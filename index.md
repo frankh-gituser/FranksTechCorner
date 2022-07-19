@@ -3,7 +3,7 @@ Title: Welcome
 Description: Pico is a stupidly simple, blazing fast, flat file CMS. 
 --- 
 
-# Willkommen in Franks Technologie Ecke
+# Willkommen in Franks TechCorner
 
 ## Hier finden sich Informationen zu verschiedenen Themenbereichen. Eine Sammlung von Projekten und How To's.
 
