@@ -20,7 +20,12 @@ Beispiel für eine App:
 Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwendigen Komponenten werfen:
 
 ### Gesamtprojekt Teileübersicht
-<img src="{{ site.baseurl }}/images/LED-stripe/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
+<img src="../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
+### 2
+<img src="../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
+### 3
+<img src="/images/LED-stripe/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
+
 
 #### Gesamtverkabelung
 <img src="{{ site.baseurl }}/images/LED-stripe/ESP+Gesamtverkabelung.jpg" width='300'>
