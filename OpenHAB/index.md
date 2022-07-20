@@ -1,3 +1,5 @@
+### [zurück zur Startseite](https://frankhoerper.github.io/FranksTechCorner)
+
 # OpenHAB Corner
 
 ##### Hier werden openHAB Projekte beschrieben
@@ -11,8 +13,8 @@ Nachdem dann die Jalousien funktionierten, kamen mit der Zeit immer mehr Sensore
 # Die Smarthome Zentrale
 Für all diese Sensoren bedarf es natürlich irgendwann einer Smarthome Zentrale.
 Da ich möglichst viel Freiheiten bei der Gestaltung und bei den Steuerungselementen möchte,
-habe ich mich für das frei verfügbare openhab Framework entschieden.
-[minima] (https://www.openhab.org/)
+habe ich mich für das frei verfügbare openhab Framework entschieden. 
+[OpenHAB](https://www.openhab.org/)
 
 # Der Smarthome „Server“
 Da der Bedarf an Rechenpower bei einem Smarthome überschaubar ist, braucht es keinen vollständigen PC im Dauerbetrieb,
