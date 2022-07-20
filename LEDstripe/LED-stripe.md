@@ -1,12 +1,6 @@
----
-layout: post
-title: "WS2812 LED-Streifen"
-date:   2022-01-22
-categories: jekyll update
----
-### [zurück zur Startseite](https://frankhoerper.github.io/FranksTechCorner)
-
 # LED Streifen mit ESP8266 und openHab steuern
+
+### [zurück zur Startseite](https://frankhoerper.github.io/FranksTechCorner)
 
 Die Grundlagen für die Programmierung eines Mikrocontrollers habe ich in dem Beitrag
 <link auf den Beitrag> beschrieben.
