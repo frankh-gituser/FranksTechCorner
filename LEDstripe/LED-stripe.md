@@ -22,7 +22,8 @@ Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwe
 ### Gesamtprojekt Teileübersicht
 <img src="../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
 ### 2
-<img src="../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
+![Book logo](../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
+![Book logo](/least-github-pages/assets/logo.png)
 ### 3
 <img src="/images/LED-stripe/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
 
