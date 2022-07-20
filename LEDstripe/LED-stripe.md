@@ -20,7 +20,11 @@ Beispiel für eine App:
 Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwendigen Komponenten werfen:
 
 ### Gesamtprojekt Teileübersicht
+![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg|width=100px])
 ![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
+
+
+
 
 #### Gesamtverkabelung
 ![image logo](../LEDstripe/images/ESP+Gesamtverkabelung.jpg width='300')
