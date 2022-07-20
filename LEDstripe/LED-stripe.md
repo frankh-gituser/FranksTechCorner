@@ -31,12 +31,12 @@ Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwe
 ![image logo](../LEDstripe/images/LED-strip-strip-Rolle.jpg)
 
 #### D1 Mini  mit ESP8266-12F WLAN Module CH340G Lua kompatibel mit Arduino
-<img src="{{ site.baseurl }}/images/LED-stripe/ESP-D1-Mini-Verkabelung.jpg" width='200'>
+![image logo](../LEDstripe/images/ESP-D1-Mini-Verkabelung.jpg)
 
 [Amazon link](https://www.amazon.de/gp/product/B01N9RXGHY/ref=as_li_tl?ie=UTF8&tag=diesudas06-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B01N9RXGHY&linkId=d735117de710eaf041a18dcf3390f753)
 
 #### Netzteil
-<img src="{{ site.baseurl }}/images/LED-stripe/Netzteil.jpg" width='300'>
+![image logo](../LEDstripe/images/Netzteil.jpg)
 
 
 Grundlagen für Netzteil, Berechnung der notwendigen Leistung etc findet ihr zB 
