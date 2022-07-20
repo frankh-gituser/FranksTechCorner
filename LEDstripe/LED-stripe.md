@@ -19,8 +19,13 @@ Beispiel für eine App:
 
 Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwendigen Komponenten werfen:
 
+![image][[../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg|width=100px]] 
+
 ### Gesamtprojekt Teileübersicht
+[[../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg|width=100px]]
+
 ![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg|width=100px])
+
 ![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
 
 
