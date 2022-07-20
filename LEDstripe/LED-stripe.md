@@ -21,12 +21,6 @@ Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwe
 
 ### Gesamtprojekt Teileübersicht
 ![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
-### 2
-![Book logo](../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
-![Book logo](/least-github-pages/assets/logo.png)
-### 3
-<img src="/images/LED-stripe/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
-
 
 #### Gesamtverkabelung
 <img src="{{ site.baseurl }}/images/LED-stripe/ESP+Gesamtverkabelung.jpg" width='300'>
