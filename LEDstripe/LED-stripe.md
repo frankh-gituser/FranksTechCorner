@@ -23,12 +23,12 @@ Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwe
 ![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
 
 #### Gesamtverkabelung
-<img src="{{ site.baseurl }}/images/LED-stripe/ESP+Gesamtverkabelung.jpg" width='300'>
+![image logo](../LEDstripe/images/ESP+Gesamtverkabelung.jpg width='300')
 
 #### LED Streifen
 
-<img src="{{ site.baseurl }}/images/LED-stripe/LED-strip-BTF-Verpackung.jpg" width='200'>
-<img src="{{ site.baseurl }}/images/LED-stripe/LED-strip-strip-Rolle.jpg" width='200'>
+![image logo](../LEDstripe/images/LED-strip-BTF-Verpackung.jpg width='200')
+![image logo](../LEDstripe/images/LED-strip-strip-Rolle.jpg)
 
 #### D1 Mini  mit ESP8266-12F WLAN Module CH340G Lua kompatibel mit Arduino
 <img src="{{ site.baseurl }}/images/LED-stripe/ESP-D1-Mini-Verkabelung.jpg" width='200'>
