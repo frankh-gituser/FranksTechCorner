@@ -14,7 +14,7 @@ Da ich möglichst viel Freiheiten bei der Gestaltung und bei den Steuerungseleme
 habe ich mich für das frei verfügbare openhab Framework entschieden. 
 [OpenHAB](https://www.openhab.org/)
 
-# Der Smarthome „Server“
+## Der Smarthome „Server“
 Da der Bedarf an Rechenpower bei einem Smarthome überschaubar ist, braucht es keinen vollständigen PC im Dauerbetrieb,
 sondern diese Arbeit kann relativ günstig zB ein raspberry erledigen. Openhab ist ein sehr mächtiges Framework,
 das eine Vielzahl von Kommunikationsprotokollen unterstützt und eine umfangreiche Bibliothek von Adaptern für die verschiedenen Sensorenhersteller
@@ -23,11 +23,11 @@ bzw kontinuierlich weiterentwickelt wird.
 
 Meine Auswahl orientierte sich dabei vorallem an dem unterstützten Kommunikationsprotokoll - zwave.
 
-### [zurück zur Startseite](https://frankhoerper.github.io/testfactory-/)
-
 ### [Übersicht](%base_url%25?openHAB/index)
 
-[Projekt1 LED](LED%20Lichterkette/LED-stripe.md?fileId=51078)
+[Projekt1 LED](LEDstripe/LED-stripe.md)
+
+### [OpenHAB Projekte und Informationen](OpenHAB/index.md) 
 
 ### [LED Lichterkette mit ESP8266 und openHAB steuern](%base_url%25openHAB/LED%20Lichterkette/LED-stripe)
 
