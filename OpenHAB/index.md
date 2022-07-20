@@ -2,15 +2,13 @@
 
 # OpenHAB Corner
 
-##### Hier werden openHAB Projekte beschrieben
-
-# Wie alles begann
+## Wie alles begann
 In diesem Blog möchte ich meine Erfahrungen und Projekte vorstellen, die ich in den vergangenen Jahren gesammelt habe.
 Angefangen hat alles mit der Idee , doch einige Funktionen im Haus zu automatisieren.
 Der Klassiker ist hierbei natürlich der Betrieb der Jalousien.
 Nachdem dann die Jalousien funktionierten, kamen mit der Zeit immer mehr Sensoren dazu, zB Licht, Türsensoren usw.
 
-# Die Smarthome Zentrale
+## Die Smarthome Zentrale
 Für all diese Sensoren bedarf es natürlich irgendwann einer Smarthome Zentrale.
 Da ich möglichst viel Freiheiten bei der Gestaltung und bei den Steuerungselementen möchte,
 habe ich mich für das frei verfügbare openhab Framework entschieden. 
