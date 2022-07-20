@@ -25,7 +25,7 @@ Meine Auswahl orientierte sich dabei vorallem an dem unterstützten Kommunikatio
 
 ### [Übersicht](%base_url%25?openHAB/index)
 
-[Projekt11 LED Lichterkette](FranksTechCorner/LEDstripe/LED-stripe.md)
+[Projekt12 LED Lichterkette](/FranksTechCorner/LEDstripe/LED-stripe.md)
 
 ### [OpenHAB Projekte und Informationen](OpenHAB/index.md) 
 
