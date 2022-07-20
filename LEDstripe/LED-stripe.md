@@ -20,7 +20,7 @@ Beispiel für eine App:
 Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwendigen Komponenten werfen:
 
 ### Gesamtprojekt Teileübersicht
-<img src="../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg" width='500'>
+![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
 ### 2
 ![Book logo](../LED-stripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
 ![Book logo](/least-github-pages/assets/logo.png)
