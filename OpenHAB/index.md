@@ -1,6 +1,5 @@
 # OpenHAB Corner
 
-### [zurück zur Startseite](https://frankhoerper.github.io/FranksTechCorner)
 ### [zurück zum Index](../index.md)
 
 ## Wie alles begann
@@ -24,16 +23,5 @@ bzw kontinuierlich weiterentwickelt wird.
 
 Meine Auswahl orientierte sich dabei vorallem an dem unterstützten Kommunikationsprotokoll - zwave.
 
-### [Übersicht](%base_url%25?openHAB/index)
-
-### [Projekt13 LED Lichterkette](../LEDstripe/LED-stripe.md)
-### [Projekt14 LED Lichterkette](../LEDstripe/index.md)
-
-### [OpenHAB Projekte und Informationen](OpenHAB/index.md) 
-
-### [LED Lichterkette mit ESP8266 und openHAB steuern](%base_url%25openHAB/LED%20Lichterkette/LED-stripe)
-
-### OpenHAB Projekte und Informationen
-
-### [Arduino + ESP Mikrocontroller Ecke](Arduino/Arduinointro.md?fileId=29465)
+### [LED Lichterkette mit Arduino ESP8266 und OpenHAB steuern](../LEDstripe/LED-stripe.md)
 
