@@ -19,24 +19,15 @@ Beispiel für eine App:
 
 Wie auch bei den anderen Projekten lasst uns zunächst einen Blick auf die notwendigen Komponenten werfen:
 
-![image][[../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg|width=100px]] 
-
 ### Gesamtprojekt Teileübersicht
-[[../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg|width=100px]]
-
-![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg|width=100px])
-
 ![image logo](../LEDstripe/images/Gesamt-Projekt-Teileluebersicht.jpg)
 
-
-
-
 #### Gesamtverkabelung
-![image logo](../LEDstripe/images/ESP+Gesamtverkabelung.jpg width='300')
+![image logo](../LEDstripe/images/ESP+Gesamtverkabelung.jpg)
 
 #### LED Streifen
 
-![image logo](../LEDstripe/images/LED-strip-BTF-Verpackung.jpg width='200')
+![image logo](../LEDstripe/images/LED-strip-BTF-Verpackung.jpg)
 ![image logo](../LEDstripe/images/LED-strip-strip-Rolle.jpg)
 
 #### D1 Mini  mit ESP8266-12F WLAN Module CH340G Lua kompatibel mit Arduino
@@ -65,7 +56,7 @@ Das nur so am Rande als lessons learned…
 
 Um die Basisfunktionen der LED Streifen auszutesten, findet ihr in der Arduino Bibliothek einige Beispiele. 
 
-<img src="{{ site.baseurl }}/images/LED-stripe/Arduino-ws2812fx-Beispiele.jpg" width='150'>
+![image logo](../LEDstripe/images/Arduino-ws2812fx-Beispiele.jpg)
 
 Das kann zB ein simpler erster Test für die verschiedenen Modi mit einem WebInterface sein. 
 Zudem gibt es mit WLED eine fertige App, (siehe link oben) mit der sich sowohl per App als auch im Browser der LED Streifen steuern lässt. Einfach mal losprobieren und ihr werdet erstaunt sein, was man für tolle Effekte findet. 
@@ -88,7 +79,7 @@ angelegt.
 Für die Auswahl der Farbe bietet sich ein item vom Type Colorpicker an. 
 
 <img src="{{ site.baseurl }}/images/LED-stripe/Colorpicker.jpg" width='150'>
-
+![image logo](../LEDstripe/images/
 
 Für die Auswahl des Modus würde ich normalerweise auf den item-Type Selection zurückgreifen. 
 Allerdings funktioniert dann die sitemap in der aktuellen openHab App nicht mehr. 
@@ -108,35 +99,25 @@ Exemplarisch schauen wir uns die notwendigen Schritte für die Auswahl der Farbe
 
 
 1. MQTT Binding anlegen
-
-<img src="{{ site.baseurl }}/images/LED-stripe/mqtt-color-1.jpg" width='500'>
-
+![image logo](../LEDstripe/images/mqtt-color-1.jpg)
 
 2. Generic MQTT Thing anlegen
-
-<img src="{{ site.baseurl }}/images/LED-stripe/mqtt-color-2.jpg" width='500'>
+![image logo](../LEDstripe/images/mqtt-color-2.jpg)
 
 3. Channel anlegen
-
-<img src="{{ site.baseurl }}/images/LED-stripe/mqtt-color-3.jpg" width='500'>
-
-<img src="{{ site.baseurl }}/images/LED-stripe/mqtt-color-4.jpg" width='500'>
-
-<img src="{{ site.baseurl }}/images/LED-stripe/mqtt-color-5.jpg" width='500'>
-
+![image logo](../LEDstripe/images/mqtt-color-3.jpg)
+![image logo](../LEDstripe/images/mqtt-color-4.jpg)
+![image logo](../LEDstripe/images/mqtt-color-5.jpg)
 
 
 4. Item mit dem Channel verlinken
 
-<img src="{{ site.baseurl }}/images/LED-stripe/mqtt-color-6.jpg" width='500'>
-
-<img src="{{ site.baseurl }}/images/LED-stripe/mqtt-color-7.jpg" width='500'>
-
+![image logo](../LEDstripe/images/mqtt-color-6.jpg)
+![image logo](../LEDstripe/images/mqtt-color-7.jpg)
 
 Das fertige Element sieht dann im Browser oder in der App wie folgt aus:
 
-<img src="{{ site.baseurl }}/images/LED-stripe/sitemap-colorpicker.jpg" width='500'>
-
+![image logo](../LEDstripe/images/sitemap-colorpicker.jpg)
 
 Mit den fertigen Steuerungselementen kann die LED Lichterkette nun gesteuert, dh Farbe , Helligkeit
 etc geändert werden.
