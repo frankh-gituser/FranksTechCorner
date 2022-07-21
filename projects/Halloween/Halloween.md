@@ -17,7 +17,9 @@ Werfen wir erstmal einen Blick auf das Ergebnis und die hierfür notwendigen Kom
 
 ## Der Bio-Kuerbis Live 
 
+![image logo](../../projects/Halloween/images/kuerbis.jpg)
 ![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](projects/Halloween/images/kuerbis.jpg)
 
 ### Komponentenliste
 
