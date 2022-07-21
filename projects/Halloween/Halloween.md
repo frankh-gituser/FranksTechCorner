@@ -18,8 +18,6 @@ Werfen wir erstmal einen Blick auf das Ergebnis und die hierfür notwendigen Kom
 ## Der Bio-Kuerbis Live 
 
 ![image logo](../../projects/Halloween/images/kuerbis.jpg)
-![image logo](../projects/Halloween/images/kuerbis.jpg)
-![image logo](projects/Halloween/images/kuerbis.jpg)
 
 ### Komponentenliste
 
@@ -28,15 +26,14 @@ Werfen wir erstmal einen Blick auf das Ergebnis und die hierfür notwendigen Kom
 [Amazon link](https://www.amazon.de/gp/product/B01N9RXGHY/ref=as_li_tl?ie=UTF8&tag=diesudas06-21&camp=1638&creative=6742&linkCode=as2&creativeASIN=B01N9RXGHY&linkId=d735117de710eaf041a18dcf3390f753)
 
 
-<img src="{{ site.baseurl }}/images/kuerbis/D1-Mini-Anschluesse.jpg" width='250'>
-![image logo](../projects/Halloween/images/kuerbis.jpg)
- 
+![image logo](../../projects/Halloween/images/D1-Mini-Anschluesse.jpg) 
 - 5V RGB LED Ring WS2812B 12-Bit 38mm kompatibel mit Arduino
 
 [Amazon link](https://www.amazon.de/AZDelivery-WS2812B-12-Bit-Neopixel-Arduino/dp/B07TZK9DNT/ref=sr_1_1_sspa?keywords=neopixel+ring+12&qid=1639237233&sr=8-1-spons&psc=1&smid=A1X7QLRQH87QA3&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFNOVVETTU2U1FJSEgmZW5jcnlwdGVkSWQ9QTAzMDk0NDQyTjVNTklOVkI3MTlJJmVuY3J5cHRlZEFkSWQ9QTAyMTI0NzdPMjJGSFk5Wjk4MDQmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
 
-<img src="{{ site.baseurl }}/images/kuerbis/Neopixel-Anschluesse-top.jpg" width='250'>
-![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](../../projects/Halloween/images/Neopixel-Anschluesse-top.jpg)
+
+
 
 Die Stromversorgung des ESP erfolgt in diesem kleinen Projekt ueber eine Powerbank oder ein USB Ladekabel. 
 Da das Stimmungslicht hauptsächlich in den Abendstunden angeschaltet ist, sollte dies ausreichend sein. 
@@ -49,8 +46,7 @@ Später im Arduino Code müsst ihr darauf achten, dass PIN6 je nach Board unters
 #### ESP8266 Pinout Reference: Welche GPIO pins muss ich auswählen ?
 [ESP8266 Pinout Reference](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
 
-<img src="{{ site.baseurl }}/images/kuerbis/ESP-GPIO-pinout.jpg" width='350'  >
-![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](../../projects/Halloween/images/ESP-GPIO-pinout.jpg)
 
 
 
@@ -102,8 +98,7 @@ für ein Device konfigurieren können, vergleichbar mit einer speziellen Spur, z
 
 <b> Installation+Konfiguration des MQTT broker in openHAB </b>
 
-<img src="{{ site.baseurl }}/images/kuerbis/add-new-mqtt-broker-thing.jpg" width='800'  >
-![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](../../projects/Halloween/images/add-new-mqtt-broker-thing.jpg)
 
 <b> Anschliessend wird die Verbindung zwischen openHAB mit dem MQTT Broker hergestellt </b>
 
@@ -119,8 +114,7 @@ Die Bridge muss nun konfiguriert werden
 * Label:Hier kann ein eigener sprechender Name fuer das MQTT Bridge Thing vergeben werden
 * Broker Hostname/IP: Hier die Verbindung zum Broker auf dem System angeben/einstellen
 
-<img src="{{ site.baseurl }}/images/kuerbis/new-MQTT-Broker.jpg" width='800'  >
-![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](../../projects/Halloween/images/new-MQTT-Broker.jpg)
 
 
 Klicke dann auf Thing erstellen. 
@@ -150,16 +144,14 @@ Einmal angelegt, kann diese ID nachträglich nicht mehr geändert werden
 sprechender Name für das Device
 <b> zB „ESPD1-02“ </b> an Stelle von Generic MQTT Thing
 
-<img src="{{ site.baseurl }}/images/kuerbis/New-Generic-MQTT-Thing.jpg" width='800'>
-![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](../../projects/Halloween/images/New-Generic-MQTT-Thing.jpg)
 
 ￼
 
 Anschliessend erstellen wir einen Kanal für dieses MQTT Thing. Hier werden die Eigenschaften des Kanals definiert, 
 zB ob es sich um einen Schalter handelt. 
 
-<img src="{{ site.baseurl }}/images/kuerbis/Add-Channel-1.jpg" width='800'>
-![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](../../projects/Halloween/images/Add-Channel-1.jpg)
 
 Zusätzlich definieren wir hier die MQTT topics,
 über die später die Informationen mit unserem Device ausgetauscht werden, zB
@@ -167,8 +159,7 @@ Zusätzlich definieren wir hier die MQTT topics,
 <i>  stat/espD1/OnOff </i> , um das Device an- oder auszuschalten (Werte ON oder OFF)
 
 
-<img src="{{ site.baseurl }}/images/kuerbis/Add-Channel-2.jpg" width='800'>
-![image logo](../projects/Halloween/images/kuerbis.jpg)
+![image logo](../../projects/Halloween/images/Add-Channel-2.jpg)
 
 ###  Code Beispiele
 
