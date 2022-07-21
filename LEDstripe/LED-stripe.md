@@ -78,8 +78,7 @@ angelegt.
 
 Für die Auswahl der Farbe bietet sich ein item vom Type Colorpicker an. 
 
-<img src="{{ site.baseurl }}/images/LED-stripe/Colorpicker.jpg" width='150'>
-![image logo](../LEDstripe/images/
+![image logo](../LEDstripe/images/Colorpicker.jpg)
 
 Für die Auswahl des Modus würde ich normalerweise auf den item-Type Selection zurückgreifen. 
 Allerdings funktioniert dann die sitemap in der aktuellen openHab App nicht mehr. 
