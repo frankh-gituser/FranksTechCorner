@@ -35,8 +35,7 @@ d.h. ein USB Kabel kompatibel mit Arduino und Nano V3 !
 Nun klickt man in dem Untermenü  auf „Port“.  
 Dort werden mehrere Ports zu sehen sein und der richtige Port muss dann entsprechend eingestellt werden.
 
-<img src="{{ site.baseurl }}/images/kuerbis/Port-Arduino-Auswahl.jpg" width='350'>
-
+![image logo](../../projects/ArduinoIntro/images/Port-Arduino-Auswahl.jpg)
 
 ### Bibliotheken zur Arduino Software hinzufügen
 
@@ -56,8 +55,7 @@ Diese Beispiele befinden sich unter „Datei > Beispiele“ und können einen gu
 Bibliothek geben. 
 Die ersten Schritte mit neuen Zusatzkomponenten wie LED Ringen, OLED Displays etc werden hierdurch deutlich vereinfacht.
 
-<img src="{{ site.baseurl }}/images/kuerbis/Arduino-Bibliotheken.jpg" width='350'>
-
+![image logo](../../projects/ArduinoIntro/images/Arduino-Bibliotheken.jpg)
 
 Es gibt auch die Möglichkeit eine Bibliothek auf einer externen Seite herunterzuladen und über die 
 „.ZIP Bibliothek hinzufügen…“ Funktion einzubinden. 
@@ -90,7 +88,7 @@ erneut am Anfang des Loop-Teils.
 
 Hier ein Beispiel , um die eingebaute LED auf dem Board blinken zu lassen
 ￼
-<img src="{{ site.baseurl }}/images/kuerbis/simple-led-Sketch.jpg" width='350'>
+![image logo](../../projects/ArduinoIntro/images/simple-led-Sketch.jpg)
 
 Wer mehr Hintergründe und Details zur Programmierung von Mikrocontrollern lernen möchte, dem kann ich das folgende Tutorial empfehlen
 
