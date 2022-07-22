@@ -7,7 +7,7 @@ Description: Pico is a stupidly simple, blazing fast, flat file CMS.
 
 ## Hier finden sich Informationen zu verschiedenen Themenbereichen. Eine Sammlung von Projekten und How To's.
 
-### [Arduino + ESP Mikrocontroller Ecke](%base_url%25?Arduino-ESP/index) 
+### [Arduino + ESP Mikrocontroller Ecke](projects/ArduinoIntro/Arduinointro.md)
 
 ### [OpenHAB Projekte und Informationen](OpenHAB/index.md) 
 
