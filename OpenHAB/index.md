@@ -26,3 +26,5 @@ Meine Auswahl orientierte sich dabei vorallem an dem unterstützten Kommunikatio
 ### [LED Lichterkette mit Arduino ESP8266 und OpenHAB steuern](../LEDstripe/LED-stripe.md)
 
 ### [Halloween LED-Ring mit Arduino ESP8266 und OpenHAB steuern](../projects/Halloween/Halloween.md)
+
+### [RaspberryPi als Überwachungskamera](../projects/Aussenkamera/Aussenkamera.md)
