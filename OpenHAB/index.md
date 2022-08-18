@@ -27,4 +27,6 @@ Meine Auswahl orientierte sich dabei vorallem an dem unterstützten Kommunikatio
 
 ### [Halloween LED-Ring mit Arduino ESP8266 und OpenHAB steuern](../projects/Halloween/Halloween.md)
 
+### [ESP8266 Schaltsteckdose vs FritzDECT!200](../projects/Tasmota/Tasmota.md)
+
 ### [RaspberryPi als Überwachungskamera](../projects/Aussenkamera/Aussenkamera.md)
