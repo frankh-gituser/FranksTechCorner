@@ -30,28 +30,17 @@ Aber es gibt sicher noch andere Anbieter. Hier ein link auf Amazon, ohne das ich
 
 
 
-
-Amazon link
-
-Wlan Steckdose mit Tasmota vorgeflasht. Kleinste ESP8266 smart plug. 
-16A mini wifi steckdosen mit stromverbrauch stromzähler, zeitschaltuhr. 
+- Wlan Steckdose mit Tasmota vorgeflasht. Kleinste ESP8266 smart plug. 16A mini wifi steckdosen mit stromverbrauch stromzähler, zeitschaltuhr. 
 MQTT, Domoticz, Home Assistant, Alexa. 2er pack. NOUS A1T
+
+[Amazon link](https://www.amazon.de/vorgeflasht-stromverbrauch-stromz%C3%A4hler-zeitschaltuhr-NOUS/dp/B0054PSIDW/ref=sr_1_6?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=X3HACXVI2MC5&keywords=tasmoto%2Bschaltsteckdosen&qid=1659692996&sprefix=tasmoto%2Bschaltsteckdosen%2Caps%2C52&sr=8-6&th=1)
 
 Zum Vergleich hier ein Bild der Steckdosen:
 
 
-
-Das erste, was einem auffällt ist der deutliche Grössenunterschied. 
-Für kleine Stromverbraucher ist eine Fritz Steckdose schon sehr voluminös, 
-was zB in einer 3-Fach Steckleiste Max zwei AVM Stecker zulässt. 
-Das Tasmota Gerät fällt sehr schlank auf, wie ihr selber sehen könnt. 
-Das ermöglicht den Einsatz auch in Bereichen mit Platzknappheit. 
-
-
-
-
-
-https://www.amazon.de/vorgeflasht-stromverbrauch-stromz%C3%A4hler-zeitschaltuhr-NOUS/dp/B0054PSIDW/ref=sr_1_6?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=X3HACXVI2MC5&keywords=tasmoto%2Bschaltsteckdosen&qid=1659692996&sprefix=tasmoto%2Bschaltsteckdosen%2Caps%2C52&sr=8-6&th=1
+Das erste, was einem auffällt ist der deutliche Grössenunterschied.
+Für kleine Stromverbraucher ist eine Fritz Steckdose schon sehr voluminös, was zB in einer 3-Fach Steckleiste Max zwei AVM Stecker zulässt.
+Das Tasmota Gerät fällt sehr schlank auf, wie ihr selber sehen könnt. Das ermöglicht den Einsatz auch in Bereichen mit Platzknappheit.
 
 Konfiguration
 
