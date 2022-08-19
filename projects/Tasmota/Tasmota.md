@@ -28,7 +28,7 @@ sondern die Kombination mir bekannter Technologien, Preis, Programmiermodell etc
 Die Stecker habe ich bei Amazon erstmal im 2er Pack zum Testen bestellt. 
 Aber es gibt sicher noch andere Anbieter. Hier ein link auf Amazon, ohne das ich davon einen kommerziellen Nutzen habe:
 
-![image logo](../../projects/Tasmota/TasmotaImgaes/Tasmota-Packung.jpeg)
+![image logo](../../projects/Tasmota/TasmotaImages/Tasmota-Packung.jpeg)
 
 - Wlan Steckdose mit Tasmota vorgeflasht. Kleinste ESP8266 smart plug. 16A mini wifi steckdosen mit stromverbrauch stromzähler, zeitschaltuhr. 
 MQTT, Domoticz, Home Assistant, Alexa. 2er pack. NOUS A1T
@@ -37,13 +37,13 @@ MQTT, Domoticz, Home Assistant, Alexa. 2er pack. NOUS A1T
 
 Zum Vergleich hier ein Bild der Steckdosen:
 
-![image logo](../../projects/Tasmota/TasmotaImgaes/Vergleich-Fritz-Tasmota.jpeg)
+![image logo](../../projects/Tasmota/TasmotaImages/Vergleich-Fritz-Tasmota.jpeg)
 
 Das erste, was einem auffällt ist der deutliche Grössenunterschied.
 Für kleine Stromverbraucher ist eine Fritz Steckdose schon sehr voluminös, was zB in einer 3-Fach Steckleiste Max zwei AVM Stecker zulässt.
 Das Tasmota Gerät fällt sehr schlank auf, wie ihr selber sehen könnt. Das ermöglicht den Einsatz auch in Bereichen mit Platzknappheit.
 
-![image logo](../../projects/Tasmota/TasmotaImgaes/Tasmota-in-Fritz.jpeg)
+![image logo](../../projects/Tasmota/TasmotaImages/Tasmota-in-Fritz.jpeg)
 
 
 Konfiguration
