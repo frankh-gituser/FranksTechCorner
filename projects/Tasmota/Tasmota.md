@@ -37,10 +37,14 @@ MQTT, Domoticz, Home Assistant, Alexa. 2er pack. NOUS A1T
 
 Zum Vergleich hier ein Bild der Steckdosen:
 
+![image logo](../../projects/Tasmota/TasmotaImgaes/Vergleich-Fritz-Tasmota.jpeg)
 
 Das erste, was einem auffällt ist der deutliche Grössenunterschied.
 Für kleine Stromverbraucher ist eine Fritz Steckdose schon sehr voluminös, was zB in einer 3-Fach Steckleiste Max zwei AVM Stecker zulässt.
 Das Tasmota Gerät fällt sehr schlank auf, wie ihr selber sehen könnt. Das ermöglicht den Einsatz auch in Bereichen mit Platzknappheit.
+
+![image logo](../../projects/Tasmota/TasmotaImgaes/Tasmota-in-Fritz.jpeg)
+
 
 Konfiguration
 
