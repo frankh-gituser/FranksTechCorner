@@ -174,7 +174,8 @@ GenericMQTT Thing und item und die beiden Channels einrichten und die  ON/OFF to
 	cmnd/tasmota2
 	cmnd/tasmota2
 
-[Tasmota commands] (https://tasmota.github.io/docs/Commands/#command-flow)
+
+[Tasmota commands](https://tasmota.github.io/docs/Commands/#command-flow)
 
 
 Ob die Kommunikation über den Broker funktioniert könnt ihr mit den entsprechenden publish, subscribe Kommandos in einem Shell Terminal prüfen:
