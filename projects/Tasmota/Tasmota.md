@@ -69,7 +69,7 @@ Die entsprechenden templates fuer das device findet ihr unter
 
 Hier am Beispiel der Schaltsteckdose
 
-	Configure->Configure Other-> Template einfügen (kopierte Zeile einfügen), -> activate -> speichern
+	Configure->Configure Other-> Template einfügen (kopierte Zeile einfügen), -> activate -> speichern 
 
 Bei meinem gelieferten Gerät war das richtige Template eingestellt, so dass ich hier nichts weiter ändern musste.
 
@@ -135,9 +135,9 @@ Oder einfach in meine anderen Projekte schauen 😉
 
 Eine Beschreibung dazu findet ihr u.a. hier:
 
-[Tasmota.github.io/docs/openHAB] (https://tasmota.github.io/docs/openHAB/#requirements)
+[Tasmota.github.io/docs/openHAB](https://tasmota.github.io/docs/openHAB/#requirements)
 
-[openHAB community Info] (https://community.openhab.org/t/itead-sonoff-switches-and-sockets-cheap-esp8266-wifi-mqtt-hardware/15024)
+[openHAB community Info](https://community.openhab.org/t/itead-sonoff-switches-and-sockets-cheap-esp8266-wifi-mqtt-hardware/15024)
 
 >The "open Home Automation Bus" (openHAB) is an open source, technology agnostic home automation platform which runs as the center of your smart home. 
 >Besides more than 400 other add-ons for all kinds of technologies, openHAB provides an MQTT add-on ("binding") to interface with systems like Tasmota.
@@ -170,14 +170,9 @@ Zurück in der OpenHAB Admin Konsole erstellt ihr dann ein MQTT-Generic-Thing f�
 konfiguriert den entsprechenden Channel mit State und command Topic für die Kommunikation zwischen OpenHAB Broker und Tasmota. 
 Über ein entsprechendes Item lässt sich der Stecker dann zB an und ausschalten.
 
-GenericMQTT Thing und item und die beiden Channels
-
-<code>
-Zwei Channels einrichten
-	0.	Switch ON/OFF topic
+GenericMQTT Thing und item und die beiden Channels einrichten und die  ON/OFF topics definieren
 	cmnd/tasmota2
 	cmnd/tasmota2
-</code>
 
 [Tasmota commands] (https://tasmota.github.io/docs/Commands/#command-flow)
 
