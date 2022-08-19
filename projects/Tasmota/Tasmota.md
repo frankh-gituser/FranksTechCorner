@@ -193,6 +193,7 @@ kann man auf dem topic mitlesen
 
 
 Im Web Interface unter der IP Adresse des Tasmota Steckers könnt ihr unter
+
 	MainMenu->Console 
 
 die send/request Kommunikation entsprechend mitverfolgen, die vom Tasmota abgeschickt wird bzw vom Tasmota auf dem Topic empfangen wird
@@ -218,6 +219,7 @@ Hier können verschiedene Funktionen genutzt werden, die OpenHAB bereits mitlief
 ! Wichtig ist allerdings zu erwähnen, dass zB die JSONPath Transformation Addons im PaperUI bzw in der Admin Umgebung erst installiert werden müssen:
 
 <b> JSONPATH Transformations unter </b> 
+
 	Settings->Tranformations in openHAB Admin Konsole installieren
 
 Danach lassen sich die Werte über ein Topic auslesen und weiterverarbeiten. Ich zeige euch hier nur exemplarisch einige Werte, wie ihr das Thing+item mit den Channels anlegt:
@@ -242,42 +244,38 @@ Dann die item für die Weiterverabeitung der Einzelwerte in der item Datei
 
 
 #### Und die Aufbereitung in der Tasmota1.rules
-<code>
-rule "TasmotaPlug1 On"
-when
-  Item GenericMQTTThingTasmota1PowerSwitch changed to ON
-then
-  val mqttActions = getActions("mqtt","mqtt:broker:331a9f6380")
-  mqttActions.publishMQTT("cmnd/tasmota1/cmnd/POWER","ON")
-  logInfo("     TASMOTA1 !!!! ON      ", "   ")
-end
-</code>
+	rule "TasmotaPlug1 On"
+	when
+  	Item GenericMQTTThingTasmota1PowerSwitch changed to ON
+	then
+  	val mqttActions = getActions("mqtt","mqtt:broker:331a9f6380")
+  	mqttActions.publishMQTT("cmnd/tasmota1/cmnd/POWER","ON")
+  	logInfo("     TASMOTA1 !!!! ON      ", "   ")
+	end
 
 
 Und hier werden die Sensordaten mit Hilfe der JSONPATH Funktionen den Einzelwert-Items zugewiesen 
 
-<code>
-rule "TasmotaPlug1 Sensor Data"
-when
-  Item GenericMQTTThingTasmota1SensorData changed
-then
-  val mqttActions = getActions("mqtt","mqtt:broker:331a9f6380")
-  logInfo("  TASMOTA1 Sensordaten:    --->>> ", GenericMQTTThingTasmota1SensorData.state.toString," ")
+	rule "TasmotaPlug1 Sensor Data"
+	when
+  	Item GenericMQTTThingTasmota1SensorData changed
+	then
+  	val mqttActions = getActions("mqtt","mqtt:broker:331a9f6380")
+  	logInfo("  TASMOTA1 Sensordaten:    --->>> ", GenericMQTTThingTasmota1SensorData.state.toString," ")
   
-val temp1 = transform("JSONPATH", "$.ENERGY.Total", GenericMQTTThingTasmota1SensorData.state.toString)
-  logInfo("  Total Energy  String :    --->>> ", temp1)
-  // post the new value to the Number Item
-  Tas1TotalEnergy.postUpdate( temp1 )
+	val temp1 = transform("JSONPATH", "$.ENERGY.Total", GenericMQTTThingTasmota1SensorData.state.toString)
+  	logInfo("  Total Energy  String :    --->>> ", temp1)
+  	// post the new value to the Number Item
+  	Tas1TotalEnergy.postUpdate( temp1 )
 
-  val temp2 = transform("JSONPATH", "$.ENERGY.Current", GenericMQTTThingTasmota1SensorData.state.toString)
-  logInfo("  Current Energy :    --->>> ", temp2)
-  Tas1CurrentEnergy.postUpdate( temp2 )
+	val temp2 = transform("JSONPATH", "$.ENERGY.Current", GenericMQTTThingTasmota1SensorData.state.toString)
+  	logInfo("  Current Energy :    --->>> ", temp2)
+  	Tas1CurrentEnergy.postUpdate( temp2 )
 
-  val temp3 = transform("JSONPATH", "$.ENERGY.Power", GenericMQTTThingTasmota1SensorData.state.toString)
-  logInfo("  Power Watt Energy :    --->>> ", temp3)
-  Tas1PowerWatt.postUpdate( temp3 )
-end
-</code>
+  	val temp3 = transform("JSONPATH", "$.ENERGY.Power", GenericMQTTThingTasmota1SensorData.state.toString)
+  	logInfo("  Power Watt Energy :    --->>> ", temp3)
+	Tas1PowerWatt.postUpdate( temp3 )
+	end
 
 
 
