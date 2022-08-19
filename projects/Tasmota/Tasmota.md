@@ -46,7 +46,7 @@ Das Tasmota Gerät fällt sehr schlank auf, wie ihr selber sehen könnt. Das erm
 ![image logo](../../projects/Tasmota/TasmotaImages/Tasmota-in-Fritz.jpeg)
 
 
-Konfiguration
+### Konfiguration
 
 Die ersten Schritte mit der Tasmota Steckdose gestalten sich eigentlich ganz einfach. 
 Tasmota Stecker in die Steckdose, kurz warten und der Tasmota Stecker bietet ein eigenes Tasmotoxxx WLAN Netzwerk an. 
@@ -71,9 +71,8 @@ activate, speichern
 Bei meinem gelieferten Gerät war das richtige Template eingestellt, 
 so dass ich hier nichts weiter ändern musste.
 
+![image logo](../../projects/Tasmota/TasmotaImages/Tasmota-template-config.jpeg)
 
-
- 
 
 Nach der Änderung des templates startet das Gerät startet dann neu
 
@@ -89,7 +88,7 @@ Auch hierzu habe ich keine persönlichen oder geschäftlichen Verbindungen
 oder irgendwelche Vorteile, aber es ist halt hilfreich und gut gemacht. 
 
 
-https://www.youtube.com/watch?v=Gj6yR45DJFQ
+[Youtube link](https://www.youtube.com/watch?v=Gj6yR45DJFQ)
 
 
 Fangen wir also mit der Volt Zahl an, die normalerweise bei uns so bei 235 V liegt. 
