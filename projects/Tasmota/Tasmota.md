@@ -157,11 +157,14 @@ Eine Beschreibung dazu findet ihr u.a. hier:
 Wie ihr seht, braucht es als erstes einen konfigurierten MQTT Broker , den ihr im OpenHAB entsprechend einrichtet.
 
 
+#### Tasmota MQTT Konfiguration
+
 Als Nächstes müsst ihr in der Tasmota Konfiguration die mqtt Einstellungen ändern, damit eine Verbindung zu eurem OpenHAB Broker aufgebaut werden kann.
 
-Screenshot Tasmoto mqtt Kondiguration
+![image logo](../../projects/Tasmota/TasmotaImages/Tasmota-mqtt-config.jpeg)
 
 
+#### openHAB  MQTT Konfiguration
 
 Zurück in der OpenHAB Admin Konsole erstellt ihr dann ein MQTT-Generic-Thing für den Tasmota Stecker und 
 konfiguriert den entsprechenden Channel mit State und command Topic für die Kommunikation zwischen OpenHAB Broker und Tasmota. 
@@ -169,34 +172,40 @@ konfiguriert den entsprechenden Channel mit State und command Topic für die Kom
 
 GenericMQTT Thing und item und die beiden Channels
 
-
-
-
+<code>
 Zwei Channels einrichten
 	0.	Switch ON/OFF topic
 	cmnd/tasmota2
 	cmnd/tasmota2
+</code>
 
-
-Tasmota commands
-https://tasmota.github.io/docs/Commands/#command-flow
+[Tasmota commands] (https://tasmota.github.io/docs/Commands/#command-flow)
 
 
 Ob die Kommunikation über den Broker funktioniert könnt ihr mit den entsprechenden publish, subscribe Kommandos in einem Shell Terminal prüfen:
 
-mosquitto_pub -h localhost -t cmnd/tasmota2/cmnd/POWER -m "OFF"
+Mit
+
+	mosquitto_pub -h localhost -t cmnd/tasmota2/cmnd/POWER -m "OFF"
+
 Lassen sich Kommandos an das Device schicken und mit
 
-mosquitto_sub -d -t  cmnd/tasmota2/cmnd/POWER
-Kann man auf dem topic mitlesen
+und mit 
+
+	mosquitto_sub -d -t  cmnd/tasmota2/cmnd/POWER
+
+kann man auf dem topic mitlesen
+
 
 Im Web Interface unter der IP Adresse des Tasmota Steckers könnt ihr unter
-MainMenu->Console die send/request Kommunikation entsprechend mitverfolgen, die vom Tasmota abgeschickt wird bzw vom Tasmota auf dem Topic empfangen wird
+	MainMenu->Console 
+
+die send/request Kommunikation entsprechend mitverfolgen, die vom Tasmota abgeschickt wird bzw vom Tasmota auf dem Topic empfangen wird
 
 
-A broker Thing with a Generic MQTT Thing and a few channels
+<b> A broker Thing with a Generic MQTT Thing and a few channels </b>
 
-https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.generic/xtend_examples.md#converting-an-mqtt1-installation
+[A broker Thing with a Generic MQTT Thing and a few channels] (https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.generic/xtend_examples.md#converting-an-mqtt1-installation)
 
 
 Fuer die PowerPlugs habe ich jeweils ein GenericMQTT Thing für Power Switch und eins fuer die Sensorwerte angelegt und entsprechende MQTT topics definiert
@@ -204,42 +213,41 @@ Fuer die PowerPlugs habe ich jeweils ein GenericMQTT Thing für Power Switch und
 Bei den Sensordaten wird es jetzt etwas komplizierter , weil diese Werte nicht als Einzelwerte gesendet werden, 
 sondern als „Sammelinformation“ in einer Zeichenkette zur Verfügung gestellt wird
 
-Item 'GenericMQTTThingTasmota1SensorData' changed from {"Time":"2022-08-18T09:34:27","ENERGY":{"TotalStartTime":"2022-08-12T15:35:39","Total":0.350,"Yesterday":0.067,"Today":0.050,"Period": 0,"Power": 0,"ApparentPower": 0,"ReactivePower": 0,"Factor":0.00,"Voltage": 0,"Current":0.000}} to {"Time":"2022-08-18T09:39:27","ENERGY":{"TotalStartTime":"2022-08-12T15:35:39","Total":0.350,"Yesterday":0.067,"Today":0.050,"Period": 0,"Power": 0,"ApparentPower": 0,"ReactivePower": 0,"Factor":0.00,"Voltage": 0,"Current":0.000}}
+	Item 'GenericMQTTThingTasmota1SensorData' changed from {"Time":"2022-08-18T09:34:27","ENERGY":{"TotalStartTime":"2022-08-12T15:35:39","Total":0.350,"Yesterday":0.067,"Today":0.050,"Period": 0,"Power": 0,"ApparentPower": 0,"ReactivePower": 0,"Factor":0.00,"Voltage": 0,"Current":0.000}} to {"Time":"2022-08-18T09:39:27","ENERGY":{"TotalStartTime":"2022-08-12T15:35:39","Total":0.350,"Yesterday":0.067,"Today":0.050,"Period": 0,"Power": 0,"ApparentPower": 0,"ReactivePower": 0,"Factor":0.00,"Voltage": 0,"Current":0.000}}
 
 
 Aus diesem String müssen die Einzelwerte dann entsprechend extrahiert und einem Item bzw. einer Variablen zugeordnet werden, 
 so dass wir den Wert im OpenHAB zB in einer Regel weiterverarbeiten bzw. anzeigen können
 Hier können verschiedene Funktionen genutzt werden, die OpenHAB bereits mitliefert. 
 
-Wichtig ist allerdings zu erwähnen, dass zB die JSONPath Transformation Addons im PaperUI bzw in der Admin Umgebung erst installiert werden müssen:
+! Wichtig ist allerdings zu erwähnen, dass zB die JSONPath Transformation Addons im PaperUI bzw in der Admin Umgebung erst installiert werden müssen:
 
-JSONPATH Transofrmations unter 
-Settings->Tranformations in openHAB Admin Konsole installieren
+<b> JSONPATH Transformations unter </b> 
+	Settings->Tranformations in openHAB Admin Konsole installieren
 
 Danach lassen sich die Werte über ein Topic auslesen und weiterverarbeiten. Ich zeige euch hier nur exemplarisch einige Werte, wie ihr das Thing+item mit den Channels anlegt:
 
 
 Dann die item für die Weiterverabeitung der Einzelwerte in der item Datei
-Tasmota.item:
+#### Tasmota.item:
 
-Number  Tas1TotalEnergy "Tas1TotalEnergy [%.3f kWh]"
-Number  Tas1CurrentEnergy "Tas1CurrentEnergy [%.3f kWh]"
-Number  Tas1PowerWatt "Tas1PowerWatt [%.2f W]"
-
-
-Die Einbindung in der 
-Default.sitemap
-Switch  item=GenericMQTTThingTasmota1PowerSwitch      label="Tasmota-1 Steckdose
-        Text item=Leeres_Item label="Tasmotoa1 Energieverbrauch" {
-          Text    item=Tas1PowerWatt
-          Text    item=Tas1TotalEnergy
-          Text    item=Tas1CurrentEnergy
-        }
+	Number  Tas1TotalEnergy "Tas1TotalEnergy [%.3f kWh]"
+	Number  Tas1CurrentEnergy "Tas1CurrentEnergy [%.3f kWh]"
+	Number  Tas1PowerWatt "Tas1PowerWatt [%.2f W]"
 
 
-Und die Aufbereitung in der 
+#### Die Einbindung in der Default.sitemap
 
-Tasmota1.rules
+	Switch  item=GenericMQTTThingTasmota1PowerSwitch      label="Tasmota-1 Steckdose
+        	Text item=Leeres_Item label="Tasmotoa1 Energieverbrauch" {
+          	Text    item=Tas1PowerWatt
+          	Text    item=Tas1TotalEnergy
+          	Text    item=Tas1CurrentEnergy
+        	}
+
+
+#### Und die Aufbereitung in der Tasmota1.rules
+<code>
 rule "TasmotaPlug1 On"
 when
   Item GenericMQTTThingTasmota1PowerSwitch changed to ON
@@ -248,11 +256,12 @@ then
   mqttActions.publishMQTT("cmnd/tasmota1/cmnd/POWER","ON")
   logInfo("     TASMOTA1 !!!! ON      ", "   ")
 end
+</code>
 
 
 Und hier werden die Sensordaten mit Hilfe der JSONPATH Funktionen den Einzelwert-Items zugewiesen 
 
-
+<code>
 rule "TasmotaPlug1 Sensor Data"
 when
   Item GenericMQTTThingTasmota1SensorData changed
@@ -273,11 +282,12 @@ val temp1 = transform("JSONPATH", "$.ENERGY.Total", GenericMQTTThingTasmota1Sens
   logInfo("  Power Watt Energy :    --->>> ", temp3)
   Tas1PowerWatt.postUpdate( temp3 )
 end
-
+</code>
 
 
 
 Viel Spaß bei den ersten Schritten und der Weiterentwicklung eurer eigenen Anforderungen. 
 Über Anregungen und gute Erkenntnisgewinne freue ich mich immer. 
 
-Einfach per Email an mich.
+
+Einfach per Email an mich n1028fh@gmail.com
