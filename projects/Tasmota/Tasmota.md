@@ -171,6 +171,7 @@ konfiguriert den entsprechenden Channel mit State und command Topic für die Kom
 Über ein entsprechendes Item lässt sich der Stecker dann zB an und ausschalten.
 
 GenericMQTT Thing und item und die beiden Channels einrichten und die  ON/OFF topics definieren
+
 	cmnd/tasmota2
 	cmnd/tasmota2
 
@@ -200,9 +201,7 @@ Im Web Interface unter der IP Adresse des Tasmota Steckers könnt ihr unter
 die send/request Kommunikation entsprechend mitverfolgen, die vom Tasmota abgeschickt wird bzw vom Tasmota auf dem Topic empfangen wird
 
 
-<b> A broker Thing with a Generic MQTT Thing and a few channels </b>
-
-[A broker Thing with a Generic MQTT Thing and a few channels] (https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.generic/xtend_examples.md#converting-an-mqtt1-installation)
+[A broker Thing with a Generic MQTT Thing and a few channels](https://github.com/openhab/openhab-addons/blob/main/bundles/org.openhab.binding.mqtt.generic/xtend_examples.md#converting-an-mqtt1-installation)
 
 
 Fuer die PowerPlugs habe ich jeweils ein GenericMQTT Thing für Power Switch und eins fuer die Sensorwerte angelegt und entsprechende MQTT topics definiert
@@ -221,12 +220,17 @@ Hier können verschiedene Funktionen genutzt werden, die OpenHAB bereits mitlief
 
 <b> JSONPATH Transformations unter </b> 
 
-	Settings->Tranformations in openHAB Admin Konsole installieren
+	Settings->Tranformations 
 
-Danach lassen sich die Werte über ein Topic auslesen und weiterverarbeiten. Ich zeige euch hier nur exemplarisch einige Werte, wie ihr das Thing+item mit den Channels anlegt:
+in der openHAB Admin Konsole installieren
 
 
-Dann die item für die Weiterverabeitung der Einzelwerte in der item Datei
+Danach lassen sich die Werte über ein Topic auslesen und weiterverarbeiten. 
+Ich zeige euch hier nur exemplarisch einige Werte, wie ihr das Thing+item mit den Channels anlegt:
+
+
+Dann die items für die Weiterverabeitung der Einzelwerte in der item Datei erstellen
+
 #### Tasmota.item:
 
 	Number  Tas1TotalEnergy "Tas1TotalEnergy [%.3f kWh]"
