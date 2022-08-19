@@ -4,7 +4,7 @@
 [comment]: <> (This is a comment, it will not be included)
 [//]: <> (This is also a comment.) 
 
-### [zurück zum Index](../index.md)
+### [zurück zum Index](../../index.md)
 
 ESP8266 vs FritzDECT Schaltsteckdose
 
@@ -69,8 +69,7 @@ Die entsprechenden templates fuer das device findet ihr unter
 
 Hier am Beispiel der Schaltsteckdose
 
-Configure->Configure Other-> Template einfügen (kopierte Zeile einfügen), 
-activate, speichern
+	Configure->Configure Other-> Template einfügen (kopierte Zeile einfügen), -> activate -> speichern
 
 Bei meinem gelieferten Gerät war das richtige Template eingestellt, so dass ich hier nichts weiter ändern musste.
 
@@ -79,13 +78,13 @@ Bei meinem gelieferten Gerät war das richtige Template eingestellt, so dass ich
 Nach der Änderung des templates startet das Gerät startet dann neu
 
 
-Im MainMenu könnt ihr nun mit „toggle“ die Steckdose ein-, ausschalten 
-und ihr seht auch die Leistungsangaben bzw Verbräuche der angeschlossenen Verbraucher. 
-Die stimmen normalerweise erstmal nicht, weil die Steckdose erstmal kalibriert werden muss, 
-d.h. die Grundwerte müssen eingestellt werden. 
+Im <b> MainMenu </b>  könnt ihr nun mit „toggle“ die Steckdose ein-, ausschalten 
+und ihr seht u.a. die Leistungsangaben bzw Verbräuche der angeschlossenen Verbraucher. 
+Die stimmen normalerweise erstmal nicht, weil die Steckdose zunächst kalibriert, 
+d.h. auf die Grundwerte  eingestellt werden muss. 
 
 Dazu nehmt ihr euch am Besten eine alte Glühlampe mit einem definierten 
-Verbrauch bzw. einer festen Wattzahl, zB 40W
+Verbrauch bzw. einer festen Wattzahl, z.B. 40W
 In dem folgenden Video ist das sehr schön erklärt. 
 Auch hierzu habe ich keine persönlichen oder geschäftlichen Verbindungen 
 oder irgendwelche Vorteile, aber es ist halt hilfreich und gut gemacht. 
@@ -93,11 +92,12 @@ oder irgendwelche Vorteile, aber es ist halt hilfreich und gut gemacht.
 
 [Youtube link](https://www.youtube.com/watch?v=Gj6yR45DJFQ)
 
+#### Den Tasmota Stecker kalibrieren
 
 Fangen wir also mit der Volt Zahl an, die normalerweise bei uns so bei 235 V liegt. 
 
 Wie gesagt, am Besten einen bekannten Verbraucher dranhängen, 
-damit man sich auf die Geundverbräuche auch verlassen kann. 
+damit man sich auf die Basiswerte auch verlassen kann. 
 In meinem Fall habe ich einfach eine alte, klassische 40W Glühlampe eingesteckt.
 
 <b> Dann in der Konfiguration->Konsole (Wattzahl der Glühlampe) </b>
@@ -122,9 +122,10 @@ Also nicht wundern über die Angaben.
 ### Einbindung in unser OpenHAB Smarthome
 
 So - nachdem die Steckdose nun also kalibriert ist und funktioniert, wollen wir das Ganze natürlich auch komfortabel bedienen bzw auch automatisch steuern. 
-Das ist jetzt natürlich nicht so einfach wie bei der Fritz Steckdose, da es keine eigene App dazu gibt.
-Dafür bietet das API , also die Kommunikationsschnittstelle der Steckdose die Möglichkeit 
-u.a. mit dem uns bekannten mqtt Protokoll eine große Anzahl von Parametern und Sensorinformationen abzufragen bzw zu steuern.
+Das ist jetzt etwas weniger komfortabel nicht so einfach als bei der Fritz Steckdose, da es keine eigene App dazu gibt. Per WebBrowser lässt sich zwar 
+auf das Hauptmenü der Konfiguration zugreifen - aber das ist natürlich etwas mühsam, wenn man N+1 Steckdosen im Haus verteilt hat.
+Dafür bietet das API , also die Kommunikationsschnittstelle der Steckdose einige Steuerungsmöglichkeiten. 
+Mit dem uns bekannten MQTT Protokoll lassen sich eine große Anzahl von Parametern und Sensorinformationen abfragen bzw steuern.
 
 #### MQTT Einbindung
 
@@ -138,16 +139,19 @@ Eine Beschreibung dazu findet ihr u.a. hier:
 
 [openHAB community Info] (https://community.openhab.org/t/itead-sonoff-switches-and-sockets-cheap-esp8266-wifi-mqtt-hardware/15024)
 
-The "open Home Automation Bus" (openHAB) is an open source, technology agnostic home automation platform which runs as the center of your smart home. Besides more than 400 other add-ons for all kinds of technologies, openHAB provides an MQTT add-on ("binding") to interface with systems like Tasmota.
-By following the guide below you'll be able to observe, control and manage your Tasmota modules from your openHAB system. If you are new to openHAB, please learn about the basic concepts and the initial setup. The below article will not cover any basics which are out of scope to the Tasmota integration.
+>The "open Home Automation Bus" (openHAB) is an open source, technology agnostic home automation platform which runs as the center of your smart home. 
+>Besides more than 400 other add-ons for all kinds of technologies, openHAB provides an MQTT add-on ("binding") to interface with systems like Tasmota.
+>By following the guide below you'll be able to observe, control and manage your Tasmota modules from your openHAB system. 
+>If you are new to openHAB, please learn about the basic concepts and the initial setup. 
+>The below article will not cover any basics which are out of scope to the Tasmota integration.
 
-Requirements
-	•	Working openHAB installation (see documentation)
-	•	Configured Tasmota device (accessible from your local network)
-	•	MQTT broker available (e.g. Eclipse Mosquitto via openHABian)
-	•	A basic understanding of MQTT
-	•	Working and tested connection between openHAB and the MQTT broker
-	•	(optional) Standalone MQTT client (e.g. MQTT Explorer) to observe and identify messages on the MQTT broker
+>Requirements
+>	•	Working openHAB installation (see documentation)
+>	•	Configured Tasmota device (accessible from your local network)
+>	•	MQTT broker available (e.g. Eclipse Mosquitto via openHABian)
+>	•	A basic understanding of MQTT
+>	•	Working and tested connection between openHAB and the MQTT broker
+>	•	(optional) Standalone MQTT client (e.g. MQTT Explorer) to observe and identify messages on the MQTT broker
 
 
 Wie ihr seht, braucht es als erstes einen konfigurierten MQTT Broker , den ihr im OpenHAB entsprechend einrichtet.
