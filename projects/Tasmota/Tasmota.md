@@ -263,22 +263,22 @@ Und hier werden die Sensordaten mit Hilfe der JSONPATH Funktionen den Einzelwert
 
 	rule "TasmotaPlug1 Sensor Data"
 	when
-  	Item GenericMQTTThingTasmota1SensorData changed
+	Item GenericMQTTThingTasmota1SensorData changed
 	then
-  	val mqttActions = getActions("mqtt","mqtt:broker:331a9f6380")
-  	logInfo("  TASMOTA1 Sensordaten:    --->>> ", GenericMQTTThingTasmota1SensorData.state.toString," ")
+	val mqttActions = getActions("mqtt","mqtt:broker:331a9f6380")
+	logInfo("  TASMOTA1 Sensordaten:    --->>> ", GenericMQTTThingTasmota1SensorData.state.toString," ")
   
 	val temp1 = transform("JSONPATH", "$.ENERGY.Total", GenericMQTTThingTasmota1SensorData.state.toString)
-  	logInfo("  Total Energy  String :    --->>> ", temp1)
-  	// post the new value to the Number Item
-  	Tas1TotalEnergy.postUpdate( temp1 )
+	logInfo("  Total Energy  String :    --->>> ", temp1)
+	// post the new value to the Number Item
+	Tas1TotalEnergy.postUpdate( temp1 )
 
 	val temp2 = transform("JSONPATH", "$.ENERGY.Current", GenericMQTTThingTasmota1SensorData.state.toString)
-  	logInfo("  Current Energy :    --->>> ", temp2)
-  	Tas1CurrentEnergy.postUpdate( temp2 )
+	logInfo("  Current Energy :    --->>> ", temp2)
+	Tas1CurrentEnergy.postUpdate( temp2 )
 
-  	val temp3 = transform("JSONPATH", "$.ENERGY.Power", GenericMQTTThingTasmota1SensorData.state.toString)
-  	logInfo("  Power Watt Energy :    --->>> ", temp3)
+	val temp3 = transform("JSONPATH", "$.ENERGY.Power", GenericMQTTThingTasmota1SensorData.state.toString)
+	logInfo("  Power Watt Energy :    --->>> ", temp3)
 	Tas1PowerWatt.postUpdate( temp3 )
 	end
 
