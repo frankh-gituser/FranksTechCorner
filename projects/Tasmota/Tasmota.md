@@ -35,7 +35,7 @@ MQTT, Domoticz, Home Assistant, Alexa. 2er pack. NOUS A1T
 
 [Amazon link](https://www.amazon.de/vorgeflasht-stromverbrauch-stromz%C3%A4hler-zeitschaltuhr-NOUS/dp/B0054PSIDW/ref=sr_1_6?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=X3HACXVI2MC5&keywords=tasmoto%2Bschaltsteckdosen&qid=1659692996&sprefix=tasmoto%2Bschaltsteckdosen%2Caps%2C52&sr=8-6&th=1)
 
-Zum Vergleich hier ein Bild der Steckdosen:
+#### Zum Vergleich hier ein Bild der Steckdosen:
 
 ![image logo](../../projects/Tasmota/TasmotaImages/Vergleich-Fritz-Tasmota.jpeg)
 
@@ -97,14 +97,14 @@ Wie gesagt, am Besten einen bekannten Verbraucher dranhängen,
 damit man sich auf die Geundverbräuche auch verlassen kann. 
 In meinem Fall habe ich einfach eine alte, klassische 40W Glühlampe eingesteckt.
 
-Dann in der Konfiguration->Konsole (Wattzahl der Glühlampe)
->powerset 40W.0 
+<b> Dann in der Konfiguration->Konsole (Wattzahl der Glühlampe) </b>
+	>powerset 40W.0 
 
-290 V passt nicht, im Normalfall liegt die Spannung bei 230-235 Volt
->voltageset 235
+<b> 290 V passt nicht, im Normalfall liegt die Spannung bei 230-235 Volt </b>
+	>voltageset 235
 
-(40/235)*1000=170,212 mA
-Currentset 170,2127
+<b> (40/235)*1000=170,212 mA </b>
+	Currentset 170,2127
 
 Danach sollte die Steckdose kalibriert sein und euch den richtigen Verbrauch der angeschlossenen Geräte anzeigen, 
 in diesem Fall von einem  angeschlossenen Notebook, nicht mehr der 40W Lampe. 
