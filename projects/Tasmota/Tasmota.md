@@ -28,7 +28,7 @@ sondern die Kombination mir bekannter Technologien, Preis, Programmiermodell etc
 Die Stecker habe ich bei Amazon erstmal im 2er Pack zum Testen bestellt. 
 Aber es gibt sicher noch andere Anbieter. Hier ein link auf Amazon, ohne das ich davon einen kommerziellen Nutzen habe:
 
-
+![image logo](../../projects/Tasmota/TasmotaImgaes/Tasmota-Packung.jpeg)
 
 - Wlan Steckdose mit Tasmota vorgeflasht. Kleinste ESP8266 smart plug. 16A mini wifi steckdosen mit stromverbrauch stromzähler, zeitschaltuhr. 
 MQTT, Domoticz, Home Assistant, Alexa. 2er pack. NOUS A1T
