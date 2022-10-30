@@ -29,7 +29,7 @@ Meine Auswahl orientierte sich dabei vorallem an dem unterstützten Kommunikatio
 
 ### [ESP8266 Schaltsteckdose vs FritzDECT!200](../projects/Tasmota/Tasmota.md)
 
-### [IR Lesekopf für Stromzähler am ESP8266 mit Tasmota](../projects/ESP-Stromzaehler/esp-volkszaehlery.md)
+### [IR Lesekopf für Stromzähler am ESP8266 mit Tasmota](../projects/ESP-Stromzaehler/esp-volkszaehler.md)
 
 ### [RaspberryPi als Überwachungskamera](../projects/Aussenkamera/Aussenkamera.md)
 
