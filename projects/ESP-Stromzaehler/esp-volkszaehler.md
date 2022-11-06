@@ -8,77 +8,135 @@
 [comment]: <> (This is a comment, it will not be included)
 [//]: <> (This is also a comment.) 
 
+
+
 ### [zurück zum Index](../../index.md)
-
-
-
 
 IR Lesekopf für Stromzähler am ESP8266 mit Tasmota
 
-Wie bekomme ich die Daten vom Stromzähler mit einem ESP8266 in mein OpenHAB eingebunden , um In Zusammenarbeit mit der Balkon PV den hausinternen Stromverbrauch zu optimieren ?
+Wie bekomme ich die Daten vom Stromzähler mit einem ESP8266 in mein OpenHAB eingebunden , um in Zusammenarbeit mit der Balkon PV
+den hausinternen Stromverbrauch zu optimieren ?
+Na ja - die Voraussetzungen sind ja in den meisten Fällen durch den Einbau eines modernen SmartMeters, dh Stromzählers schon gegeben.
+Mit Hilfe eines Lesekopfs können wir dann die Daten per Infrarot-Schnittstelle  vom Stromzähler auslesen und Richtung openHAB schicken.
+Voraussetzung hierfür ist allerdings die Freischaltung des Stromzählers mit einer PIN, die ihr online bei eurem Netzbetreiber anfordern könnt.
+Das geht schnell und einfach. Die notwendigen Schritte sind meistens je nach Stromzähler ebenfalls beim Netzbetreiber abrufbar.
 
-Bevor wir loslegen, kurz noch ein paar Erklärungen zum Tasmota Begriff.  
-Tasmota ist eine Software , die auf einem mikrocontroller wie dem d1 Mini, esp8266 läuft und auf vieler anderer Hardware. Diese Software kann man auf die Hardware , den ESP flashen.
-Tasmota um mit dem Lesekopf  zu kommunizieren
-Dafür könnte man sich tasmota auf der Releasemanagement Seite xxxx runterladen und mit einem Tool auf die entsprechende Hardware flashen
-Das Problem ist, dass man die Funktionen für einen smartester und speziell für deinen eingesetzten smartmeter benötigt
+Beim Lesekopf habe ich mich für den sog. Volkszähler entschieden, der sehr verbreitet ist und zu dem ihr sehr viele Anleitungen als
+Videos und Blogs im Netz findet. Links füge ich  im weiteren Verlauf noch bei.
 
-https://tasmota.github.io/docs/
+Es gibt eine Wifi Variante und eine ESP8266 Variante.
+Bei der Wifi Variante sind sozusagen alle Komponenten als Einheit direkt im Lesekopf vorhanden.
+Bei der TTL Variante müsst ihr den IR Lesekopf noch mit einer Steuerungseinheit, dem ESP verbinden und einige zusätzliche Arbeitsschritte selber durchführen .
 
-Bild von Features 
+Dazu erstmal ein paar grundsätzliche Worte zu Tasmota.
 
-https://tasmota.github.io/docs/Smart-Meter-Interface/
-
-This Feature is Not inclusive in precompiled binaren
-Dh die bin enthalten nicht den nötigen Code um sich mit dem smartmeter zu verbinden und Funktionen auszuführen
-Dh wir müssen uns eine eigene binare zusammenstellen und compilieren zu einem binare
-SML commands müssen mit reincompiliert werden , 
-
-#ifndef USE_SCRIPT
-#define USE_SCRIPT
-#endif
-#ifndef USE_SML_M
-#define USE_SML_M
-#endif
-#ifdef USE_RULES
-#undef USE_RULES
-#endif
-
-Das sind die nächsten Schritte. Klingt dramatisch, bekommt aber jeder hin
-Dafür brauchen wir erstmal den Quellcode von tasmota.
-
-Auf den link oben rechts auf der tasmota Seite klicken auf die aktuellen Code Release
+Tasmota ist eine Software , die auf einem Microcontroller wie zB dem D1 Mini,ESP8266 läuft . Diese Software kann man auf die Hardware , den ESP flashen.
+Tasmota wird benötigt, damit der Lesekopf  mit dem Stromzähler kommunizieren kann.
+Dafür könnte man sich eigentlich die Standard Release von Tasmota auf der Releasemanagement Seite
 
 https://github.com/arendst/tasmota
 
-Hier liegen alle möglichen Dateien, die nachher in unser binare kommen und somit Compiler werden müssen. Unserem Release. In dem Dev Branche werden permanent Änderungen aktualisiert . DieEi zelheiten zu dem entwickljngszyklus von tasmota will ich hier nicht weiter ausführen, dazu gibt es reichlich Material zum lesen oder exzellente YouTube Beiträge.
+runterladen und mit einem Tool eigener Wahl auf den ESP flashen.
+Das Problem ist allerdings, dass man die Funktionen / Kommandos für einen Smartmeter und speziell für deinen eingesetzten Smartmeter benötigt, 
+diese aber im Standardrelease nicht enthalten sind.
 
-Ihr sollteteuch über die Tags die aktuelle Version raussuchen, in meinem Fall aktuell die Version 12.2.0   Und die diese Release als zip Datei oder gar Downloaden. Den kompletten Quellcode dann auf eurem system entpackt in ein Verzeichnis. Achtet darauf , dass ihr auf einen freigegeben stand/Tag zurückgreift
-Dann habt ihr den kompletten tasmota Quellcode auf eurem system
-Hier müsst ihr jetzt etwas anpassen, um die SML Funktionen mit in den Quellcode einzubinden
-Wuerdetihr jetzteinfach nur complilieren, dann hätte ihr nichts gewonnen, sondern einfach nur ein Standard tasmota Release gebaut, die es auf den tasmota Seiten auch direkt zum Download gibt.
+https://tasmota.github.io/docs/ 
 
-Wir fügen jetzt neue Features hinzu. 
+<b>  Unter Features -> Smart Meter Interface </b>
 
-Da wir jetzt am Code ändern müssen und eine neue Version compilieren müssen, benötigen wir eine Entwickler ide . Hier gibt es viele Möglichkeiten.die Anker beschrieben sind
+https://tasmota.github.io/docs/Smart-Meter-Interface/
 
-https://tasmota.github.io/docs/Compile-your-build/
+￼
 
-Ich habe auf meinem mac Visual Studio Code installiert, so dass ich exemplarisch , damit das weitere Vorgehen zeigen werde.
-Ihr könnt euch brauch kostenlos Downloaden unter 
+
+Dh die bin enthalten nicht den nötigen Code um sich mit dem smartmeter zu verbinden und Funktionen auszuführen. Würden alle Funktionen in einem Standardrelease eingebunden, dann wäre der Speicherbedarf einfach zu groß, um es auf einem kleinen ESP im verfügbaren Flash Speicher unterzubringen.
+Daher müssen wir uns eine eigene „bin“ Datei zusammenstellen und compilieren. Dabei müssen die SML commands mit reincompiliert in unseren Code eingebunden werden.
+
+	Based on Tasmota's scripting language. To use it you must compile your build. Add the following to user_config_override.h:
+
+	#ifndef USE_SCRIPT
+	#define USE_SCRIPT
+	#endif
+	#ifndef USE_SML_M
+	#define USE_SML_M
+	#endif
+	#ifdef USE_RULES
+	#undef USE_RULES
+	#endif
+
+Auf der rechten Seite der Liste könnt ihr dann auch direkt nachschauen, ob euer SmartMeter in der Liste der bekannten Geräte
+Enthalten ist. 
+
+
+Jetzt geht es also daran , unser eigenes Tasmota System zu bauen und zu kompilieren.  Klingt dramatisch, bekommt aber 
+jeder hin. Dafür brauchen wir erstmal den Quellcode von Tasmota.
+
+Auf den link oben rechts auf der Tasmota Seite klicken , um auf die aktuellen Code Release Seiten zu kommen:
+
+https://github.com/arendst/tasmota
+
+Hier liegen alle möglichen Dateien, die nachher in unser binary kommen und somit kompiliert werden müssen.  In dem development Branch könnt ihr sehen, dass  permanent Änderungen durchgeführt und aktualisiert werden. Die Einzelheiten zu dem Entwicklungszyklus von Tasmota will ich hier nicht weiter ausführen, dazu gibt es reichlich Material zum Lesen und sehr gute YouTube Videos.
+
+Ihr solltet euch über die Tags die aktuelle Version raussuchen. Zum Zeitpunkt des Verfassers dieses Artikels ist dies die Version 12.2.0   
+https://github.com/arendst/Tasmota/tags
+
+￼
+
+Nun diese Release als zip Datei oder tar downloaden. Den kompletten Quellcode dann auf eurem System in ein Verzeichnis entpacken. Achtet darauf , dass ihr auf einen freigegeben Release/Tag zurückgreift
+Dann habt ihr den kompletten Tasmota Quellcode auf eurem System
+Hier müsst ihr jetzt ein paar Dinge anpassen, um die SML Funktionen mit in den Quellcode einzubinden
+Wuerdeti hr jetzt einfach nur compile+build durchführen, dann hättet ihr nichts gewonnen, sondern einfach nur ein Standard Tasmota Release gebaut, die es auf den Tasmota Seiten auch direkt zum Download gibt.
+
+Fügen wir jetzt also die zusätzlichen SML Features hinzu. Da wir jetzt im Code Änderungen vornehmen  und eine neue Version 
+compilieren müssen, benötigen wir eine Entwicklungsumgebung , eine sog. IDE . 
+Hier gibt es wieder viele Möglichkeiten, die hier https://tasmota.github.io/docs/Compile-your-build/
+beschrieben sind, zB 
+
+	Visual Studio Code - setup and configure Visual Studio Code with PlatformIO for Tasmota
+
+Ich habe auf meinem MacBook sowieso Visual Studio Code installiert, so dass ich exemplarisch mit VSCode das weitere Vorgehen zeigen werde.
+VSCode ist übrigens frei verfügbar unter, wenn ihr ebenfalls auf diese Variante zurückgreifen möchtet
 
 https://code.visualstudio.com/download
 
 Aber wie gesagt, mit Gitpod und Co gibt es auch weitere Varianten. 
-In Visual Studio müsst ihr dann Platform.io als Plugin installieren
+
+
+In Visual Studio müsst ihr dann Platform.io als Plugin in VSCode installieren. Dazu ladet ihr euch die zusätzliche Software unter
 
 https://tasmota.github.io/docs/PlatformIO/
 
-Das hilft uns dann dabei, die ganzen Sachen auf den ESP zu flashen
-Links in Vs dann auf Extensions klicken und sehe dann die Ameise Platform.Info IDE. Danach links ein neues Menü.. wieder oben links auf explorerzurueckgehen und Open folder u d in das Download Verzeichnis gehen und öffnen. Um zu gucken ob das alles funktioniert, links auf die Ameise gehen, default, und auf Build all gehen . Der baut dann das binary , erstmal ein Test, ob das alles läuft. Success, dann sollte alles funktioniert haben.
-Wieder zurück in die dateiansicht und endlich die Änderungen durchführen, um unsere eigene tasmota Version zu bauen.
+Auf euren Rechner und installiert das Ganze nach Anleitung wie auf der Seite beschrieben.
 
-Wie das geht ist in der Docu beschrieben. Unter smartmeter, Compiler your own Build
+Platform.io hilft uns dann dabei, die fertigen binaries auf den ESP zu flashen. Nach der Installation könnt ihr links in VSCode
+auf Extensions klicken und seht dann das Symbol der die Ameise für Platform.io. 
+
+￼
+
+
+Danach wieder oben links auf Explorer zurückgehen und Open Folder und in das Download Verzeichnis gehen , wo euer Tasmota Download liegt  
+und das Verzeichnis öffnen. Um zu sehen ob das alles funktioniert hat, links auf die Ameise gehen, default, und auf Build all gehen . 
+
+Der baut dann das binary  , um zu testen,  ob das alles läuft. Den Build Vorgang könnt ihr in dem Terminal Fenster dann verfolgen. 
+Wenn das alles funktioniert hat , solltet ihr dort
+
+￼
+
+sehen.
+
+
+Jetzt geht es wieder zurück in die Dateiansicht und wir können endlich die Änderungen durchführen, um unsere eigene Tasmota Version zu bauen.
+
+Wie das geht ist in der Doku nter Smartmeter, Compiler your own Build beschrieben
+
+https://tasmota.github.io/docs/Compile-your-build/
+
+
+
+WORK IN PROGRESS  ################################
+
+
+
 Erstmal die ganzen defines kopieren, 
 Und dann zurücknimmst VsCode . Dann unter tasmota , bis zu user_config-override.h . Da kann man auch andere Angaben machen und in meine binsaries einfügen, zB wlan id und Passwort etc. Also unsere kopierten Zeilen unten einfügen und speichern.
 Das sagtjetzt der Projektdateien, Bau mir mein binary mit den sml geschichten. Jetzt wieder auf
