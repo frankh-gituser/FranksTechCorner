@@ -53,8 +53,11 @@ diese aber im Standardrelease nicht enthalten sind.
 ￼
 
 
-Dh die bin enthalten nicht den nötigen Code um sich mit dem smartmeter zu verbinden und Funktionen auszuführen. Würden alle Funktionen in einem Standardrelease eingebunden, dann wäre der Speicherbedarf einfach zu groß, um es auf einem kleinen ESP im verfügbaren Flash Speicher unterzubringen.
-Daher müssen wir uns eine eigene „bin“ Datei zusammenstellen und compilieren. Dabei müssen die SML commands mit reincompiliert in unseren Code eingebunden werden.
+Dh die bin enthalten nicht den nötigen Code um sich mit dem smartmeter zu verbinden und Funktionen auszuführen. 
+Würden alle Funktionen in einem Standardrelease eingebunden, dann wäre der Speicherbedarf einfach zu groß, um es auf einem kleinen ESP im verfügbaren Flash 
+Speicher unterzubringen.
+Daher müssen wir uns eine eigene <i> bin </i> Datei zusammenstellen und compilieren. 
+Dabei müssen die SML commands mit reincompiliert und in unseren Code eingebunden werden.
 
 	Based on Tasmota's scripting language. To use it you must compile your build. Add the following to user_config_override.h:
 
