@@ -59,7 +59,9 @@ Speicher unterzubringen.
 Daher müssen wir uns eine eigene <i> bin </i> Datei zusammenstellen und compilieren. 
 Dabei müssen die SML commands mit reincompiliert und in unseren Code eingebunden werden.
 
-	Based on Tasmota's scripting language. To use it you must compile your build. Add the following to user_config_override.h:
+	Based on Tasmota's scripting language. 
+	To use it you must compile your build. 
+	Add the following to user_config_override.h:
 
 	#ifndef USE_SCRIPT
 	#define USE_SCRIPT
@@ -70,6 +72,7 @@ Dabei müssen die SML commands mit reincompiliert und in unseren Code eingebunde
 	#ifdef USE_RULES
 	#undef USE_RULES
 	#endif
+
 
 Auf der rechten Seite der Liste könnt ihr dann auch direkt nachschauen, ob euer SmartMeter in der Liste der bekannten Geräte
 Enthalten ist. 
