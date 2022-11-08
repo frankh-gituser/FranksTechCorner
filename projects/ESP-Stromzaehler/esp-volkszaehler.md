@@ -100,36 +100,43 @@ Zum Zeitpunkt des Verfassers dieses Artikels ist dies die Version 12.2.0
 
 ￼
 
-Nun diese Release als zip Datei oder tar downloaden. Den kompletten Quellcode dann auf eurem System in ein Verzeichnis entpacken. Achtet darauf , dass ihr auf einen freigegeben Release/Tag zurückgreift
+Nun diese Release als zip Datei oder tar downloaden. Den kompletten Quellcode dann auf eurem System in ein Verzeichnis
+entpacken. Achtet darauf , dass ihr auf einen freigegeben Release/Tag zurückgreift
 Dann habt ihr den kompletten Tasmota Quellcode auf eurem System
 Hier müsst ihr jetzt ein paar Dinge anpassen, um die SML Funktionen mit in den Quellcode einzubinden
-Wuerdeti hr jetzt einfach nur compile+build durchführen, dann hättet ihr nichts gewonnen, sondern einfach nur ein Standard Tasmota Release gebaut, die es auf den Tasmota Seiten auch direkt zum Download gibt.
+Würdet ihr jetzt einfach nur einen compile+build durchführen, dann hättet ihr nichts gewonnen, sondern einfach nur ein
+Standard Tasmota Release gebaut, die es auf den Tasmota Seiten auch direkt zum Download gibt.
 
-Fügen wir jetzt also die zusätzlichen SML Features hinzu. Da wir jetzt im Code Änderungen vornehmen  und eine neue Version 
-compilieren müssen, benötigen wir eine Entwicklungsumgebung , eine sog. IDE . 
-Hier gibt es wieder viele Möglichkeiten, die hier https://tasmota.github.io/docs/Compile-your-build/
-beschrieben sind, zB 
+Fügen wir also die zusätzlichen SML Features hinzu. Da wir dazu im Code Änderungen vornehmen  und eine neue Version
+compilieren müssen, benötigen wir eine entsprechende Entwicklungsumgebung , eine sog. IDE . Hier gibt es wieder viele
+Möglichkeiten, einige sind hier https://tasmota.github.io/docs/Compile-your-build/
+beschrieben , zB 
 
 	Visual Studio Code - setup and configure Visual Studio Code with PlatformIO for Tasmota
 
-Ich habe auf meinem MacBook sowieso Visual Studio Code installiert, so dass ich exemplarisch mit VSCode das weitere Vorgehen zeigen werde.
-VSCode ist übrigens frei verfügbar unter, wenn ihr ebenfalls auf diese Variante zurückgreifen möchtet
 
-https://code.visualstudio.com/download
+Da ich auf meinem MacBook sowieso Visual Studio Code installiert habe, 
+zeige ich das weitere Vorgehen exemplarisch auf Basis dieser IDE.
+Solltet ihr euch auch für diese Variante entscheiden, findet ihren einen kostenlosen 
+Download der Software hier :  
 
-Aber wie gesagt, mit Gitpod und Co gibt es auch weitere Varianten. 
+[VisualStudio Code Download Page  ](hhttps://code.visualstudio.com/download)
+
+Aber wie gesagt, mit Gitpod und Co gibt es auch weitere Alternativen.. 
 
 
-In Visual Studio müsst ihr dann Platform.io als Plugin in VSCode installieren. Dazu ladet ihr euch die zusätzliche Software unter
+In Visual Studio müsst ihr dann Platform.io als Plugin in VSCode installieren. 
+Dazu ladet ihr euch die zusätzliche Software unter
 
-https://tasmota.github.io/docs/PlatformIO/
+[Platform.io Download Page  ](https://tasmota.github.io/docs/PlatformIO/)
 
-Auf euren Rechner und installiert das Ganze nach Anleitung wie auf der Seite beschrieben.
+auf euren Rechner und installiert das Ganze nach Anleitung wie auf der Seite beschrieben.
 
 Platform.io hilft uns dann dabei, die fertigen binaries auf den ESP zu flashen. Nach der Installation könnt ihr links in VSCode
 auf Extensions klicken und seht dann das Symbol der die Ameise für Platform.io. 
 
-￼
+
+![image logo](../../projects/ESP-Stromzaehler/images/PlatformIO-EXTENSIONS.png) 
 
 
 Danach wieder oben links auf Explorer zurückgehen und Open Folder und in das Download Verzeichnis gehen , wo euer Tasmota Download liegt  
