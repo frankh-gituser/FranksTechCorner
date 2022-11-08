@@ -151,33 +151,82 @@ Um zu sehen ob das alles funktioniert hat,
 
 ![image logo](../../projects/ESP-Stromzaehler/images/platformio-default.png) 
 
-￼
 
-sehen.
+mitverfolgen. Wenn das alles funktioniert hat , solltet ihr dort
 
+![image logo](../../projects/ESP-Stromzaehler/images/platformio-buildall.png) 
 
-Jetzt geht es wieder zurück in die Dateiansicht und wir können endlich die Änderungen durchführen, um unsere eigene Tasmota Version zu bauen.
-
-Wie das geht ist in der Doku nter Smartmeter, Compiler your own Build beschrieben
-
-https://tasmota.github.io/docs/Compile-your-build/
+sehen
 
 
 
-WORK IN PROGRESS  ################################
+Jetzt geht es wieder zurück in die Dateiansicht und wir können endlich die Änderungen 
+durchführen,  um unsere eigene Tasmota Version zu bauen.
+
+Wie das geht , ist in der Doku unter 
+
+	Smartmeter, Compiler your own Build beschrieben
+
+[Tasmota Firmware Compile-your-Build  ](https://tasmota.github.io/docs/Compile-your-build/)
 
 
 
-Erstmal die ganzen defines kopieren, 
-Und dann zurücknimmst VsCode . Dann unter tasmota , bis zu user_config-override.h . Da kann man auch andere Angaben machen und in meine binsaries einfügen, zB wlan id und Passwort etc. Also unsere kopierten Zeilen unten einfügen und speichern.
-Das sagtjetzt der Projektdateien, Bau mir mein binary mit den sml geschichten. Jetzt wieder auf
-Ameise klicken und Build all
-Jetzt baut er das Standard binary mit den Features, die wir eben hinzugefügt haben.
-Jetzt müssen wir das binary nur noch auf den esp aufspielen, flashen 
-Dafür gehe ich wieder auf Dateien oben links, ganz unten die Datei Platforms-Override.ini 
-Die hat VS automatisch angelegt,, ansonsten müsstestdu die sample Datei selber umbenennen und anpassen
-Hier können wir jetzt verschieden Sachen konfigurieren. Da ist sehr viel drin, lasst euch dadurch nicht ablenken. Wir müssen hier nur den Upload-Port ändern, weil da steht jetzt COM5, was auf unserem Mac nicht passt. Welchen uploadport nutzen wir also ? Dazu gehen wir in ein Terminal in eine Shell und geben 
-ls -la /dev/cu.*
+Als Nächstes müssen die Zusätzlichen Funktionen aktiviert werden, indem die folgenden #defineCompiler-Anweisungsparameter hinzugefügt und dann die Firmware kompiliert werden. Die Parameter und die defines  
+werden unter 
+
+[Tasmota SmartMeter Interface  ](https://tasmota.github.io/docs/Smart-Meter-Interface/)
+
+erläutert.
+
+	#ifndef USE_SCRIPT
+	#define USE_SCRIPT
+	#endif
+	#ifndef USE_SML_M
+	#define USE_SML_M
+	#endif
+	#ifdef USE_RULES
+	#undef USE_RULES
+	#endif
+
+
+Wie ihr seht, werden hier neben den SML auch die Script Funktionen aktiviert bzw. erweitert, 
+da die Smartmeter Schnittstelle auf der Scriptsprache von Tasmota basiert.  
+
+Zurück in VSCode Geht ihr wieder zum 
+	-> Menüpunkt tasmota -> bis zu user_config-override.h . 
+
+Dort könnt ihr auch weitere  Angaben machen und in eure binsaries einfügen, zB WLAN-ID 
+und Passwort etc.  Wir fügen jetzt Also  unsere kopierten Zeilen unten ein und speichern 
+das Ganze. 
+Das sagt jetzt  der Projektdatei, „Bau mir mein binary mit den SML Erweiterungen“.
+Jetzt wieder auf die Ameise klicken und 
+	-> Build all
+
+VSCode baut nun das Standard binary mit den Features, die wir eben hinzugefügt haben.
+Anschließend  müssen wir das binary nur noch auf den ESP aufspielen (flashen).
+
+Dazu gehe ich wieder auf den
+	Explorer oben links 
+und öffne ganz unten die Datei 
+	Platforms-Override.ini 
+
+Die hat VSCode automatisch angelegt, ansonsten müsstest du die sample-Datei selber
+umbenennen und anpassen.
+Hier können wir jetzt verschiedene Sachen konfigurieren. 
+Da steht sehr viel drin, lasst euch dadurch aber nicht ablenken. 
+Wir müssen hier nur den Upload-Port ändern, weil da steht als default sowas wie 
+
+	 COM5
+
+was zB auf einem Mac nicht passt. 
+Welchen uploadport nutzen wir also ? 
+Dazu önnen wir in ein Terminal und geben in der Shell
+
+	ls -la /dev/cu.*
+
+
+--------  bis hierher fertig ------
+
 
 [Ausgabe hier reinkopieren]
 
