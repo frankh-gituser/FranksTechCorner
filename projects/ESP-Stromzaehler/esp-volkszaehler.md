@@ -139,11 +139,17 @@ auf Extensions klicken und seht dann das Symbol der die Ameise für Platform.io.
 ![image logo](../../projects/ESP-Stromzaehler/images/PlatformIO-EXTENSIONS.png) 
 
 
-Danach wieder oben links auf Explorer zurückgehen und Open Folder und in das Download Verzeichnis gehen , wo euer Tasmota Download liegt  
-und das Verzeichnis öffnen. Um zu sehen ob das alles funktioniert hat, links auf die Ameise gehen, default, und auf Build all gehen . 
 
-Der baut dann das binary  , um zu testen,  ob das alles läuft. Den Build Vorgang könnt ihr in dem Terminal Fenster dann verfolgen. 
-Wenn das alles funktioniert hat , solltet ihr dort
+Danach wieder oben links auf 
+	-> Explorer zurückgehen 
+	-> Open Folder 
+	-> in das Download Verzeichnis mit den Tasmota Dateien wechseln 
+	-> und das Verzeichnis öffnen. 
+
+Um zu sehen ob das alles funktioniert hat, 
+	links auf die Ameise gehen -> default -> und auf Build all gehen . 
+
+![image logo](../../projects/ESP-Stromzaehler/images/platformio-default.png) 
 
 ￼
 
