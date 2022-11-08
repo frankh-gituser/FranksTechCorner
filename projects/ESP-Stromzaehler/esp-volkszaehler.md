@@ -14,7 +14,8 @@
 
 IR Lesekopf für Stromzähler am ESP8266 mit Tasmota
 
-Wie bekomme ich die Daten vom Stromzähler mit einem ESP8266 in mein OpenHAB eingebunden , um in Zusammenarbeit mit der Balkon PV
+Wie bekomme ich die Daten vom Stromzähler mit einem ESP8266 in mein OpenHAB eingebunden , um in Zusammenarbeit mit
+der Balkon PV
 den hausinternen Stromverbrauch zu optimieren ?
 Na ja - die Voraussetzungen sind ja in den meisten Fällen durch den Einbau eines modernen SmartMeters, dh Stromzählers schon gegeben.
 Mit Hilfe eines Lesekopfs können wir dann die Daten per Infrarot-Schnittstelle  vom Stromzähler auslesen und Richtung openHAB schicken.
@@ -30,22 +31,25 @@ Bei der TTL Variante müsst ihr den IR Lesekopf noch mit einer Steuerungseinheit
 
 Dazu erstmal ein paar grundsätzliche Worte zu Tasmota.
 
+
 Tasmota ist eine Software , die auf einem Microcontroller wie zB dem D1 Mini,ESP8266 läuft . Diese Software kann man auf die Hardware , den ESP flashen.
 Tasmota wird benötigt, damit der Lesekopf  mit dem Stromzähler kommunizieren kann.
 Dafür könnte man sich eigentlich die Standard Release von Tasmota auf der Releasemanagement Seite
 
-https://github.com/arendst/tasmota
+[Tasmota Releases](https://github.com/arendst/tasmota)
 
 runterladen und mit einem Tool eigener Wahl auf den ESP flashen.
 Das Problem ist allerdings, dass man die Funktionen / Kommandos für einen Smartmeter und speziell für deinen eingesetzten Smartmeter benötigt, 
 diese aber im Standardrelease nicht enthalten sind.
 
-https://tasmota.github.io/docs/ 
+[Tasmota SmartMeter docs ](https://tasmota.github.io/docs/) 
 
 <b>  Unter Features -> Smart Meter Interface </b>
 
-https://tasmota.github.io/docs/Smart-Meter-Interface/
+[Tasmota SmartMeter Features ](https://tasmota.github.io/docs/Smart-Meter-Interface/)
 
+
+![image logo](../../projects/ESP-Stromzaehler/images/Tasmota-Smartmeter-Features.png)) 
 ￼
 
 
