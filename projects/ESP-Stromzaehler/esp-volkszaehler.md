@@ -36,20 +36,20 @@ Tasmota ist eine Software , die auf einem Microcontroller wie zB dem D1 Mini,ESP
 Tasmota wird benötigt, damit der Lesekopf  mit dem Stromzähler kommunizieren kann.
 Dafür könnte man sich eigentlich die Standard Release von Tasmota auf der Releasemanagement Seite
 
-[Tasmota Releases](https://github.com/arendst/tasmota)
+[Tasmota Github Repository](https://github.com/arendst/tasmota)
 
 runterladen und mit einem Tool eigener Wahl auf den ESP flashen.
 Das Problem ist allerdings, dass man die Funktionen / Kommandos für einen Smartmeter und speziell für deinen eingesetzten Smartmeter benötigt, 
 diese aber im Standardrelease nicht enthalten sind.
 
-[Tasmota SmartMeter docs ](https://tasmota.github.io/docs/) 
+[Tasmota Firmware Releases ](https://tasmota.github.io/docs/) 
 
 <b>  Unter Features -> Smart Meter Interface </b>
 
 [Tasmota SmartMeter Features ](https://tasmota.github.io/docs/Smart-Meter-Interface/)
 
 
-![image logo](../../projects/ESP-Stromzaehler/images/Tasmota-Smartmeter-Features.png)) 
+![image logo](../../projects/ESP-Stromzaehler/images/Tasmota-Smartmeter-Features.png)
 ￼
 
 
