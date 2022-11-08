@@ -83,12 +83,20 @@ jeder hin. Dafür brauchen wir erstmal den Quellcode von Tasmota.
 
 Auf den link oben rechts auf der Tasmota Seite klicken , um auf die aktuellen Code Release Seiten zu kommen:
 
-https://github.com/arendst/tasmota
+[Tasmota Release Pages ](https://github.com/arendst/tasmota)
 
-Hier liegen alle möglichen Dateien, die nachher in unser binary kommen und somit kompiliert werden müssen.  In dem development Branch könnt ihr sehen, dass  permanent Änderungen durchgeführt und aktualisiert werden. Die Einzelheiten zu dem Entwicklungszyklus von Tasmota will ich hier nicht weiter ausführen, dazu gibt es reichlich Material zum Lesen und sehr gute YouTube Videos.
+Hier liegen alle möglichen Dateien, die nachher in unser binary kommen und somit kompiliert werden müssen.  
+In dem development Branch könnt ihr sehen, dass  permanent Änderungen durchgeführt und aktualisiert werden. 
+Die Einzelheiten zu dem Entwicklungszyklus von Tasmota will ich hier nicht weiter ausführen, dazu gibt es 
+reichlich Material zum Lesen und sehr gute YouTube Videos.
 
-Ihr solltet euch über die Tags die aktuelle Version raussuchen. Zum Zeitpunkt des Verfassers dieses Artikels ist dies die Version 12.2.0   
-https://github.com/arendst/Tasmota/tags
+Ihr solltet euch über die Tags die aktuelle Version raussuchen. 
+Zum Zeitpunkt des Verfassers dieses Artikels ist dies die Version 12.2.0   
+
+[Tasmota Aktuelle Release  ](https://github.com/arendst/Tasmota/tags)
+
+
+![image logo](../../projects/ESP-Stromzaehler/images/Tasmota-current-Tag.png) 
 
 ￼
 
