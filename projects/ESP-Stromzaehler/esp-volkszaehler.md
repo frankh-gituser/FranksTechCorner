@@ -165,7 +165,7 @@ durchführen,  um unsere eigene Tasmota Version zu bauen.
 
 Wie das geht , ist in der Doku unter 
 
-	Smartmeter, Compiler your own Build beschrieben
+	Smartmeter, Compile your own Build beschrieben
 
 [Tasmota Firmware Compile-your-Build  ](https://tasmota.github.io/docs/Compile-your-build/)
 
@@ -225,85 +225,264 @@ Dazu önnen wir in ein Terminal und geben in der Shell
 	ls -la /dev/cu.*
 
 
---------  bis hierher fertig ------
+ein. Als Ausgabe seht ihr dann meine Standard Upload Ports, die bei euch dann entsprechend andere 
+Bezeichnungen haben
+
+	% ls -la /dev/cu.*
+	crw-rw-rw-  1 root  wheel  0x9000001 31 Okt 17:35 /dev/cu.Bluetooth-Incoming-Port
 
 
-[Ausgabe hier reinkopieren]
+	
 
-Was mach ich jetzt. Ich nehme hier mein d1 Mini und Stecke das ganze einfach mal in einen meiner usb Ports. Und jetzt geben wir den Befehl nochmal aus und jetzt sehe ich den richtigen usbserial-### Port . Das ganze kopiere ich jetzt einfach und das füge ich in die Datei platformio.ini ein. 
+Ich schließe nun meinen D1 Mini  einfach mal an einen meiner USB-Ports von meinem MacBook. 
+Anschliessend gebe ich wieder den Befehl 
 
-(Bild reinkoieren)
+	ls -la /dev/cu.*
 
-Wir haben jetzt die Features hinzugefügt. Das binary gebaut und können’s jetzt auf unseren esp flashen. Einfach auf Upload-all klicken und das sollte funktionieren. Schreibt jetzt den Flash Speicher des esp mit unserem binary. 
-Wenn das geklappt hat, sind wir mit diesem Abschnitt fertig.
+ein und sehe jetzt den zugeordneten  usbserial-### Port . 
 
-Wenn wir alles richtig gemacht haben und den ESP an Strom angeschlossen haben, dann sollte wir ein WLAN finden, welches mit mit Tasmota_ anfängt. Der esp ist momentan im Access-Mode Modus , dh ich trete diesem wlan bei und nach kurzer Zeit geht ein Konfigurationsfragen auf 
+	% ls -la /dev/cu.*
+	crw-rw-rw-  1 root  wheel  0x9000001 31 Okt 17:35 /dev/cu.Bluetooth-Incoming-Port
+	crw-rw-rw-  1 root  wheel  0x9000003  9 Nov 11:16 /dev/cu.usbserial-2110
 
-Bild
 
-In diesem Dialog kann ich erstmal meine wlan Zugangsdaten eingeben, damit der esp Teilnehmer in meinem wlan wird . Speichern, neu starten, Anzeige der IP adresse, die ihr vom dhcp Server bekommen habt. Adresse nehmen und die könnt ihr im Browser aufrufen und kommt in das tasmota config Menü.
-Erstmal configuration-Modul = generic. Speichern.
-Wenn ihr erstmal testen wollt, ob eure sml Funktionen auch in dem binary eingebaut  wurden, könnt ihr auf Console-edit Script gehen , wo ihr ein Script einfügen könnt.
+Diese Info füge ich anschliessend  in die Datei platformio.ini in der richtigen Zeile ein. 
 
-Hier muss ich jetzt meinen Zähler konfigurieren. In meinem Fall ist das ein Apator NORAX 3D 
-Hier muss ich konfigurieren, welche Daten ich denn auf welche Art und Weise bekomme und wie will ich die Abfragen. All das wird in dem Script beschrieben.
-Was schreibe also hier rein ? Dafür Wechsel ich wieder auf die tasmota Seite unter Features-> smartmeter-Interface , und hier findest du hoffentlich deinen Stromzähler. In meinem Fall ist der Norax3D aufgeführt, und dort finde ich ein Script. Das kopiere ich alles , Wechsel zurück zu tasmota und füge die scriptdaten unter edit-script ein u d aktiviere das ganze
-Auf der tasmota Seite kann ich noch Erklärungen finden, was mit dem script dann bereitgestellt wird:
+	[common]
+	platform 				= ${core.platform}
+	platform_packages	= ${core.platform_packages}
+	framework 			= arduino
+	board				= esp8266_1M
+	board_build.filesystem = littlefs
+	custom_unpack_dir 	= unpacked_littlefs
+	build_unflags 		= ${core.build_unflags}
+	build_flags			= ${core.build_flags}
+	monitor_speed		= 115200
+	monitor_port			= /dev/cu.usbserial-2110
+	; *** Upload Serial reset method for Wemos and NodeMCU
+	upload_resetmethod	= nodemcu
+	upload_port		= /dev/cu.usbserial-2110
 
-Norax 3D+ (SML)~
-This script gives also the wattage per phase. Make sure to get the PIN from your grid operator! Tested on a WeMos D1 mini with an IR Head from https://agalakhov.github.io/ir-interface connected to the RX pin (3). The meter also outputs the phase angles, but i left them out since i do not need them. You can easily find additional values by activating the debug mode ("sensor53 d1" for the first meter, switch off after a few seconds with "sensor53 d0").
 
->D
->B
-->sensor53 r
->M 1
-+1,3,s,1,9600,SML
-1,77070100010800ff@1000,Total consumption,KWh,Total_in,4
-1,77070100020800ff@1000,Total Feed,KWh,Total_out,4
-1,77070100100700ff@1,Current consumption,W,Power_curr,0
-1,77070100200700ff@1,Voltage L1,V,Volt_p1,1
-1,77070100340700ff@1,Voltage L2,V,Volt_p2,1
-1,77070100480700ff@1,Voltage L3,V,Volt_p3,1
-1,770701001f0700ff@1,Amperage L1,A,Amperage_p1,1
-1,77070100330700ff@1,Amperage L2,A,Amperage_p2,1
-1,77070100470700ff@1,Amperage L3,A,Amperage_p3,1
-1,77070100240700ff@1,Current consumption L1,W,Power_curr_p1,0
-1,77070100380700ff@1,Current consumption L2,W,Power_curr_p2,0
-1,770701004c0700ff@1,Current consumption L3,W,Power_curr_p3,0
-1,770701000e0700ff@1,Frequency,Hz,frequency,0
-#
+![image logo](../../projects/ESP-Stromzaehler/images/platformIO-usbport-eintrag.png) 
 
-Script enable -> speichern
+Wir haben jetzt die Features hinzugefügt, das binary gebaut , so dass wir diese Firmware jetzt abschließend 
+auf unseren ESP flashen können. 
+Dazu einfach auf 
+	Upload-all klicken 
 
-Wenn das geklappt haben sollte, dann sollte ich im Main Menü die entsprechenden Werte sehen.
+und abwarten, bis der Vorgang erfolgreich abgeschlossen wurde.
 
-Damit das Ganze funktioniert, müsst ihr euch vom Netzbetreiber den PIN für die Freischaltung des Zählers geben lassen. Das geht sehr einfach über ein Online Formular und der PIN wird dann aus Sicherheitsgründen per Post zu euch geschickt. Das dauert ein paar Tage, hat aber in meinem Fall schnell und reibungslos funktioniert. 
+Wenn das geklappt hat, ist unsere selbstgebaute Tasmota Firmware mit den zusätzlichen Funktionen gebaut 
+und in den Speicher des ESPs kopiert. 
 
-Je nachdem welche Werte euch der Zähler liefert , könnt ihr das Script anpassen und Zeilen rauslöschen, weilzB nicht jede einzelne Phase als Wert geliefert wird etc.
-Das Ganze ist recht einfach, weil alle Details super dokumentiert sind. Ich hoffe also, dass auch euere Zähler mit in der Liste der smartmeter enthalten ist.
+Womit wir dann auch mit diesem Abschnitt fertig sind. 
 
-All diese Werte kann ich jetzt wieder per mqtt weiterleiten, zB an meine SmartHome zentrale . Hierzu in Configuration-MQtt die entsprechenden Konfigurationen vornehmen.
 
+Konfiguration des ESPs
+
+Wenn wir alles richtig gemacht und den ESP an Strom angeschlossen haben, 
+sollten wir zB mit dem Smartphone ein neues WLAN finden, welches mit Tasmota_xxx anfängt. 
+Denn der ESP ist momentan im sogenannten Access-Mode. Wir wechseln also in dieses WLAN 
+und nach kurzer Zeit geht ein Konfigurationsfenster auf.
+
+In diesem Konfigurationsdialog können wir nun erstmal die Zugangsdaten des eigenen WLANs eingeben, 
+damit der ESP sich nach dem Neustart dort anmelden  kann. 
+
+	Speichern -> neu starten -> Anzeige der IP Adresse, die ihr vom DHCP Server bekommen habt. 
+
+Diese IP Adresse nehmen und in einem Browser aufrufen, so dass ihr in das Tasmota config Menü
+kommt. 
+Anschließend zuerst 
+	 configuration-Modul = generic -> Speichern.
+
+Wenn ihr erstmal testen wollt, ob eure SML Funktionen auch in dem binary eingebaut  wurden, könnt ihr auf 
+
+	Console-> edit Script gehen 
+
+wo ihr ein Script einfügen könnt.
+
+Hier solltet ihr jetzt euren Zähler konfigurieren. In meinem Fall ist das ein Apator NORAX 3D 
+Hier gebe ich an, welche Daten ich denn auf welche Art und Weise bekomme und wie ich die abfragen will. 
+All das wird in dem Script beschrieben.
+Was schreibe also hier rein ? 
+
+Dafür Wechsel ich wieder auf die Tasmota Seite unter 
+
+	Features-> smartmeter-Interface 
+
+und hier findest du hoffentlich deinen Stromzähler. 
+
+[Tasmota SmartMeter Script  ](https://tasmota.github.io/docs/Smart-Meter-Interface/#norax-3d-sml)
+
+In meinem Fall ist der NORAX3D aufgeführt und dort finde ich das passende  Script. 
+
+
+	Norax 3D+ (SML)~
+	This script gives also the wattage per phase. Make sure to get the PIN from your grid operator! 
+	Tested on a WeMos D1 mini with an IR Head from https://agalakhov.github.io/ir-interface connected to the RX pin (3). 
+	The meter also outputs the phase angles, but i left them out since i do not need them. 
+	You can easily find additional values by activating the debug mode ("sensor53 d1" for the first meter, 
+	switch off after a few seconds with "sensor53 d0").
+
+	>D
+	>B
+	->sensor53 r
+	>M 1
+	+1,3,s,1,9600,SML
+	1,77070100010800ff@1000,Total consumption,KWh,Total_in,4
+	1,77070100020800ff@1000,Total Feed,KWh,Total_out,4
+	1,77070100100700ff@1,Current consumption,W,Power_curr,0
+	1,77070100200700ff@1,Voltage L1,V,Volt_p1,1
+	1,77070100340700ff@1,Voltage L2,V,Volt_p2,1
+	1,77070100480700ff@1,Voltage L3,V,Volt_p3,1
+	1,770701001f0700ff@1,Amperage L1,A,Amperage_p1,1
+	1,77070100330700ff@1,Amperage L2,A,Amperage_p2,1
+	1,77070100470700ff@1,Amperage L3,A,Amperage_p3,1
+	1,77070100240700ff@1,Current consumption L1,W,Power_curr_p1,0
+	1,77070100380700ff@1,Current consumption L2,W,Power_curr_p2,0
+	1,770701004c0700ff@1,Current consumption L3,W,Power_curr_p3,0
+	1,770701000e0700ff@1,Frequency,Hz,frequency,0
+
+
+Diese Info also von der Seite kopieren -> Wechsel zurück zur Tasmota Konfiguration ->  die Scriptdaten unter 
+	<b> edit-script </b> 
+
+![image logo](../../projects/ESP-Stromzaehler/images/edit-script-page.png) 
+
+
+einfügen und das Ganze mit dem Häkchen oben links aktivieren.
+Nicht vergessen ! - das wird oftmals übersehen.
+
+![image logo](../../projects/ESP-Stromzaehler/images/edit-script-enabled.png) 
+
+
+Auf der Tasmota Seite findet ihr noch ausführliche  Erklärungen, was mit dem script dann an 
+Funktionen bereitgestellt wird:
+
+[Tasmota SmartMeter Script Funktionen  ](https://tasmota.github.io/docs/Smart-Meter-Interface/)
+
+
+Wenn das geklappt hat, dann solltet ihr im 
+	Main Menü 
+die entsprechenden Werte sehen.
+
+
+Damit das Ganze funktioniert, müsst ihr euch allerdings vom Netzbetreiber den PIN für die Freischaltung des Zählers 
+geben lassen. Das geht sehr einfach über ein Online Formular und der PIN wird dann aus Sicherheitsgründen per Post 
+zu euch geschickt. Das dauert ein paar Tage, hat aber in meinem Fall schnell und reibungslos funktioniert. 
+
+Je nachdem welche Werte euch der Zähler liefert , könnt ihr das Script anpassen und Zeilen 
+rauslöschen, weil zB  nicht jede einzelne Phase als Wert geliefert wird oder geliefert werden soll etc.
+Das Ganze ist recht einfach, weil alle Details gut dokumentiert sind. Ich hoffe also, dass auch 
+euer Zähler mit in der Liste der Smartmeter enthalten ist.
+
+All diese Werte kann ich jetzt wieder per MQTT an einen MQTT Host weiterleiten, zB an meine OpenHAB 
+SmartHome Zentrale . 
+Hierzu in Tasmota 
+	MainMenü -> Configuration -> MQTT die entsprechenden Konfigurationen vornehmen.
+
+
+![image logo](../../projects/ESP-Stromzaehler/images/esp-mqtt-config.png) 
+
+Der mit der eigenen Tasmota-Firmware geflashte ESP kann jetzt Daten vom Stromzähler per MQTT an 
+OpenHAB senden. Allerdings ist an meinen ESP ja derzeit noch kein Lesekopf angebunden. Das wäre dann
+der nächste Schritt.
 
 Der Volkszähler Lesekopf 
 
-ttl ir lesekopf lese-schreib-Kopf EHZ Volkszähler original-Hichi Smartmeter
+Der Volkszähler Lesekopf 
 
-https://www.ebay.de/itm/314015465828?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D242766%26meid%3D34b44eb109e34cc3b43298d06e1fc4b8%26pid%3D101195%26rk%3D1%26rkt%3D12%26sd%3D314152997777%26itm%3D314015465828%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DSimplAMLv11WebTrimmedV3MskuAspectsV202110NoVariantSeedKnnRecallV1&_trksid=p2047675.c101195.m1851&amdata=cksum%3A31401546582834b44eb109e34cc3b43298d06e1fc4b8%7Cenc%3AAQAHAAABIMFr2e4EmAnM%252ByHZkULYKDIJ4L66fOjNL0iupgt%252BzO1%252F3AE1t3mNirUYB96NktMCicMagiS6mbeTl0xquGODv9nSajpm1aaEbsSFw0uTVvCdFa4SbTTTejhdIALH%252FMfICFmn9uxcclDxbM5y0r8z4myyvxKikwjz5jwlJAw6hlp5di%252BCZ3FC5B8BnS6VuoSzmejpuqpezh2l0g3lUGIw5ENGdD0xE19uE%252BqGTt2GsHa59UBPO%252FmSiOGQGHyfpNfF8iHoEeax%252FVso5CxW%252FCTFlzilaKSnOya31INXwB6%252B0fz5t1f4NiGPY52y27aNEXhGpWSLr%252FahPOyEy6qzYpvqeXp0%252B84C9ZiKywRw6olNBsqNvwC2weP8w3zDAxKii%252FP%252BSw%253D%253D%7Campid%3APL_CLK%7Cclp%3A2047675
+Nach etwas Suche bin ich auf eine weit verbreitete Variante gestossen:
 
-* 		ausgereifte und verbreitete Platine mit Schmitt Triggern zum sicheren und störungsfreien Betrieb
-* 		Baudraten bis 57600 sind möglich und getestet.
-* 		TTL Version (RX / TX)
-* 		3,3V - 5V Betriebsspannung
-* 		geeignet für Arduino, ESP8266, ESP32, Raspberry und alles was eine UART Schnittstelle hat
-* 		Platine beschriftet VCC GND RX TX
-* 		Lesen und senden (manche Zähler müssen zum Senden aufgefordert werden, funktioniert nicht mit einem reinem Lesekopf, mit diesem kein Problem)
+[ebay-link: TTR IR Lesekopf Lese-Schreib-Kopf EHZ Volkszähler Original-Hichi Smartmeter ](
+https://www.ebay.de/itm/314015465828?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D242766%26meid%3D34b44eb109e34cc3b43298d06e1fc4b8%26pid%3D101195%26rk%3D1%26rkt%3D12%26sd%3D314152997777%26itm%3D314015465828%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DSimplAMLv11WebTrimmedV3MskuAspectsV202110NoVariantSeedKnnRecallV1&_trksid=p2047675.c101195.m1851&amdata=cksum%3A31401546582834b44eb109e34cc3b43298d06e1fc4b8%7Cenc%3AAQAHAAABIMFr2e4EmAnM%252ByHZkULYKDIJ4L66fOjNL0iupgt%252BzO1%252F3AE1t3mNirUYB96NktMCicMagiS6mbeTl0xquGODv9nSajpm1aaEbsSFw0uTVvCdFa4SbTTTejhdIALH%252FMfICFmn9uxcclDxbM5y0r8z4myyvxKikwjz5jwlJAw6hlp5di%252BCZ3FC5B8BnS6VuoSzmejpuqpezh2l0g3lUGIw5ENGdD0xE19uE%252BqGTt2GsHa59UBPO%252FmSiOGQGHyfpNfF8iHoEeax%252FVso5CxW%252FCTFlzilaKSnOya31INXwB6%252B0fz5t1f4NiGPY52y27aNEXhGpWSLr%252FahPOyEy6qzYpvqeXp0%252B84C9ZiKywRw6olNBsqNvwC2weP8w3zDAxKii%252FP%252BSw%253D%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
 
 
+    * ausgereifte und verbreitete Platine mit Schmitt Triggern zum sicheren und störungsfreien Betrieb
+    * Baudraten bis 57600 sind möglich und getestet.
+    * TTL Version (RX / TX)
+    * 3,3V - 5V Betriebsspannung
+    * geeignet für Arduino, ESP8266, ESP32, Raspberry und alles was eine UART Schnittstelle hat
+    * Platine beschriftet VCC GND RX TX
+    * Lesen und senden (manche Zähler müssen zum Senden aufgefordert werden, funktioniert nicht mit einem reinem Lesekopf, mit diesem kein Problem)
 
-Das Ganze gibt es auch direkt als wlan Variante, was euch den ganzen Aufwand eines eigenen tasmota builds erspart.  
-Jetzt müsst ihr den Lesekopf mit dem esp verbinden 
 
+Das Ganze gibt es auch direkt als WLAN Modell, was euch den ganzen Aufwand eines eigenen Tasmota builds erspart.  
+
+[Wiki: ir-schreib-lesekopf-ttl-ausgang](https://wiki.volkszaehler.org/hardware/controllers/ir-schreib-lesekopf-ttl-ausgang)
+
+IR-Schreib-Lesekopf, TTL-Interface
+Hier der IR-Schreib-Lesekopf mit TTL-Ausgang.
+Features
+- Alle Funktionen auf einer einseitigen Leiterplatte.
+- Gesteigerte IR-Empfangsempfindlichkeit.
+
+In meinem Fall verbinde ich den Lesekopf jetzt mit dem ESP:
+
+![image logo](../../projects/ESP-Stromzaehler/images/ESP-to-volkszaehler.jpeg) 
+
+
+Ein „Trockentest“ des Lesekopfs hat bei mir mit einer Brücke auf Rx-Tx nicht funktioniert. 
+Also habe ich den Lesekopf direkt am Stromzähler positioniert und siehe da - es funktionierte auf Anhieb, 
+dh der Lesekopf sendet Daten an den ESP
+
+
+
+Telemetry period
+
+In den Consolen Messages seht ihr , welche Daten auf welchem Topic in welchem Intervall an den MQTT Host 
+gesendet werden.
+Die Auslesefrequenz war default bei mir im Minutenbereich, was insbesondere dann wenig Sinn macht, wenn ich 
+die aktuelle PV Leistung möglichst optimal an der Grundlast verbrauchen will. 
+Dh habe ich mehr PV Leistung als Grundlast, dann schalte ich zusätzliche Verbraucher ein, zB Stromspeicher. 
+(Powerbanks, Notebooks, ebikes etc). 
+Der Grund hierfür liegt sehr einfach darin, dass es für Balkonkraftwerke bis 600W Einspeisung zwar ein vereinfachtes
+ Genehmigungsverfahren gibt, dafür allerdings auch keine Einspeisevergütung. 
+Daher müsst ihr auch unbedingt darauf achten, dass eurer Stromzähler bei Einspeisung nicht rückwärts läuft, 
+was vorallem bei den ganz alten Drehstromzählern meistens der Fall ist. 
+Egal, der entscheidende Punkt ist, ihr verschenkt Strom und damit Geld, wenn ihr den erzeugten Strom nicht bestmöglich 
+im Hausnetz verbraucht. 
+
+Aus diesem Grund habe ich die Polling-Period für curr_Power im Script auf 16 gesetzt, dh Sekundentakt. 
+
+	1,77070100100700ff@1,Current consumption,W,Power_curr,16
+
+Genauere Erläuterungen zu diesem und anderen Parametern findet ihr hier:
+
+[SML-auslesen-mit-Tasmota](https://forum.creationx.de/forum/index.php?thread/1095-d0-z%C3%A4hler-sml-auslesen-mit-tasmota/&postID=40311#post40311)
+
+[Telemetry period](https://tasmota.github.io/docs/Commands/)
+
+
+	TelePeriod
+	See current value and force publish STATE and SENSOR message
+	0 = disable telemetry messages
+	1 = reset telemetry period to firmware default (TELE_PERIOD)
+	10..3600 = set telemetry period in seconds (default = 300)
+
+OpenHAB 
+
+Auf der Empfängerseite (OpenHAB) müssen jetzt die topics mittels GenericMQTT Things+Items angelegt werden. Diese Schritte habe ich in meinen 
+anderen Projekten bereits beschrieben, so dass ihr die einzelnen Schritte dort nochmal nachlesen könnt.
+
+Per rules lese ich dann mit Hilfe von JSONPath die gewünschte Info , wie zB curr_Power aus und aktualisiere die Sitemap.
+
+volkszaehler.rules
+
+	// **************************************************************************************************************************
+	//      Volkszaehler mit dem ESP MQTT string auslesen per JSONPATH
+	//      {"Time":"2022-11-06T13:28:10","SML":{"Power_curr":110}} to {"Time":"2022-11-06T13:28:11","SML":{"Power_curr":112}}
+	// **************************************************************************************************************************
+	rule "volkszaehler Sensor Data"
+	when
+	  Item GenericMQTTThing_volkszaehlerData changed
+	then
+	  val mqttActions = getActions("mqtt","mqtt:broker:BROKER-ID")
+	  var String temp = transform("JSONPATH", "$.SML.Power_curr", GenericMQTTThing_volkszaehlerData.state.toString)
+	  logInfo("  VOLKSZAEHLER  String :    --->>> ", temp)
+          postUpdate(HausGesamtStrom,temp)
+	end
 
 
 
