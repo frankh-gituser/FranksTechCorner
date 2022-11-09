@@ -488,3 +488,26 @@ volkszaehler.rules
 
 
 
+meine.sitemaps
+
+Der angezeigte HausGesamtStrom zeigt die Summe des Gesamtverbrauchs, dh am Stromzähler wird die Einspeisung 
+Von der Balkon-PV Anlage eingerechnet. Bei viel Sonne und wenig Grundlast im Haus kann der Wert also auch negativ werden.
+Dann nutzt ihr sozusagen nur grünen Strom.
+
+	Text item=HausGesamtStrom       label=" Strom Grundlast aktuell " valuecolor=[<0="green" , >1="red"] icon="energy"
+
+
+Soweit erstmal das kurze Tutorial , wie man sich eine eigene Firmware für den ESP baut und diese dann mit einem IR Lesekopf
+verbindet, die Daten in seine SmartHome Zentrale bekommt und verarbeitet. 
+All diese Informationen findet ihr natürlich vielfach auf YouTube,  in Foren etc , die ganz hervorragend und hilfreich sind.
+Aber das komplette end-to-end Szenario für meinen Bedarf gab es in der passenden Form nicht, so dass ich die Einzelschritte
+für mich , aber auch für andere Interessierte dokumentiert habe. 
+
+Anmerkungen, Kritik, Hinweise sind immer willkommen. 
+
+n1028fh@gmail.com
+
+Ansonsten hoffe ich, dass diese Anleitung dem ein oder anderen schneller zum Ziel hilft. 
+
+
+
