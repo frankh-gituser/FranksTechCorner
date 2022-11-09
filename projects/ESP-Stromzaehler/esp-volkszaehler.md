@@ -1,16 +1,12 @@
 # IR Lesekopf für Stromzähler am ESP8266 mit Tasmota
 
 
-!!!! WORK IN PROGRESS !!!!!!!!
-
-
-
 [comment]: <> (This is a comment, it will not be included)
 [//]: <> (This is also a comment.) 
 
 
 
-### [zurück zum Index](../../index.md)
+### [zurück zum Hauptmenü](../../index.md)
 
 IR Lesekopf für Stromzähler am ESP8266 mit Tasmota
 
