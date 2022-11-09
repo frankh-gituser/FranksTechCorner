@@ -216,12 +216,13 @@ Wir müssen hier nur den Upload-Port ändern, weil da steht als default sowas wi
 
 was zB auf einem Mac nicht passt. 
 Welchen uploadport nutzen wir also ? 
-Dazu önnen wir in ein Terminal und geben in der Shell
+Dazu öffnen wir ein Terminal und geben in der Shell
 
 	ls -la /dev/cu.*
 
 
-ein. Als Ausgabe seht ihr dann meine Standard Upload Ports, die bei euch dann entsprechend andere 
+ein. 
+Als Ausgabe seht ihr dann meine Standard Upload-Ports, die bei euch entsprechend andere 
 Bezeichnungen haben
 
 	% ls -la /dev/cu.*
@@ -385,7 +386,6 @@ Der mit der eigenen Tasmota-Firmware geflashte ESP kann jetzt Daten vom Stromzä
 OpenHAB senden. Allerdings ist an meinen ESP ja derzeit noch kein Lesekopf angebunden. Das wäre dann
 der nächste Schritt.
 
-Der Volkszähler Lesekopf 
 
 Der Volkszähler Lesekopf 
 
