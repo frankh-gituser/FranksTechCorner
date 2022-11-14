@@ -402,9 +402,11 @@ Damit die MQTT Anbindung korrekt funktioniert , muss das FullTopic die beiden Va
 
 Die Variable %prefix% enthält wahlweise tele, cmnd oder stat, je nachdem, welchen Teil Tasmota gerade anspricht.
 Die drei Zweige cmnd, tele und stat haben in Tamota ganz klar definierte Funktionen:
-	- cmnd ist zum Senden von Befehlen in Richtung Tasmota gedacht. Das entspricht der Eingabe in der Tasmota Kommandozeile.
-	- stat liefert unmittelbare "Antworten" auf empfangene Kommandos. Nehmen wir das Standard FullTopic und das Topic "device" als Beispiel, dann kann man eine Schaltsteckdose mit cmnd/device/POWER ON dazu bewegen, die Steckdose einzuschalten. Gleichzeitig wird Tasmota mit stat/device/POWER ON und stat/device/RESULT {"Power":"ON"} reagieren.
-	- Über tele werden zyklisch Daten gesendet.
+
+- cmnd ist zum Senden von Befehlen in Richtung Tasmota gedacht. Das entspricht der Eingabe in der Tasmota Kommandozeile.
+- stat liefert unmittelbare "Antworten" auf empfangene Kommandos. Nehmen wir das Standard FullTopic und das Topic "device" als Beispiel, dann kann man eine Schaltsteckdose mit cmnd/device/POWER ON dazu bewegen, die Steckdose einzuschalten. Gleichzeitig wird Tasmota mit stat/device/POWER ON und stat/device/RESULT {"Power":"ON"} reagieren.
+- Über tele werden zyklisch Daten gesendet.
+
 
 Alle MQTT-Statusmeldungen werden unter Verwendung des konfigurierbaren %topic% gesendet, das vom Benutzer eindeutig festgelegt werden muss. 
 In diesem Projekt heisst das topic = „volkszaehler“,  kann aber auch „tasmota-xyz-abc“ heissen , solange man weiß, was es ist und wo es zu finden ist.
