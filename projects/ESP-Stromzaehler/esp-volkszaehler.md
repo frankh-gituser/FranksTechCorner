@@ -404,7 +404,7 @@ Die Variable %prefix% enthält wahlweise tele, cmnd oder stat, je nachdem, welch
 Die drei Zweige cmnd, tele und stat haben in Tamota ganz klar definierte Funktionen:
 
 - cmnd ist zum Senden von Befehlen in Richtung Tasmota gedacht. Das entspricht der Eingabe in der Tasmota Kommandozeile.
-- stat liefert unmittelbare "Antworten" auf empfangene Kommandos. Nehmen wir das Standard FullTopic und das Topic "device" als Beispiel, dann kann man eine Schaltsteckdose mit cmnd/device/POWER ON dazu bewegen, die Steckdose einzuschalten. Gleichzeitig wird Tasmota mit stat/device/POWER ON und stat/device/RESULT {"Power":"ON"} reagieren.
+- stat liefert unmittelbare "Antworten" auf empfangene Kommandos. Nehmen wir das Standard FullTopic und das Topic "steckdose" als Beispiel, dann kann man eine Schaltsteckdose mit cmnd/steckdose/POWER ON dazu bewegen, die Steckdose einzuschalten. Gleichzeitig wird Tasmota mit stat/steckdose/POWER ON und stat/steckdose/RESULT {"Power":"ON"} reagieren.
 - Über tele werden zyklisch Daten gesendet.
 
 
@@ -442,21 +442,12 @@ Die Empfangsrichtung wird über das stateTopic konfiguriert, die Senderichtung �
 Wenn ein Channel nur senden soll, wird kein stateTopic konfiguriert, wenn ein Channel nur empfangen soll, wird kein commandTopic konfiguriert. 
 
 
-
-
-
-
-
-
-
-
-
 Der mit der eigenen Tasmota-Firmware geflashte ESP kann jetzt Daten vom Stromzähler per MQTT an 
 OpenHAB senden. Allerdings ist an meinen ESP ja derzeit noch kein Lesekopf angebunden. Das wäre dann
 der nächste Schritt.
 
 
-Der Volkszähler Lesekopf 
+## Der Volkszähler Lesekopf 
 
 Nach etwas Suche bin ich auf eine weit verbreitete Variante gestossen:
 
