@@ -384,7 +384,7 @@ Hierzu in Tasmota
 
 Bezüglich der MQTT Konfiguration noch ein kurzer Ausflug in die Tasmota Eigenschaften, die hier berücksichtigt werden sollten:
 
-[Configure Tasmota MQTT ](https://tasmota.github.io/docs/MQTT/#examples)
+[https://tasmota.github.io/docs/MQTT/ ](https://tasmota.github.io/docs/MQTT/#examples)
 
 	For a basic setup you only need to set Host, User and Password but it is recommended to change Topic to avoid issues. Each device should have a unique Topic.
     * Host = your MQTT broker address or IP (mDNS is not available in the official Tasmota builds, means no .local domain!)
