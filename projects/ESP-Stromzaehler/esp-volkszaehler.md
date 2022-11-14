@@ -382,6 +382,73 @@ Hierzu in Tasmota
 
 ![image logo](../../projects/ESP-Stromzaehler/images/esp-mqtt-config.png) 
 
+Bezüglich der MQTT Konfiguration noch ein kurzer Ausflug in die Tasmota Eigenschaften, die hier berücksichtigt werden sollten:
+
+[Configure Tasmota MQTT ](https://tasmota.github.io/docs/MQTT/#examples)
+
+	For a basic setup you only need to set Host, User and Password but it is recommended to change Topic to avoid issues. Each device should have a unique Topic.
+    * Host = your MQTT broker address or IP (mDNS is not available in the official Tasmota builds, means no .local domain!)
+    * Port = your MQTT broker port (default port is set to 1883)
+    * Client = device's unique identifier. In 99% of cases it's okay to leave it as is, however some Cloud-based MQTT brokers require a ClientID connected to your account. Can not be identical to Topic!
+    * User = username for authenticating on your MQTT broker
+    * Password = password for authenticating on your MQTT broker
+    * Topic = unique identifying topic for your device (e.g. hallswitch, kitchen-light). %topic% in wiki references to this. It is recommended to use a single word for the topic.
+    * FullTopic = full topic definition. Modify it if you want to use multi-level topics for your devices, for example lights/%prefix%/%topic%/ or %prefix%/top_floor/bathroom/%topic%/ etc.
+
+FullTopic ist das MQTT-Topic, das für die Kommunikation mit Tasmota über MQTT verwendet wird. 
+Es wird mit Hilfe von Token erstellt, die in einer benutzerdefinierten Zeichenkette (mit maximal 100 Zeichen) platziert werden. 
+Die Token werden während der Laufzeit dynamisch ersetzt. 
+Damit die MQTT Anbindung korrekt funktioniert , muss das FullTopic die beiden Variablen %prefix% und %topic% enthalten 
+
+Die Variable %prefix% enthält wahlweise tele, cmnd oder stat, je nachdem, welchen Teil Tasmota gerade anspricht.
+Die drei Zweige cmnd, tele und stat haben in Tamota ganz klar definierte Funktionen:
+	- cmnd ist zum Senden von Befehlen in Richtung Tasmota gedacht. Das entspricht der Eingabe in der Tasmota Kommandozeile.
+	- stat liefert unmittelbare "Antworten" auf empfangene Kommandos. Nehmen wir das Standard FullTopic und das Topic "device" als Beispiel, dann kann man eine Schaltsteckdose mit cmnd/device/POWER ON dazu bewegen, die Steckdose einzuschalten. Gleichzeitig wird Tasmota mit stat/device/POWER ON und stat/device/RESULT {"Power":"ON"} reagieren.
+	- Über tele werden zyklisch Daten gesendet.
+
+Alle MQTT-Statusmeldungen werden unter Verwendung des konfigurierbaren %topic% gesendet, das vom Benutzer eindeutig festgelegt werden muss. 
+In diesem Projekt heisst das topic = „volkszaehler“,  kann aber auch „tasmota-xyz-abc“ heissen , solange man weiß, was es ist und wo es zu finden ist.
+Im Topic vergibt man einen eindeutigen Namen, oder zumindest einen im Rahmen des Fulltopics eindeutigen Namen. 
+Auch hier könnte man noch Unterebenen definieren, es erscheint aber sinnvoll, es damit nicht zu übertreiben 
+
+Nachdem ihr die Konfiguration abgespeichert habt, könnt ihr in den Konsolen messages zB folgende Messages sehen:
+
+	volkszaehler/tele/SENSOR = {"Time":"2022-11-11T11:11:11“,“SML":{"Power_curr“:000}}
+Oder (gekürzt)
+	volkszaehler/tele/STATE = {"Time“:“2022-11-11T11:11:11“,“Uptime":"","UptimeSec““:,“Heap“:““SleepMode":"Dynamic","Sleep““,“LoadAvg“:““MqttCount“:““Wifi":{"AP":1,"SSId“:“““x:“““,“Channel““,“Mode“:“““,“RSSI“““Signal““LinkCount“““:““}}
+Oder (gekürzt)
+	volkszaehler/tele/SENSOR = {"Time“:“2022-11-11T11:11:11“,“SML":{"Total_in““Total_out““Power_curr“:““Volt_p1":,"Volt_p2":,"Volt_p3":,"Amperage_p1","Amperage_p2":,"Amperage_p3","Power_curr_p1":0,"Power_curr_p2":0,"Power_curr_p3":0,"frequency":50}}
+
+
+Was die Konfiguration auf der Gegenseite , dh OpenHAB betrifft, hier auch noch ein paar Hinweise, die zum besseren Verständnis hilfreich sind.
+Hier gilt mein Dank den fleissigen Erklärungen auf [openhabforum ](https://openhabforum.de/)
+
+Tasmota != mqtt != generic mqtt Thing. 
+
+In Tasmota gibt es drei Prefixes, d.h. für Commands, Status und zyklische Statusinfo -  und die Senderichtung ist zweigeteilt. 
+In MQTT gibt es nur zwei Richtungen, 
+- vom Client zum Broker und 
+- vom Broker zum Client. 
+
+Die Topics, welche zum Client gehen, werden vom Client abonniert.
+Die Topics, über die der Client sendet, werden vom Client (gewöhnlich) nicht abonniert. 
+
+In openHAB wird MQTT abgebildet, kein Tasmota ! 
+Es gibt also Topics zum Senden und Topics zum empfangen. 
+
+Die Empfangsrichtung wird über das stateTopic konfiguriert, die Senderichtung über das commandTopic. 
+Wenn ein Channel nur senden soll, wird kein stateTopic konfiguriert, wenn ein Channel nur empfangen soll, wird kein commandTopic konfiguriert. 
+
+
+
+
+
+
+
+
+
+
+
 Der mit der eigenen Tasmota-Firmware geflashte ESP kann jetzt Daten vom Stromzähler per MQTT an 
 OpenHAB senden. Allerdings ist an meinen ESP ja derzeit noch kein Lesekopf angebunden. Das wäre dann
 der nächste Schritt.
