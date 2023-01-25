@@ -11,3 +11,4 @@ Description: Pico is a stupidly simple, blazing fast, flat file CMS.
 
 ### [OpenHAB Projekte und Informationen](OpenHAB/index.md) 
 
+### [Solar-Balkonkraftwerk + Speicher + Nulleinspeisung](Solar/index.md)
