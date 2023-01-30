@@ -21,20 +21,18 @@ Wie immer, kommt man an der deutschen Bürokratie natürlich auch bei einem Balk
 
 ![image logo](/images/basisaufbau-konstant-einspeisung.jpeg)
 
-![image logo](../images/basisaufbau-konstant-einspeisung.jpeg)
-
-![image logo](images/basisaufbau-konstant-einspeisung.jpeg)
-
-![image logo](../../Solar/images/basisaufbau-konstant-einspeisung.jpeg)
 
 ## Balkonkraftwerk mit Speicherakku
 
 ... in Arbeit...
 
+![image logo](/images/vom-pv-modul-zur-batterie-bauplan.jpeg)
 
 ## Balkonkraftwerk mit Nulleinspeisung
 
 ... in Arbeit...
+
+![image logo](/images/nachteinspeisung-bauplan.jpeg)
 
 ## Balkonkraftwerk für Notsrom
 
