@@ -19,6 +19,8 @@ Wie immer, kommt man an der deutschen Bürokratie natürlich auch bei einem Balk
 
 ... in Arbeit...
 
+![image logo](/images/basisaufbau-konstant-einspeisung.jpeg)
+
 ![image logo](../images/basisaufbau-konstant-einspeisung.jpeg)
 
 ![image logo](images/basisaufbau-konstant-einspeisung.jpeg)
