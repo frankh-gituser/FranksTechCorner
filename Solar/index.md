@@ -25,6 +25,7 @@ Wie immer, kommt man an der deutschen Bürokratie natürlich auch bei einem Balk
 
 ![image logo](images/basisaufbau-konstant-einspeisung.jpeg)
 
+![image logo](../../Solar/images/basisaufbau-konstant-einspeisung.jpeg)
 
 ## Balkonkraftwerk mit Speicherakku
 
