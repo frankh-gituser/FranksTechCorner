@@ -84,7 +84,7 @@ Bei Quantencomputern verwenden wir dieselbe Grundidee, haben aber andere Konvent
 Eingängen, Ausgängen und den für Operationen verwendeten Symbolen. 
 Hier ist die "Quantenschaltung", die den gleichen Prozess wie oben darstellt.
 
-![image logo](/images/quantum_circuit.png
+![image logo](/images/quantum_circuit.png)
 
 
 
@@ -152,7 +152,7 @@ Begonnen wird  mit der Erstellung eines Quantenschaltkreises mit 3 Qubits und 3 
 	qc.draw()  # returns a drawing of the circuit
 
 
-![image logo](/images/first_circuit.png
+![image logo](/images/first_circuit.png)
 
 
 Schließlich erstellt die Methode qc.draw() eine Zeichnung der Schaltung für uns. 
@@ -188,7 +188,7 @@ Wir können dies mit der Methode .measure() des QuantumCircuit tun.
 
 
 
-![image logo](/images/circuit_measure.png
+![image logo](/images/circuit_measure.png)
 
 
 Als Nächstes wollen wir sehen, welche Ergebnisse ein Betrieb dieser Schaltung bringen würde. 
@@ -250,7 +250,7 @@ Im Folgenden werden wir eine neue Schaltung erstellen, die sich mit der Kodierun
 	qc.draw()    # returns a drawing of the circuit
 
 
-![image logo](/images/perform_x_gate.png
+![image logo](/images/perform_x_gate.png)
 
 
 Und die Simulation  unserer Schaltung, um die Ergebnisse zu sehen:
@@ -306,7 +306,7 @@ Der erste Teil muss geändert werden, wenn wir eine neue Eingabe verwenden wolle
 aber der Rest wird immer gleich bleiben.
 
 
-![image logo](/images/adding_circuit.png
+![image logo](/images/adding_circuit.png)
 
 Die beiden Bits, die wir addieren wollen, sind in den Qubits 0 und 1 kodiert. 
 Das obige Beispiel kodiert eine 1 in diesen beiden Qubits und versucht daher, die Lösung 1+1 zu finden. 
@@ -328,7 +328,7 @@ Um diesen Teil unserer Lösung richtig zu machen, brauchen wir etwas, das heraus
 ob zwei Bits unterschiedlich sind oder nicht. 
 Im Studium der digitalen Berechnungen wird dies traditionell als XOR-Gatter bezeichnet.
 
-![image logo](/images/xor.png
+![image logo](/images/xor.png)
 
 In Quantencomputern wird die Aufgabe des XOR-Gatters durch das "controlled-NOT-Gatter" übernommen. 
 Da das ein ziemlich langer Name ist, nennen wir es gewöhnlich einfach "CNOT". 
@@ -338,7 +338,7 @@ Das eine fungiert als Kontroll-Qubit (das ist das mit dem kleinen Punkt).
 Das andere fungiert als Ziel-Qubit (mit dem großen Kreis und dem Kreuz - eine Art Zielmarkierung).
 
 
-![image logo](/quantum_xor.png
+![image logo](/quantum_xor.png)
 
 In Qiskit können wir die Methode .cx() verwenden, um einen CNOT zu unserer Schaltung hinzuzufügen. 
 Wir müssen die Indizes der beiden Qubits, auf die es wirkt, als Argumente angeben. Hier ist ein Beispiel:
@@ -356,5 +356,5 @@ Wir müssen die Indizes der beiden Qubits, auf die es wirkt, als Argumente angeb
 	print("Result: ", result.get_counts())
 
 
-![image logo](/qc_xor.png
+![image logo](/qc_xor.png)
 
