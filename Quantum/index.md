@@ -338,7 +338,7 @@ Das eine fungiert als Kontroll-Qubit (das ist das mit dem kleinen Punkt).
 Das andere fungiert als Ziel-Qubit (mit dem großen Kreis und dem Kreuz - eine Art Zielmarkierung).
 
 
-![image logo](/quantum_xor.png)
+![image logo](/images/quantum_xor.png)
 
 In Qiskit können wir die Methode .cx() verwenden, um einen CNOT zu unserer Schaltung hinzuzufügen. 
 Wir müssen die Indizes der beiden Qubits, auf die es wirkt, als Argumente angeben. Hier ist ein Beispiel:
@@ -356,5 +356,5 @@ Wir müssen die Indizes der beiden Qubits, auf die es wirkt, als Argumente angeb
 	print("Result: ", result.get_counts())
 
 
-![image logo](/qc_xor.png)
+![image logo](/images/qc_xor.png)
 
