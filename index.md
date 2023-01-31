@@ -1,9 +1,9 @@
 --- 
 Title: Welcome 
-Description: Pico is a stupidly simple, blazing fast, flat file CMS. 
+Description: Frank Hoerper Technologie zum mitmachen
 --- 
 
-# Übersicht
+# Technologiethemen von Frank Hoerper
 
 ## Hier finden sich Informationen zu verschiedenen Themenbereichen. Eine Sammlung von Projekten und How To's.
 
