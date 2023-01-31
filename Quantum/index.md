@@ -80,5 +80,46 @@ Hier ist ein Beispiel dafür, wie ein Schaltkreis für Standard-Bitcomputer auss
 Es wird nicht von Ihnen erwartet, dass Sie verstehen, was sie tut. 
 Es soll Ihnen lediglich eine Vorstellung davon vermitteln, wie diese Schaltungen aussehen.
 
+Bei Quantencomputern verwenden wir dieselbe Grundidee, haben aber andere Konventionen für die Darstellung von 
+Eingängen, Ausgängen und den für Operationen verwendeten Symbolen. 
+Hier ist die "Quantenschaltung", die den gleichen Prozess wie oben darstellt.
 
+![image logo](/images/quantum_circuit.png
+
+
+
+### Quantum Computer programmieren mit Quiskit
+
+Das Hauptziel von Qiskit ist es, einen Software-Stack zu entwickeln, der es jedem leicht macht, Quantencomputer zu benutzen, 
+unabhängig von seinen Fähigkeiten oder seinem Interessengebiet; 
+Qiskit ermöglicht es, Experimente und Anwendungen einfach zu entwerfen und sie auf echten Quantencomputern und/oder 
+klassischen Simulatoren auszuführen. 
+Qiskit wird bereits auf der ganzen Welt von Anfängern, Bastlern, Lehrern, Forschern und kommerziellen Unternehmen genutzt.
+
+### Schaltkreise mit Qiskit erstellen
+
+#### Basics
+
+Wir wissen, dass wir alle Informationen mit einem Bündel von Bits beschreiben können. 
+So speichern und verarbeiten Computer alles, auch Quantenschaltungen! 
+Aber für uns Menschen ist es schwierig, darüber nachzudenken, wie wir dies tun und wie wir diese Bits manipulieren, 
+um die gewünschten Schaltungen darzustellen.
+
+Ein  "QuantumCircuit" ist ein Satz von Anweisungen zur Darstellung von Quantenschaltungen als Bits. 
+Die Zeile 
+
+	qc = QuantumCircuit(4, 2) 
+
+ist ein Konstruktor, der Python anweist, einige Bits in Ihrem Computer bereitzustellen, die wir zur Darstellung eines 
+Quantenschaltkreises verwenden werden. 
+Wenn wir uns auf diesen Quantenschaltkreis beziehen wollen (oder besser gesagt, auf die Bits, die diesen 
+Quantenschaltkreis darstellen), verwenden wir die Variable "qc". 
+
+Wir sagen, dass sich 'qc' auf ein "QuantumCircuit-Objekt" bezieht.
+
+
+Dies ermöglicht es uns Menschen, über Quantenschaltungen auf einer hohen, abstrakten Ebene nachzudenken; 
+wir können Anweisungen  wie 
+	"füge ein X-Gate hinzu" 
+und Qiskit kümmert sich darum, was wir mit den Bits in unserem Computer machen müssen, um diese Änderung zu reflektieren.
 
