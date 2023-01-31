@@ -40,11 +40,12 @@ zu lösen als mit einem herkömmlichen Computer.
 
 
 Schnelles Quiz
-Quantencomputer werden irgendwann...
 
-...die Geschwindigkeit von herkömmlichen Computern erhöhen.
-...herkömmliche Computer ersetzen.
-...Berechnungen durchführen, die für herkömmliche Computer zu schwierig sind.
+# Quantencomputer werden irgendwann...
+
+	...die Geschwindigkeit von herkömmlichen Computern erhöhen.
+	...herkömmliche Computer ersetzen.
+	...Berechnungen durchführen, die für herkömmliche Computer zu schwierig sind.
 
 Lösung: A
 
@@ -78,8 +79,6 @@ Hier ist ein Beispiel dafür, wie ein Schaltkreis für Standard-Bitcomputer auss
 
 Es wird nicht von Ihnen erwartet, dass Sie verstehen, was sie tut. 
 Es soll Ihnen lediglich eine Vorstellung davon vermitteln, wie diese Schaltungen aussehen.
-
-## Balkonkraftwerk für Notsrom
 
 
 
