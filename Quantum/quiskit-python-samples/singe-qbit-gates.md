@@ -2,25 +2,17 @@
 
 #### Visualizing qubits
 
-[comment]: <>  ### $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
-[comment]: <>  $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
-[comment]: <>  ### newcommand
-[comment]: <>  $$ \newcommand{\noop}[1]{#1}$$
-[comment]: <>  $$ \noop{\newcommand{\foo}[1]{#1}}$$
-[comment]: <>  $$ \foo{hi}$$
-
-
 \newcommand{\ket}[1]{\left|{#1}\right\rangle}
 \newcommand{\bra}[1]{\left\langle{#1}\right|}
 \bra{\Psi}\Omega\ket{\Psi}
 
-[comment]: <>  $$ \newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
-[comment]: <>  $$ \braket{\Psi}{\Psi}$$
-[comment]: <>  $$ \braket{\frac{\Psi}{2}}{\Psi}$$
+\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}
+\braket{\Psi}{\Psi}
+\braket{\frac{\Psi}{2}}{\Psi}
 
-[comment]: <>  \begin{align}
-[comment]: <>  \braket{Paw_L}{Paw_)
-[comment]: <>  \end{align}
+\begin{align}
+\braket{Paw_L}{Paw_)
+\end{align}
 
 
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
