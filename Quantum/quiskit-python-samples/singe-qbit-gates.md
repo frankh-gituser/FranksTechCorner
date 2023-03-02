@@ -7,7 +7,7 @@
 $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 
 ### newcommand 
-$$ \newcommand{\ket}[1]{\left|{#1}\right\rangle} $$
+$$ \newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
 # $ \newcommand{\bra}[1]{\left\langle{#1}\right|} $$
 # $$ \bra{\Psi}\Omega\ket{\Psi} $$
 
