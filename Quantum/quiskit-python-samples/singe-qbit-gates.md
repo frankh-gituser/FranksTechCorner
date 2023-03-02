@@ -5,7 +5,13 @@
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
 Commonly this is also used as computational basis.
 
+The states $\ket{0} = $
+
+The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
+Commonly this is also used as computational basis.
+
 Any state $\ket{\psi}$ can be represented as a complex linear combination of these two states, i.e. 
+
 $$\ket{\psi} =  a \ket{0} + b \ket{1} \; \text{with} \; a,b \in \mathbb{C}$$
 
 Any state $\ket{\psi}$ can be represented as a complex linear combination of these two states, i.e. $$\ket{\psi} =  a \ket{0} + b \ket{1} \; \text{with} \; a,b \in \mathbb{C}$$
