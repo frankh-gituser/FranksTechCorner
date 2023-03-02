@@ -5,7 +5,8 @@
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
 Commonly this is also used as computational basis.
 
-The states $\ket{0} = $
+$\sum_{n=1}^{10} n^2$
+The states $\ket{0} =$
 
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
 Commonly this is also used as computational basis.
