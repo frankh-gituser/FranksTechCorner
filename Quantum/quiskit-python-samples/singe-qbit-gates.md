@@ -2,8 +2,7 @@
 
 #### Visualizing qubits
 
-The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
-Commonly this is also used as computational basis.
+### $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 
 $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 
@@ -17,7 +16,7 @@ $$\braket{\frac{\Psi}{2}}{\Psi}$$
 
 \begin{align}
 \braket{Paw_L}{Paw_
-
+\end{align}
 
 
 
