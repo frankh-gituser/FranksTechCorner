@@ -7,12 +7,19 @@ Commonly this is also used as computational basis.
 
 $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 
+$$\newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
+$$\newcommand{\bra}[1]{\left\langle{#1}\right|}$$
+$$\bra{\Psi}\Omega\ket{\Psi}$$
 
-$\sum_{n=1}^{10} n^2$
+$$\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
+$$\braket{\Psi}{\Psi}$$
+$$\braket{\frac{\Psi}{2}}{\Psi}$$
 
-$\sqrt{a^2+b^2} = 1$
+\begin{align}
+\braket{Paw_L}{Paw_
 
-The states $$ \begin \ket{0} = $$
+
+
 
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
 Commonly this is also used as computational basis.
