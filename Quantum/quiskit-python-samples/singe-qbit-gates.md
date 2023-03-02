@@ -8,9 +8,9 @@ $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 
 ### newcommand 
 
-\newcommand{\noop}[1]{#1}
-\noop{\newcommand{\foo}[1]{#1}}
-\foo{hi}
+$$\newcommand{\noop}[1]{#1}$$
+$$\noop{\newcommand{\foo}[1]{#1}}$$
+$$\foo{hi}$$
 
 
 $$ \newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
