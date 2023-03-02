@@ -2,9 +2,9 @@
 
 ### [zurück zum Index](../index.md)
 
-## [Quiskit Sample Singe Qbit Gates](../quiskit-python-samples/singe-qbit-gates.jpynb)
-## [Quiskit Sample Singe Qbit Gates](/quiskit-python-samples/singe-qbit-gates.jpynb)
-## [Quiskit Sample Singe Qbit Gates](quiskit-python-samples/singe-qbit-gates.jpynb)
+## [Quiskit Sample Single Qbit Gates](quiskit-python-samples/singe-qbit-gates.jpynb)
+
+## [Quiskit Sample Single Qbit Gates](quiskit-python-samples/singe-qbit-gates.md)
 
 ## Quantencomputing in Kürze
 
