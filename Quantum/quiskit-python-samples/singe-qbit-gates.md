@@ -6,7 +6,7 @@ The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmat
 Commonly this is also used as computational basis.
 
 
-$$ \begin{pmatrix}1\\0\end{pmatrix} $$
+$$ \begin{pmatrix}1 \\ 0\end{pmatrix} $$
 
 $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 $$ \begin{pmatrix}a & b \\ c & d\end{pmatrix} $$
