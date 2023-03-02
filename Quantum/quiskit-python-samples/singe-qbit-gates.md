@@ -8,6 +8,8 @@ Commonly this is also used as computational basis.
 
 $$ \begin{pmatrix}1 \\ 0\end{pmatrix} $$
 
+$$ \begin {ket(0)} $$
+
 $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 $$ \begin{pmatrix}a & b \\ c & d\end{pmatrix} $$
 
