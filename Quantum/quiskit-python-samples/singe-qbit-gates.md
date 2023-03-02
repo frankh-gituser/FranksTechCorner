@@ -7,6 +7,10 @@ Commonly this is also used as computational basis.
 
 \\(\sum_{n=1}^{10} n^2\\)
 
+$\sum_{n=1}^{10} n^2$
+
+$\sqrt{a^2+b^2} = 1$
+
 The states $\ket{0} =$
 
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
@@ -23,6 +27,7 @@ Any state $\ket{\psi}$ can be represented as a complex linear combination of the
 
 Using the fact that the qubit state must be normalized, i.e. $\sqrt{a^2+b^2} = 1$ and the trigonometric identity $\sqrt{\sin^2x+\cos^2x} = 1$, allows to describe a state as
 $$\ket{\psi}= \cos\frac{\theta}{2} \ket{0} + e^{i\phi}\sin\frac{\theta}{2} \ket{1}\; \text{with} \;  \theta,\phi \in \mathbb{R}.$$
+
 This mapping allows to visualize any single qubit state on a sphere [Bloch Sphere](https://javafxpert.github.io/grok-bloch/). 
 
 
