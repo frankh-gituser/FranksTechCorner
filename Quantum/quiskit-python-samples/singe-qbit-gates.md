@@ -1,6 +1,6 @@
 ### Summary: Single qubit gates - Pt 1 <a class="anchor" id="single_qubit_gates_pt1"></a>
 
-#### Visualizing qubits
+#### Visualizing qubits 
 
 $$\newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
 $$\newcommand{\bra}[1]{\left\langle{#1}\right|}$$
