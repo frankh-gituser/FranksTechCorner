@@ -2,21 +2,21 @@
 
 #### Visualizing qubits
 
-[//]: <>### $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
-[//]: <>$$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
-[//]: <>### newcommand
-[//]: <>$$ \newcommand{\noop}[1]{#1}$$
-[//]: <>$$ \noop{\newcommand{\foo}[1]{#1}}$$
-[//]: <>$$ \foo{hi}$$
+[//]: <> ### $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
+[//]: <> $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
+[//]: <> ### newcommand
+[//]: <> $$ \newcommand{\noop}[1]{#1}$$
+[//]: <> $$ \noop{\newcommand{\foo}[1]{#1}}$$
+[//]: <> $$ \foo{hi}$$
 
 
 \newcommand{\ket}[1]{\left|{#1}\right\rangle}
 \newcommand{\bra}[1]{\left\langle{#1}\right|}
 \bra{\Psi}\Omega\ket{\Psi}
 
-[//]: <>$$ \newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
-[//]: <>$$ \braket{\Psi}{\Psi}$$
-[//]: <>$$ \braket{\frac{\Psi}{2}}{\Psi}$$
+[//]: <> $$ \newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
+[//]: <> $$ \braket{\Psi}{\Psi}$$
+[//]: <> $$ \braket{\frac{\Psi}{2}}{\Psi}$$
 
 [//]: <>\begin{align}
 [//]: <>\braket{Paw_L}{Paw_)
