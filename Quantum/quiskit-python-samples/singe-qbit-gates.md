@@ -16,7 +16,7 @@ $$ \braket{\Psi}{\Psi}$$
 $$ \braket{\frac{\Psi}{2}}{\Psi}$$
 
 \begin{align}
-\braket{Paw_L}{Paw_
+\braket{Paw_L}{Paw_)
 \end{align}
 
 
