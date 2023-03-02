@@ -2,9 +2,8 @@
 
 ### [zurück zum Index](../index.md)
 
-## ### [zurück zum Index](../quiskit-python-samples/singe-qbit-gates.jpynb
+## [Quiskit Sample Singe Qbit Gates](../quiskit-python-samples/singe-qbit-gates.jpynb)
 
-)
 ## Quantencomputing in Kürze
 
 Quantencomputing stellt ein neues Paradigma in der Datenverarbeitung dar, bei dem die grundlegenden Prinzipien der Quantenmechanik
