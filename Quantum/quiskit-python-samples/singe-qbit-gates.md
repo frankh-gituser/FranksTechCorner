@@ -25,6 +25,10 @@ $$ \braket{\frac{\Psi}{2}}{\Psi}$$
 \braket{Paw_L}{Paw_)
 \end{align}
 
+\begin{align}
+\ket{\psi} =  a \ket{0} + b \ket{1} \; \text{with} \; a,b \in \mathbb{C}
+\end{align}
+
 
 
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
