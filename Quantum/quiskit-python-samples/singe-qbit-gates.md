@@ -2,16 +2,16 @@
 
 #### Visualizing qubits
 
-\newcommand{\ket}[1]{\left|{#1}\right\rangle}
-\newcommand{\bra}[1]{\left\langle{#1}\right|}
-\bra{\Psi}\Omega\ket{\Psi}
+$$\newcommand{\ket}[1]{\left|{#1}\right\rangle}$$
+$$\newcommand{\bra}[1]{\left\langle{#1}\right|}$$
+$$\bra{\Psi}\Omega\ket{\Psi}$$
 
-\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}
-\braket{\Psi}{\Psi}
-\braket{\frac{\Psi}{2}}{\Psi}
+$$\newcommand{\braket}[2]{\left\langle{#1}\middle|{#2}\right\rangle}$$
+$$\braket{\Psi}{\Psi}$$
+$$\braket{\frac{\Psi}{2}}{\Psi}$$
 
 \begin{align}
-\braket{Paw_L}{Paw_)
+\braket{Paw_L}{Paw_R} = 0
 \end{align}
 
 
