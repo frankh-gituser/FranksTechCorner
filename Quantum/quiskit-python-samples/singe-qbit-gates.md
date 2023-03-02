@@ -12,7 +12,7 @@ $\sum_{n=1}^{10} n^2$
 
 $\sqrt{a^2+b^2} = 1$
 
-The states $$ \begin \ket{0} = $$
+The states $$ \begin ket{0} = $$
 
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
 Commonly this is also used as computational basis.
