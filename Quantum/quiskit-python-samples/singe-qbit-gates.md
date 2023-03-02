@@ -5,6 +5,9 @@
 The states $\ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$ and $\ket{1} \begin{pmatrix}0\\1\end{pmatrix}$ form an orthonormal basis. 
 Commonly this is also used as computational basis.
 
+
+The states $$ \ket{0} = \begin{pmatrix}1\\0\end{pmatrix}$$ and $\ket{1} $$\begin{pmatrix}0\\1\end{pmatrix}$$
+
 $$ \begin{bmatrix}a & b \\ c & d\end{bmatrix} $$
 $$ \begin{pmatrix}a & b \\ c & d\end{pmatrix} $$
 
