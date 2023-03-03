@@ -34,13 +34,14 @@ Erstellen Sie eine 1-Qubit-Schaltung mit mehreren Gattern
 Create Barriers
 
 Erläuterung zu Barriers. 
-Eine Barriere ist ein visueller Indikator für die Gruppierung eines Schaltungsabschnitts. 
-Sie dient auch als Richtlinie für die Schaltkreiskompilierung, um Teile eines Schaltkreises zu trennen, 
-so dass Optimierungen oder Neuschreibungen nur zwischen den Barrieren stattfinden können. 
+Wenn eine Schaltung mehrere 1-Qubit-Gates in einer Reihe hat, die auf dasselbe Qubit wirken, 
+können diese zu einem einzigen 1-Qubit-Gate zusammengefasst werden.
+Wenn Sie dieses Verhalten explizit verhindern wollen, können Sie eine Barriere dazwischen setzen.
 
 Neue Barriere-Anweisung erstellen.
 
 # Beispiel
+# 3 Möglichkeiten - gleiches Ergebnis
 
 	qc = QuantumCircuit(3)
 	qc.barrier(0)
@@ -59,7 +60,8 @@ Neue Barriere-Anweisung erstellen.
 	qc.barrier()
 	display(qc.draw('mpl'))
 
-Wenn eine Schaltung mehrere 1-Qubit-Gates in einer Reihe hat, die auf dasselbe Qubit wirken, können diese zu einem einzigen 1-Qubit-Gate zusammengefasst werden. 
-Wenn Sie dieses Verhalten explizit verhindern wollen, können Sie eine Barriere dazwischen setzen.
+![image logo](qbit-barrier-gate.png)
+
+
 
 
