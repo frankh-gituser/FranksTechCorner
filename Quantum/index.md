@@ -152,14 +152,23 @@ Der erste  Quantenschaltkreis konzentriert sich auf den letzten Punkt
 
 Begonnen wird  mit der Erstellung eines Quantenschaltkreises mit 3 Qubits und 3 Ausgängen.
 
-	from qiskit import QuantumCircuit
-	# Create quantum circuit with 3 qubits and 3 classical bits
-	# (we'll explain why we need the classical bits later)
-	qc = QuantumCircuit(3, 3)
-	qc.draw()  # returns a drawing of the circuit
+	import qiskit
+	from qiskit import ClassicalRegister, QuantumRegister, QuantumCircuit
+	from qiskit import execute, BasicAer, Aer
+	from qiskit.tools.visualization import plot_histogram, circuit_drawer
+
+	from qiskit.visualization import plot_state_qsphere
+	from qiskit.visualization import plot_bloch_multivector, array_to_latex
+	from numpy import sqrt, pi
 
 
-![image logo](/images/first_circuit.png)
+	qc = QuantumCircuit(3)
+	display(qc.draw('mpl'))
+
+	qc = QuantumCircuit(3,3)
+	display(qc.draw('mpl'))
+
+![image logo](/images/MyFirstSampleCircuit.png)
 
 
 Schließlich erstellt die Methode qc.draw() eine Zeichnung der Schaltung für uns. 
