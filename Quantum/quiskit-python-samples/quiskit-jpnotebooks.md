@@ -11,4 +11,4 @@
 
 [Quiskit Sample Single Qbit Gates](quiskit-python-samples/singe-qbit-gates.md)
 
-
+[Quiskit Sample Single Qbit Gates](singe-qbit-gates.md)
