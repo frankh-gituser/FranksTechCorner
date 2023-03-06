@@ -95,7 +95,7 @@ Hier ist die "Quantenschaltung", die den gleichen Prozess wie oben darstellt.
 
 
 
-### Quantum Computer programmieren mit Quiskit
+### Quantum Computer programmieren mit Qiskit
 
 Das Hauptziel von Qiskit ist es, einen Software-Stack zu entwickeln, der es jedem leicht macht, Quantencomputer zu benutzen, 
 unabhängig von seinen Fähigkeiten oder seinem Interessengebiet; 
@@ -273,8 +273,14 @@ Wir müssen die Indizes der beiden Qubits, auf die es wirkt, als Argumente angeb
 ![image logo](/images/qc_xor.png)
 
 
-## Verschiedene Gate Varianten
+## Quantum States and Qubits
 
 [U-Gates ](quiskit-python-samples/prep-UGate-QVersion/prep-UGate-QVersion.md)
+
+[Singe Gates (X, Y, Z-Gate und Hadamard) ](quiskit-python-samples/[U-Gates ](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
+
+
+
+
 
 
