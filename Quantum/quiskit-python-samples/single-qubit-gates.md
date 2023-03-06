@@ -1,4 +1,4 @@
-### Summary: Single qubit gates - Pt 1 <a class="anchor" id="single_qubit_gates_pt1"></a>
+### Erste Quanten Schaltkreise (Gates)
 
 
 
@@ -30,7 +30,7 @@ Begonnen wird  mit der Erstellung eines Quantenschaltkreises mit 3 Qubits und 3 
 	qc = QuantumCircuit(3,3)
 	display(qc.draw('mpl'))
 
-![image logo](/images/MyFirstSampleCircuit.png)
+![image logo](../images/MyFirstSampleCircuit.png)
 
 
 Schließlich erstellt die Methode qc.draw() eine Zeichnung der Schaltung für uns. 
@@ -66,7 +66,7 @@ Wir können dies mit der Methode .measure() des QuantumCircuit tun.
 
 
 
-![image logo](/images/circuit_measure.png)
+![image logo](../images/circuit_measure.png)
 
 
 Als Nächstes wollen wir sehen, welche Ergebnisse ein Betrieb dieser Schaltung bringen würde. 

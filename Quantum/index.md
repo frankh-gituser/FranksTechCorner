@@ -141,6 +141,7 @@ Bits unsere Schaltung haben soll.
 Wir brauchen klassische Bits, um die Messungen unserer Qubits zu speichern.
 
 
+[Quiskit MyFirstSample für Quantenschaltkreise (Gates) ](quiskit-python-samples/MyFirstSample/MyFirstSampleCircuit.md)
 
 [Quiskit Erste Beispiele für Quantenschaltkreise (Gates) ](quiskit-python-samples/single-qubit-gates.md)
 
