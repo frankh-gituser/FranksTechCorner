@@ -1,9 +1,8 @@
-### [zurück zum Index](../index.md)
+#### [zurück zum Index](../../index.md)
 
 # Quantum States und Qubits
 
 ## Single Qubit Gates
-
 
 
 ```python
@@ -20,7 +19,7 @@ from qiskit.providers.aer import QasmSimulator
 provider = IBMQ.load_account()
 ```
 
-    <frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
+    ibmqfactory.load_account:WARNING:2023-03-06 17:12:31,838: Credentials are already in use. The existing account in the session will be replaced.
 
 
 Import Basic Functions First
@@ -53,6 +52,11 @@ X|1> = |0>
 
 
 ```python
+
+```
+
+
+```python
 qc = QuantumCircuit(1)
 qc.x(0)
 qc.draw()
@@ -62,7 +66,7 @@ qc.draw()
 
 
     
-![png](output_4_0.png)
+![png](output_6_0.png)
     
 
 
@@ -84,17 +88,14 @@ plot_bloch_multivector(job.get_statevector(qc), title='X-Gate')
 
 
     
-![png](output_6_0.png)
+![png](output_8_0.png)
     
 
 
 
-
-```python
 Wir können sehen, dass der Zustand des Qubits |1> tatsächlich wie erwartet ist. 
 Wir können uns dies als eine Drehung im Bogenmaß π  um die x-Achse der Bloch-Kugel vorstellen. 
 Das X-Gate wird in Anlehnung an sein klassisches Analogon oft auch als NOT-Gate bezeichnet.
-```
 
 ### Das Y-Gate
 
@@ -111,7 +112,7 @@ qc.draw()
 
 
     
-![png](output_9_0.png)
+![png](output_11_0.png)
     
 
 
@@ -127,7 +128,7 @@ plot_bloch_multivector(job.get_statevector(qc), title='Y-Gate')
 
 
     
-![png](output_10_0.png)
+![png](output_12_0.png)
     
 
 
@@ -149,7 +150,7 @@ qc.draw()
 
 
     
-![png](output_12_0.png)
+![png](output_14_0.png)
     
 
 
@@ -165,7 +166,7 @@ plot_bloch_multivector(job.get_statevector(qc), title='Z-Gate')
 
 
     
-![png](output_13_0.png)
+![png](output_15_0.png)
     
 
 
@@ -216,6 +217,116 @@ gate_demo(gates='pauli+h')
 
     Image(value=b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x01 \x00\x00\x01 \x08\x06\x00\x00\x00\x14\x83\xae\x8…
 
+
+## Qiskit API
+
+### Which statement will create a quantum circuit with four quantum bits and four classical bits?
+
+A. QuantumCircuit (4,4)
+B. QuantumCircuit (4)
+С. QuantumCircuit (QuantumRegister (4, 'grO'),QuantumRegister (4, 'crI'))
+D. QuantumCircuit ([4,4])
+
+
+
+
+```python
+qc = QuantumCircuit (4,4)
+#QuantumCircuit (4)
+#QuantumCircuit (QuantumRegister (4, 'grO'),QuantumRegister (4, 'crI'))
+#QuantumCircuit ([4, 4])
+qc.draw()
+```
+
+
+
+
+    
+![png](output_21_0.png)
+    
+
+
+
+QuantumCircuit (4, 3) 
+Ein QuantumCircuit mit 4 qubits und 3 klassischen Bits
+
+https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.html
+
+## Assuming the fragment below, which three code fragments would produce the circuit illustrated ?
+
+inp reg = QuantumRegister (2, name='inp")
+ancilla = QuantumRegister (1, name='anc')
+qo = QuantumCircuit (in reg, ancilla)
+# Insert code here
+
+![image logo](/quiskit-python-samples/MyFirstSample/sampe-question-3.png)
+
+A. go.h (inp reg)
+qc.× (ancilla)
+qc.draw ()
+
+B. gc.h(inp reg [0:2])
+qc.x(ancilla [0])
+qc.draw ()
+
+C. qc.h(inp reg [0:1])
+qc.x (ancilla [0])
+qc.draw ( )
+
+D. go.h (inp reg [0]) qc.h (inp reg [1])
+qc.× (ancilla 01)
+qc.draw ()
+
+E. qc.h(inp reg [1]) qc.h(inp reg [2])
+qc.×(ancilla [1])
+qc.draw ()
+
+F. qc.h (inp reg) qc.h(inp reg)
+qc.x (ancilla)
+ac.draw ()
+
+
+https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumRegister.html
+
+
+
+
+```python
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+qr = QuantumRegister (3,'g')
+anc = QuantumRegister(1, 'ancilla')
+cr = ClassicalRegister (3, 'c')
+qc = QuantumCircuit (qr, anc, cr)
+qc.x (anc [0])
+qc.h (anc [0])
+qc.h(qr [0:3])
+qc.cx(qr[0:3], anc[0])
+qc.x (anc [0])
+qc.barrier (qr)
+#qc = QuantumCircuit (qr, anc, cI)
+qc.measure (qr,cr)
+qc.draw ()
+```
+
+
+
+
+    
+![png](output_24_0.png)
+    
+
+
+
+### Lösung:
+
+A. 
+    go.h (inp reg) qc.× (ancilla) qc.draw ()
+
+B. 
+    gc.h(inp reg [0:2]) qc.x(ancilla [0]) qc.draw ()
+
+D. 
+    go.h (inp reg [0]) qc.h (inp reg [1]) qc.× (ancilla 01) qc.draw ()
 
 
 ```python
