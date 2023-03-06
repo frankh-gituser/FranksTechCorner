@@ -272,3 +272,9 @@ Wir müssen die Indizes der beiden Qubits, auf die es wirkt, als Argumente angeb
 
 ![image logo](/images/qc_xor.png)
 
+
+## Verschiedene Gate Varianten
+
+[U-Gates ](quiskit-python-samples/prep-UGate-QVersion/prep-UGate-QVersion.md)
+
+
