@@ -39,7 +39,7 @@ display(qc.draw('mpl'))
 
     
 ![png](output_2_0.png)
-    
+![png](quiskit-python-samples/MyFirstSample/output_2_0.png)    
 
 
 
