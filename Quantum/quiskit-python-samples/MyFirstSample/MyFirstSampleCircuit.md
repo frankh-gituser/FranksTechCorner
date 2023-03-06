@@ -1,3 +1,20 @@
+### [zurück zum Index](../index.md)
+
+### Erste Quanten Schaltkreise (Gates)
+
+## Ihr erster Quantenschaltkreis
+
+In einem Schaltkreis müssen wir normalerweise drei Aufgaben erledigen: 
+
+1. Zunächst muss die Eingabe kodiert werden,
+2. dann folgt die eigentliche Berechnung, 
+3. und schließlich wird eine Ausgabe extrahiert. 
+
+Der erste  Quantenschaltkreis konzentriert sich auf den letzten Punkt
+
+Begonnen wird  mit der Erstellung eines Quantenschaltkreises mit 3 Qubits und 3 Ausgängen.
+
+
 ```python
 import numpy as np
 
@@ -38,14 +55,39 @@ display(qc.draw('mpl'))
 
 
     
-![png](output_2_0.png)
-![png](quiskit-python-samples/MyFirstSample/output_2_0.png)    
+![png](output_3_0.png)
+    
 
 
 
     
-![png](output_2_1.png)
+![png](output_3_1.png)
     
+
+
+Schließlich erstellt die Methode qc.draw() eine Zeichnung der Schaltung für uns. 
+
+Jupyter Notebooks werten die letzte Zeile einer Codezelle aus und zeigen sie unterhalb der Zelle an. 
+
+Da "qc.draw()" eine Zeichnung zurückgibt, ist es das, was wir unter dem Code sehen. 
+In unserem Schaltkreis gibt es noch keine Gatter, also sehen wir nur einige horizontale Linien.
+
+#### Python basics (what’s a method?)
+
+    Die Klasse QuantumCircuit ist ein Satz von Anweisungen zur Darstellung von Quantenschaltungen als Bits, 
+    aber wenn wir eine dieser Schaltungen ändern wollen, müssen wir auch wissen, wie wir die Bits 
+    entsprechend ändern können. 
+
+    In Python gibt es für Objekte "Methoden", d.h. eine Reihe von Anweisungen, um etwas mit dem Objekt zu tun. 
+
+    In der obigen Zelle betrachtet die Methode .draw() den Schaltkreis, den wir erstellt haben, und 
+    erstellt eine für Menschen lesbare Zeichnung dieses Schaltkreises.
+
+
+Als Nächstes brauchen wir eine Möglichkeit, unseren Quantencomputer anzuweisen, unsere Qubits zu messen und die 
+Ergebnisse aufzuzeichnen. 
+Zu diesem Zweck fügen wir unserem Quantenschaltkreis eine "Mess"-Operation hinzu. 
+Wir können dies mit der Methode .measure() des QuantumCircuit tun.
 
 
 Als Nächstes brauchen wir eine Möglichkeit, unseren Quantencomputer anzuweisen, unsere Qubits zu messen und die 
@@ -66,7 +108,7 @@ qc.draw()
 
 
     
-![png](output_4_0.png)
+![png](output_6_0.png)
     
 
 
@@ -84,6 +126,11 @@ Dennoch sind Simulatoren sehr nützliche Werkzeuge für den Entwurf kleinerer Qu
 
 
 Der Simulator von Qiskit nennt sich " Aer" und wir erstellen zunächst  ein neues Simulator-Objekt.
+
+
+```python
+
+```
 
 
 ```python
