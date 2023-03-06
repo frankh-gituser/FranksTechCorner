@@ -1,4 +1,4 @@
-### [zurück zum Index](../index.md)
+### [zurück zum Index](../../index.md)
 
 ### Erste Quanten Schaltkreise (Gates)
 
