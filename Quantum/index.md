@@ -5,12 +5,6 @@
 
 ### [zurück zum Index](index.md)
 
-
-## Grundlagen der Quantencomputer Programmierung 
-
-### [Grundlagen](grundlagen.md)
-
-
 ## Quantencomputing in Kürze
 
 Quantencomputing stellt ein neues Paradigma in der Datenverarbeitung dar, bei dem die grundlegenden Prinzipien der Quantenmechanik
@@ -59,6 +53,11 @@ Schnelles Quiz
 Lösung: A
 
 
+## Grundlagen der Quantencomputer Programmierung 
+
+### [Grundlagen](grundlagen.md)
+
+
 ## Quantum States and Qubits
 
 [U-Gates ](quiskit-python-samples/prep-UGate-QVersion/prep-UGate-QVersion.md)
@@ -66,10 +65,13 @@ Lösung: A
 [Singe Gates - X, Y, Z-Gate und Hadamard](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
 
 
-## Quiskit Sample Jupyter Notebooks
+## Qiskit Sample Jupyter Notebooks
+
+[Qiskit Sample Single Qbit Gates](quiskit-python-samples/quiskit-jpnotebooks.md)
+
+## Qiskit Sample Questions
 
 [Quiskit Sample Single Qbit Gates](quiskit-python-samples/quiskit-jpnotebooks.md)
-
 
 
 
