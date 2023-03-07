@@ -62,7 +62,9 @@ Lösung: A
 
 [U-Gates ](quiskit-python-samples/prep-UGate-QVersion/prep-UGate-QVersion.md)
 
-[Singe Gates - X, Y, Z-Gate und Hadamard](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
+[Single Gates - X, Y, Z-Gate und Hadamard](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
+
+[Barrier-Gates ](quiskit-python-samples/prep-create-barriers/prep-create-barriers.md)
 
 
 ## Qiskit Sample Jupyter Notebooks
