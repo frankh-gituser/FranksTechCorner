@@ -3,16 +3,13 @@
 [comment]: <> (This is a comment, it will not be included)
 [//]: <> (This is also a comment.)
 
-### [zurück zum Index](../index.md)
+### [zurück zum Index](index.md)
 
 
 ## Grundlagen der Quantencomputer Programmierung 
+
 ### [Grundlagen](grundlagen.md)
-### [zurück zum Index](../grundlagen.md)
 
-## Quiskit Sample Jupyter Notebooks
-
-[Quiskit Sample Single Qbit Gates](quiskit-python-samples/quiskit-jpnotebooks.md)
 
 ## Quantencomputing in Kürze
 
@@ -53,7 +50,7 @@ zu lösen als mit einem herkömmlichen Computer.
 
 Schnelles Quiz
 
-# Quantencomputer werden irgendwann...
+### Quantencomputer werden irgendwann...
 
 	...die Geschwindigkeit von herkömmlichen Computern erhöhen.
 	...herkömmliche Computer ersetzen.
@@ -67,6 +64,11 @@ Lösung: A
 [U-Gates ](quiskit-python-samples/prep-UGate-QVersion/prep-UGate-QVersion.md)
 
 [Singe Gates - X, Y, Z-Gate und Hadamard](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
+
+
+## Quiskit Sample Jupyter Notebooks
+
+[Quiskit Sample Single Qbit Gates](quiskit-python-samples/quiskit-jpnotebooks.md)
 
 
 
