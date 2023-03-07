@@ -67,13 +67,15 @@ Lösung: A
 [Barrier-Gates ](quiskit-python-samples/prep-create-barriers/prep-create-barriers.md)
 
 
+## Qiskit Sample Questionnaire
+
+
+[Sample Questions ](quiskit-python-samples/prep-API-Questions/prep-API-Questions.md)
+
+
 ## Qiskit Sample Jupyter Notebooks
 
-[Qiskit Sample Single Qbit Gates](quiskit-python-samples/quiskit-jpnotebooks.md)
-
-## Qiskit Sample Questions
-
-[Quiskit Sample Single Qbit Gates](quiskit-python-samples/quiskit-jpnotebooks.md)
+[U-Gates ](jupyter-notebooks/prep-UGate-QVersion.ipynb)
 
 
 
