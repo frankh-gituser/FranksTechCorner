@@ -223,8 +223,11 @@ gate_demo(gates='pauli+h')
 ### Which statement will create a quantum circuit with four quantum bits and four classical bits?
 
 A. QuantumCircuit (4,4)
+
 B. QuantumCircuit (4)
+
 С. QuantumCircuit (QuantumRegister (4, 'grO'),QuantumRegister (4, 'crI'))
+
 D. QuantumCircuit ([4,4])
 
 
@@ -248,15 +251,20 @@ qc.draw()
 
 
 QuantumCircuit (4, 3) 
+
 Ein QuantumCircuit mit 4 qubits und 3 klassischen Bits
+
 
 https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.html
 
 ## Assuming the fragment below, which three code fragments would produce the circuit illustrated ?
 
 inp reg = QuantumRegister (2, name='inp")
+
 ancilla = QuantumRegister (1, name='anc')
+
 qo = QuantumCircuit (in reg, ancilla)
+
 # Insert code here
 
 ![image logo](/quiskit-python-samples/MyFirstSample/sampe-question-3.png)
