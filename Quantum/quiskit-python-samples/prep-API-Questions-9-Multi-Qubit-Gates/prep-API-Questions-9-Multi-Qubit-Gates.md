@@ -12,7 +12,7 @@ from qiskit.providers.aer import QasmSimulator
 provider = IBMQ.load_account()
 ```
 
-    ibmqfactory.load_account:WARNING:2023-03-09 16:39:41,967: Credentials are already in use. The existing account in the session will be replaced.
+    <frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
 
 
 Import Basic Functions First
@@ -32,18 +32,9 @@ from numpy import sqrt, pi
 https://slides.com/javafxpert/prep-qiskit-dev-cert-exam#/21
 
 
-# sample question #9
+```python
 
-
-### Familiarity with Qiskit API, multi-qubit gates
-
-
-9. Which code fragment will produce a multi-qubit gate other than a CNOT ?
-
-    A. qc.cx(0,1)
-    B. qc.cnot(0,1)
-    C. qc.mct([0],1)
-    D. qc.cz(0,1)
+```
 
 
 
@@ -79,7 +70,7 @@ qc.draw()
 
 
     
-![png](output_7_0.png)
+![png](output_6_0.png)
     
 
 
@@ -90,6 +81,26 @@ qc.draw()
 qc = QuantumCircuit(2)
 # Apply H-gate to the first:
 qc.h(0)
+qc.draw()
+```
+
+
+
+
+    
+![png](output_7_0.png)
+    
+
+
+
+
+```python
+# And let’s see what happens when we apply the CNOT gate:
+qc = QuantumCircuit(2)
+# Apply H-gate to the first:
+qc.h(0)
+# Apply a CNOT:
+qc.cx(0,1)
 qc.draw()
 ```
 
@@ -120,19 +131,32 @@ array_to_latex(final_state, prefix="\\text{Statevector = }")
 $$
 \text{Statevector = }
 \begin{bmatrix}
-\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}} & 0 & 0  \\
+\tfrac{1}{\sqrt{2}} & 0 & 0 & \tfrac{1}{\sqrt{2}}  \\
  \end{bmatrix}
 $$
 
 
 
 
+# sample question #9
+
+
+### Familiarity with Qiskit API, multi-qubit gates
+
+
+9. Which code fragment will produce a multi-qubit gate other than a CNOT ?
+
+    A. qc.cx(0,1)
+    
+    B. qc.cnot(0,1)
+    
+    C. qc.mct([0],1)
+    
+    D. qc.cz(0,1)
+
+
 ```python
-# And let’s see what happens when we apply the CNOT gate:
-qc = QuantumCircuit(2)
-# Apply H-gate to the first:
-qc.h(0)
-# Apply a CNOT:
+qc = QuantumCircuit (2,2)
 qc.cx(0,1)
 qc.draw()
 ```
@@ -141,7 +165,55 @@ qc.draw()
 
 
     
-![png](output_10_0.png)
+![png](output_12_0.png)
+    
+
+
+
+
+```python
+qc = QuantumCircuit (2,2)
+qc.cnot(0,1)
+qc.draw()
+```
+
+
+
+
+    
+![png](output_13_0.png)
+    
+
+
+
+
+```python
+qc = QuantumCircuit (2,2)
+qc.mct([0],1)
+qc.draw()
+```
+
+
+
+
+    
+![png](output_14_0.png)
+    
+
+
+
+
+```python
+qc = QuantumCircuit (2,2)
+qc.cz(0,1)
+qc.draw()
+```
+
+
+
+
+    
+![png](output_15_0.png)
     
 
 
@@ -158,31 +230,3 @@ qc.draw()
 ![image logo](../images_samples/cnot-2.png)
 
     qc.cz(0,1)
-
-
-```python
-qc = QuantumCircuit (2,2)
-qc.cx(0,1)
-qc.draw()
-```
-
-
-```python
-qc = QuantumCircuit (2,2)
-qc.cnot(0,1)
-qc.draw()
-```
-
-
-```python
-qc = QuantumCircuit (2,2)
-qc.mct([0],1)
-qc.draw()
-```
-
-
-```python
-qc = QuantumCircuit (2,2)
-qc.cz(0,1)
-qc.draw()
-```
