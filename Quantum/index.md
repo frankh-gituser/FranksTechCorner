@@ -70,7 +70,7 @@ Lösung: A
 ## Qiskit Sample Questionnaire
 
 
-[Sample Questions ](quiskit-python-samples/prep-API-Questions/prep-API-Questions.md)
+[Sample Questions: Familiarity with Qiskit API  ](quiskit-python-samples/prep-API-Questions/prep-API-Questions.md)
 
 
 ## Qiskit Sample Jupyter Notebooks

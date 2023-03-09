@@ -12,7 +12,7 @@ from qiskit.providers.aer import QasmSimulator
 provider = IBMQ.load_account()
 ```
 
-    ibmqfactory.load_account:WARNING:2023-03-06 17:12:31,838: Credentials are already in use. The existing account in the session will be replaced.
+    <frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
 
 
 Import Basic Functions First
@@ -158,15 +158,113 @@ D.
 
 ```
 
+## measure vs. measure_all
+### 4. Given an empty QuantumCircuit object, q, with three qubits and three classical bits, which one of these code fragments would create this circuit?
+
+    A. qc.measure ([0, 1,2], [0, 1,2])
+    B. qc.measure ([0, 0], [1, 1], [2, 2] )
+    C. qc.measure.all ()
+    D. qc.measure ( 0,1,2 )
+
+
 
 ```python
+qc.measure ([0,1,2],[0,1,2])
+```
 
+
+
+
+    <qiskit.circuit.instructionset.InstructionSet at 0x7f43ff538280>
+
+
+
+
+```python
+qc.measure ([0,0],[1,1],[2,2] )
+```
+
+    Traceback [1;36m(most recent call last)[0m:
+    [1;36m  Input [1;32mIn [12][1;36m in [1;35m<cell line: 1>[1;36m[0m
+    [1;33m    qc.measure ([0,0],[1,1],[2,2] )[0m
+    [1;31mTypeError[0m[1;31m:[0m measure() takes 3 positional arguments but 4 were given
+    
+    Use %tb to get the full traceback.
+
+
+
+
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.iqx-button {
+  background-color: #0f62fe; 
+  color: white; 
+}
+.iqx-button:hover {
+  background-color: #0043ce;
+  color: white;
+}
+</style>
+<a href="https://stackoverflow.com/search?q=TypeError: measure() takes 3 positional arguments but 4 were given" target='_blank'><button class='button iqx-button'>Search for solution online</button></a>
+
+
+
+
+```python
+qc.measure_all ()
 ```
 
 
 ```python
-
+qc.measure (0,1,2)
 ```
+
+    Traceback [1;36m(most recent call last)[0m:
+    [1;36m  Input [1;32mIn [15][1;36m in [1;35m<cell line: 1>[1;36m[0m
+    [1;33m    qc.measure (0,1,2)[0m
+    [1;31mTypeError[0m[1;31m:[0m measure() takes 3 positional arguments but 4 were given
+    
+    Use %tb to get the full traceback.
+
+
+
+
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.iqx-button {
+  background-color: #0f62fe; 
+  color: white; 
+}
+.iqx-button:hover {
+  background-color: #0043ce;
+  color: white;
+}
+</style>
+<a href="https://stackoverflow.com/search?q=TypeError: measure() takes 3 positional arguments but 4 were given" target='_blank'><button class='button iqx-button'>Search for solution online</button></a>
+
+
 
 
 ```python
