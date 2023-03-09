@@ -12,6 +12,9 @@ from qiskit.providers.aer import QasmSimulator
 provider = IBMQ.load_account()
 ```
 
+    ibmqfactory.load_account:WARNING:2023-03-09 16:39:41,967: Credentials are already in use. The existing account in the session will be replaced.
+
+
 Import Basic Functions First
 
 
@@ -54,6 +57,15 @@ qc = QuantumCircuit (4,4)
 #QuantumCircuit ([4, 4])
 qc.draw()
 ```
+
+
+
+
+    
+![png](output_5_0.png)
+    
+
+
 
 QuantumCircuit (4, 3) 
 
@@ -121,6 +133,15 @@ qc.measure (qr,cr)
 qc.draw ()
 ```
 
+
+
+
+    
+![png](output_8_0.png)
+    
+
+
+
 ### Lösung:
 
 A. 
@@ -176,15 +197,12 @@ qc.draw()
 ### Familiarity with Qiskit API, multi-qubit gates
 
 
-
-```python
 9. Which code fragment will produce a multi-qubit gate other than a CNOT ?
 
     A. qc.cx(0,1)
     B. qc.cnot(0,1)
     C. qc.mct([0],1)
     D. qc.cz(0,1)
-```
 
 
 
@@ -196,11 +214,23 @@ qc.draw()
 qc.measure ([0,1,2],[0,1,2])
 
 
+### Multiple Qubits and Entangled States
+
+https://qiskit.org/textbook/ch-gates/multiple-qubits-entangled-states.html
+
+## Multi-Qubit Gates
+
+### Ein wichtiges Zwei-Qubit-Gate ist das CNOT-Gate 
+
+Dieses Gatter ist ein bedingtes (conditional) Gate, das ein X-Gate auf dem zweiten Qubit (Ziel) ausführt, wenn der Zustand des ersten Qubits (Kontrolle) ist |1⟩ 
+Das Gate wird auf einer Schaltung wie dieser gezeichnet, mit q0 als Steuerung (control) und q1 als Ziel (target):
 
 
 ```python
-qc = QuantumCircuit (2,2)
+qc = QuantumCircuit(2)
+# Apply CNOT
 qc.cx(0,1)
+# See the circuit:
 qc.draw()
 ```
 
@@ -215,8 +245,10 @@ qc.draw()
 
 
 ```python
-qc = QuantumCircuit (2,2)
-qc.cnot(0,1)
+# put qubit in Superposition |+) 
+qc = QuantumCircuit(2)
+# Apply H-gate to the first:
+qc.h(0)
 qc.draw()
 ```
 
@@ -231,24 +263,36 @@ qc.draw()
 
 
 ```python
-qc = QuantumCircuit (2,2)
-qc.mct([0],1)
-qc.draw()
+# Let's see the result:
+from qiskit import QuantumCircuit, Aer, assemble
+svsim = Aer.get_backend('aer_simulator')
+qc.save_statevector()
+qobj = assemble(qc)
+final_state = svsim.run(qobj).result().get_statevector()
+# Print the statevector neatly:
+array_to_latex(final_state, prefix="\\text{Statevector = }")
 ```
 
 
 
 
-    
-![png](output_19_0.png)
-    
+$$
+\text{Statevector = }
+\begin{bmatrix}
+\tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}} & 0 & 0  \\
+ \end{bmatrix}
+$$
 
 
 
 
 ```python
-qc = QuantumCircuit (2,2)
-qc.cz(0,1)
+# And let’s see what happens when we apply the CNOT gate:
+qc = QuantumCircuit(2)
+# Apply H-gate to the first:
+qc.h(0)
+# Apply a CNOT:
+qc.cx(0,1)
 qc.draw()
 ```
 
@@ -273,3 +317,46 @@ qc.draw()
 ![image logo](../images_samples/cnot-2.png)
 
     qc.cz(0,1)
+
+
+```python
+qc = QuantumCircuit (2,2)
+qc.cx(0,1)
+qc.draw()
+```
+
+
+```python
+qc = QuantumCircuit (2,2)
+qc.cnot(0,1)
+qc.draw()
+```
+
+
+```python
+qc = QuantumCircuit (2,2)
+qc.mct([0],1)
+qc.draw()
+```
+
+
+```python
+qc = QuantumCircuit (2,2)
+qc.cz(0,1)
+qc.draw()
+```
+
+
+# sample question #10
+
+
+### Familiarity with Qiskit API, Toffoli gate
+
+
+
+```python
+
+10. Which code fragment will produce a multi-qubit gate other than a Toffoli?
+
+
+```
