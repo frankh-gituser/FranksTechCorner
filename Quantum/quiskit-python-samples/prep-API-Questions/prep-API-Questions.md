@@ -29,12 +29,27 @@ from qiskit.visualization import plot_bloch_multivector, array_to_latex
 from numpy import sqrt, pi
 ```
 
-https://slides.com/javafxpert/prep-qiskit-dev-cert-exam#/21
+# Qiskit API
 
-## Qiskit API
 
 Sample Questions can be found here: 
 https://slides.com/javafxpert/prep-qiskit-dev-cert-exam#/21
+
+
+
+
+
+# sample question #9
+
+
+### Familiarity with Qiskit API, multi-qubit gates
+
+[Sample Question 9:  Multi Qubit Gates ](quiskit-python-samples/prep-API-Questions-9-Multi-Qubit-Gates/prep-API-Questions-9-Multi-Qubit-Gates.md)
+
+[Sample Question 9:  Multi Qubit Gates ](prep-API-Questions-9-Multi-Qubit-Gates/prep-API-Questions-9-Multi-Qubit-Gates.md)
+
+
+
 
 
 ### Which statement will create a quantum circuit with four quantum bits and four classical bits?
@@ -62,7 +77,7 @@ qc.draw()
 
 
     
-![png](output_5_0.png)
+![png](output_6_0.png)
     
 
 
@@ -137,7 +152,7 @@ qc.draw ()
 
 
     
-![png](output_8_0.png)
+![png](output_9_0.png)
     
 
 
@@ -185,18 +200,9 @@ qc.draw()
 
 
     
-![png](output_13_0.png)
+![png](output_14_0.png)
     
 
-
-
-
-# sample question #9
-
-
-### Familiarity with Qiskit API, multi-qubit gates
-
-[Sample Question 9:  Multi Qubit Gates ](quiskit-python-samples/prep-API-Questions-9-Multi-Qubit-Gates/prep-API-Questions-9-Multi-Qubit-Gates.md)
 
 
 9. Which code fragment will produce a multi-qubit gate other than a CNOT ?
