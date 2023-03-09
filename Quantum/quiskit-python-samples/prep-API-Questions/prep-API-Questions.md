@@ -12,9 +12,6 @@ from qiskit.providers.aer import QasmSimulator
 provider = IBMQ.load_account()
 ```
 
-    <frozen importlib._bootstrap>:219: RuntimeWarning: scipy._lib.messagestream.MessageStream size changed, may indicate binary incompatibility. Expected 56 from C header, got 64 from PyObject
-
-
 Import Basic Functions First
 
 
@@ -57,15 +54,6 @@ qc = QuantumCircuit (4,4)
 #QuantumCircuit ([4, 4])
 qc.draw()
 ```
-
-
-
-
-    
-![png](output_5_0.png)
-    
-
-
 
 QuantumCircuit (4, 3) 
 
@@ -133,15 +121,6 @@ qc.measure (qr,cr)
 qc.draw ()
 ```
 
-
-
-
-    
-![png](output_8_0.png)
-    
-
-
-
 ### Lösung:
 
 A. 
@@ -188,42 +167,6 @@ qc.draw()
 qc.measure ([0,0],[1,1],[2,2] )
 ```
 
-    Traceback [1;36m(most recent call last)[0m:
-    [1;36m  Input [1;32mIn [25][1;36m in [1;35m<cell line: 1>[1;36m[0m
-    [1;33m    qc.measure ([0,0],[1,1],[2,2] )[0m
-    [1;31mTypeError[0m[1;31m:[0m measure() takes 3 positional arguments but 4 were given
-    
-    Use %tb to get the full traceback.
-
-
-
-
-<style>
-.button {
-  border: none;
-  color: white;
-  padding: 4px 8px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
-  transition-duration: 0.2s;
-  cursor: pointer;
-}
-.iqx-button {
-  background-color: #0f62fe; 
-  color: white; 
-}
-.iqx-button:hover {
-  background-color: #0043ce;
-  color: white;
-}
-</style>
-<a href="https://stackoverflow.com/search?q=TypeError: measure() takes 3 positional arguments but 4 were given" target='_blank'><button class='button iqx-button'>Search for solution online</button></a>
-
-
-
 
 ```python
 qc.measure_all ()
@@ -236,6 +179,6 @@ qc.measure (0,1,2)
 
 Solution: https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.html
 
-![image logo](/images_samples/measure_vs_measure_all.png)
+![image logo](../images_samples/measure_vs_measure_all.png)
 
 qc.measure ([0,1,2],[0,1,2])
