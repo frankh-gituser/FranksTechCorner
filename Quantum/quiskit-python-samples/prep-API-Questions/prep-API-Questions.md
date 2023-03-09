@@ -44,9 +44,7 @@ https://slides.com/javafxpert/prep-qiskit-dev-cert-exam#/21
 
 ### Familiarity with Qiskit API, multi-qubit gates
 
-[Sample Question 9:  Multi Qubit Gates ](quiskit-python-samples/prep-API-Questions-9-Multi-Qubit-Gates/prep-API-Questions-9-Multi-Qubit-Gates.md)
-
-[Sample Question 9:  Multi Qubit Gates ](prep-API-Questions-9-Multi-Qubit-Gates/prep-API-Questions-9-Multi-Qubit-Gates.md)
+[Sample Question 9:  Multi Qubit Gates ](../prep-API-Questions-9-Multi-Qubit-Gates/prep-API-Questions-9-Multi-Qubit-Gates.md)
 
 
 
