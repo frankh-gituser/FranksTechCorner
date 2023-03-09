@@ -33,16 +33,13 @@ from numpy import sqrt, pi
 
 
 Sample Questions can be found here: 
-https://slides.com/javafxpert/prep-qiskit-dev-cert-exam#/21
+https://slides.com/javafxpert/prep-qiskit-dev-cert-exam#
 
 
 
 
 
-# sample question #9
-
-
-### Familiarity with Qiskit API, multi-qubit gates
+## Question #9 : Familiarity with Qiskit API, multi-qubit gates
 
 [Sample Question 9:  Multi Qubit Gates ](../prep-API-Questions-9-Multi-Qubit-Gates/prep-API-Questions-9-Multi-Qubit-Gates.md)
 
