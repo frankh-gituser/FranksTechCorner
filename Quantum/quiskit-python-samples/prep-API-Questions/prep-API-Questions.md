@@ -1,38 +1,35 @@
-```python
-import numpy as np
+<details open>
 
-# Importing standard Qiskit libraries
-from qiskit import QuantumCircuit, transpile, Aer, IBMQ
-from qiskit.tools.jupyter import *
-from qiskit.visualization import *
-from ibm_quantum_widgets import *
-from qiskit.providers.aer import QasmSimulator
+<summary>Import Basic Functions First</summary>
 
-# Loading your IBM Quantum account(s)
-provider = IBMQ.load_account()
-```
+    import numpy as np
 
-    ibmqfactory.load_account:WARNING:2023-03-09 16:39:41,967: Credentials are already in use. The existing account in the session will be replaced.
+    # Importing standard Qiskit libraries
+    from qiskit import QuantumCircuit, transpile, Aer, IBMQ
+    from qiskit.tools.jupyter import *
+    from qiskit.visualization import *
+    from ibm_quantum_widgets import *
+    from qiskit.providers.aer import QasmSimulator
 
+    # Loading your IBM Quantum account(s)
+    provider = IBMQ.load_account()
+    
+    import qiskit
+    from qiskit import ClassicalRegister, QuantumRegister, QuantumCircuit
+    from qiskit import execute, BasicAer, Aer
+    from qiskit.tools.visualization import plot_histogram, circuit_drawer
 
-Import Basic Functions First
+    from qiskit.visualization import plot_state_qsphere
+    from qiskit.visualization import plot_bloch_multivector, array_to_latex
+    from numpy import sqrt, pi
 
-
-```python
-import qiskit
-from qiskit import ClassicalRegister, QuantumRegister, QuantumCircuit
-from qiskit import execute, BasicAer, Aer
-from qiskit.tools.visualization import plot_histogram, circuit_drawer
-
-from qiskit.visualization import plot_state_qsphere
-from qiskit.visualization import plot_bloch_multivector, array_to_latex
-from numpy import sqrt, pi
-```
+</details>
 
 # Qiskit API
 
 
 Sample Questions can be found here: 
+
 https://slides.com/javafxpert/prep-qiskit-dev-cert-exam#
 
 
@@ -72,7 +69,7 @@ qc.draw()
 
 
     
-![png](output_6_0.png)
+![png](output_4_0.png)
     
 
 
@@ -147,7 +144,7 @@ qc.draw ()
 
 
     
-![png](output_9_0.png)
+![png](output_7_0.png)
     
 
 
@@ -195,53 +192,7 @@ qc.draw()
 
 
     
-![png](output_14_0.png)
-    
-
-
-
-9. Which code fragment will produce a multi-qubit gate other than a CNOT ?
-
-    A. qc.cx(0,1)
-    B. qc.cnot(0,1)
-    C. qc.mct([0],1)
-    D. qc.cz(0,1)
-
-
-
-### Solution
-    https://qiskit.org/documentation/stubs/qiskit.circuit.QuantumCircuit.html
-
-![image logo](../images_samples/measure_vs_measure_all.png)
-
-qc.measure ([0,1,2],[0,1,2])
-
-
-### Multiple Qubits and Entangled States
-
-https://qiskit.org/textbook/ch-gates/multiple-qubits-entangled-states.html
-
-## Multi-Qubit Gates
-
-### Ein wichtiges Zwei-Qubit-Gate ist das CNOT-Gate 
-
-Dieses Gatter ist ein bedingtes (conditional) Gate, das ein X-Gate auf dem zweiten Qubit (Ziel) ausführt, wenn der Zustand des ersten Qubits (Kontrolle) ist |1⟩ 
-Das Gate wird auf einer Schaltung wie dieser gezeichnet, mit q0 als Steuerung (control) und q1 als Ziel (target):
-
-
-```python
-qc = QuantumCircuit(2)
-# Apply CNOT
-qc.cx(0,1)
-# See the circuit:
-qc.draw()
-```
-
-
-
-
-    
-![png](output_17_0.png)
+![png](output_12_0.png)
     
 
 
@@ -259,7 +210,7 @@ qc.draw()
 
 
     
-![png](output_18_0.png)
+![png](output_13_0.png)
     
 
 
@@ -303,7 +254,7 @@ qc.draw()
 
 
     
-![png](output_20_0.png)
+![png](output_15_0.png)
     
 
 
