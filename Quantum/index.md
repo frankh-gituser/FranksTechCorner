@@ -58,6 +58,11 @@ Lösung: A
 ### [Grundlagen](grundlagen.md)
 
 
+## Themenvertiefung der Quantencomputer Programmierung 
+
+### [Quantencomputer Programmierung](study-guide.md)
+
+
 ## Quantum States and Qubits
 
 [U-Gates ](quiskit-python-samples/prep-UGate-QVersion/prep-UGate-QVersion.md)
