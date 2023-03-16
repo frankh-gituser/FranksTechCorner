@@ -213,7 +213,7 @@ Von rechts nach links gelesen hat q0 den Wert 1 und q1 den Wert 0, und dieses Er
 ![image logo](images/reading-output.png)
 
 
-Im dem Screenshot zeigt, dass der Quantenschaltkreis drei Qubits enthält. 
+Im dem Screenshot sieht man, dass der Quantenschaltkreis drei Qubits enthält. 
 Die ersten beiden Qubits haben den Standardwert 0 und das dritte Qubit ist invertiert und hat den Wert 1. 
 Die resultierende Ausgabewahrscheinlichkeit in IBM Quantum Composer wird als 100 mit einer Wahrscheinlichkeit von 100 % angezeigt. 
 Von rechts nach links gelesen: 
