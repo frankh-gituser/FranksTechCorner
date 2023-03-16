@@ -135,7 +135,7 @@ Aufgrund dieser einfachen Umkehrung des Werts wird das Pauli X-Gate oft als "Bit
 Im Composer stellt sich das dann wie folgt dar:
 
 
-![image logo](../images/x-gate-composer.png)
+![image logo](images/x-gate-composer.png)
 
 
 Im obigen Screenshot ist zu sehen, wie ein einzelnes X-Gate auf ein Qubit angewendet wird, gefolgt von einer Messanweisung. 
@@ -196,13 +196,13 @@ Auf diese Weise können Sie sehen, zu welchem Ergebnis das Qubit nach Anwendung 
 Sie können die Änderungen in der Ausgabe der Qubits auch mit dem IBM Quantum Composer Inspector Tool schrittweise nachvollziehen. 
 Aktivieren Sie dazu Inspect Button.
 
-![image logo](../images/inspect.png)
+![image logo](images/inspect.png)
 
 
 Sie können dann die Ausführung jedes logischen Gatters im Quantenschaltkreis durchspielen und die Änderungen Schritt für Schritt sehen.
 
 
-![image logo](../images/composer-inspect.png)
+![image logo](images/composer-inspect.png)
 
 
 Es ist wichtig zu beachten, dass die im Balkendiagramm angezeigten Bits von rechts nach links gelesen werden, entsprechend jedem Qubit im Schaltkreis (von 0 ... i). 
@@ -210,7 +210,7 @@ Wenn der Quantenschaltkreis zum Beispiel zwei Qubits (q0, q1) hat und das erste 
 Von rechts nach links gelesen hat q0 den Wert 1 und q1 den Wert 0, und dieses Ergebnis (01) hat eine Wahrscheinlichkeit von 100 % - was bedeutet, dass die Schaltung einen Ergebniswert von 01 hat.
 
 
-![image logo](../images/reading-output.png)
+![image logo](images/reading-output.png)
 
 
 Im dem Screenshot zeigt, dass der Quantenschaltkreis drei Qubits enthält. 
