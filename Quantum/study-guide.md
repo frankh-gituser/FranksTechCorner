@@ -104,7 +104,9 @@ Der IBM Quantum Composer [IBM Quantum Composer ](https://quantum-computing.ibm.c
 
 Sie ermöglicht es, durch Ziehen und Ablegen von Quantencomputer-Schaltkreisen (d. h. Operationen) Quantenschaltungen zu erstellen und sie in einem Simulator oder auf einem echten Quantencomputer bei IBM auszuführen.
 
+![image logo](../images/quantum_composer.png)
 ![image logo](images/quantum_composer.png)
+![image logo](/images/quantum_composer.png)
 
 Schauen wir uns kurz an, wie man mit Qubits (Quantencomputer-Bits) und der IBM Quantum Composer-Anwendung einige grundlegende logische Gatter erstellt.
 
