@@ -1,7 +1,4 @@
-[zurück](study-guide.md)
-
-<details open>
-
+[zurück](../study-guide.md)<details open>
 <summary>Import Basic Functions First</summary>
 
     import numpy as np
@@ -26,7 +23,6 @@
     from numpy import sqrt, pi
 
 </details>
-
 ### Vorhersage des Outputs eines Qubits
 
 Nehmen wir an, wir haben einen Quantenschaltkreis, der aus einem einzigen Qubit besteht. 
@@ -38,30 +34,21 @@ qc = QuantumCircuit(1, 1)
 qc.measure(0, 0)
 backend = BasicAer.get_backend('qasm_simulator')
 result = execute(qc, backend, shots=1000).result()
-```
-
-Alle Messungen (**shots**) an dieser Schaltung ergeben eine 0. 
-Wenn wir den Bit-Flip-Operator (**X-Gate**) anwenden würden, wäre der Wert 1. Das Ergebnis der obigen Schaltung ist unten dargestellt.
-
-
-```python
 print(result.get_counts())
-
+display(qc.draw('mpl'))
 ```
 
     {'0': 1000}
 
 
 
-```python
-display(qc.draw('mpl'))
-```
-
-
     
-![png](output_7_0.png)
+![png](output_4_1.png)
     
 
+
+Alle Messungen (**shots**) an dieser Schaltung ergeben eine 0. 
+Wenn wir den Bit-Flip-Operator (**X-Gate**) anwenden würden, wäre der Wert 1. Das Ergebnis der obigen Schaltung ist unten dargestellt.
 
 Bringen wir das Qubit in eine Superposition und schauen die Vorhersageergebnisse an: 
 Da das Qubit nun sowohl den Wert 0 als auch den Wert 1 enthält, wäre zu erwarten, dass das Ergebnis 50/50 aufgeteilt wird, d.h.: 
@@ -74,30 +61,20 @@ qc = QuantumCircuit(1, 1)
 qc.h(0)
 qc.measure(0, 0)
 result = execute(qc, backend, shots=1000).result()
-
-```
-
-Wie man sieht, ist das Ergebnis gleichmässig verteilt:
-
-
-```python
 print(result.get_counts())
-
-```
-
-    {'1': 491, '0': 509}
-
-
-
-```python
 display(qc.draw('mpl'))
 ```
 
+    {'1': 492, '0': 508}
+
+
 
     
-![png](output_12_0.png)
+![png](output_7_1.png)
     
 
+
+Wie man sieht, ist das Ergebnis gleichmässig verteilt:
 
 ### Vorhersage des Outputs von zwei Qubits
 
@@ -110,8 +87,14 @@ Es ist wichtig, mit der Vorhersage der Messwerte von Quantenschaltungen vertraut
 qc = QuantumCircuit(2, 2)
 qc.measure([0,1], [0,1])
 result = execute(qc, backend, shots=1000).result()
-
+display(qc.draw('mpl'))
 ```
+
+
+    
+![png](output_11_0.png)
+    
+
 
 Wie könnte das Ergebnis der obigen Schaltung aussehen ?
 Da wir zwei Qubits haben (ohne Überlagerung), wäre als Ergebnis {'00': 1000} zu erwarten. 
@@ -127,17 +110,6 @@ print(result.get_counts())
     {'00': 1000}
 
 
-
-```python
-display(qc.draw('mpl'))
-```
-
-
-    
-![png](output_18_0.png)
-    
-
-
 Was aber, wenn wir eines der Qubits mit einem Bitflip versehen?
 
 
@@ -146,8 +118,14 @@ qc = QuantumCircuit(2, 2)
 qc.x(1)
 qc.measure([0,1], [0,1])
 result = execute(qc, backend, shots=1000).result()
-
+display(qc.draw('mpl'))
 ```
+
+
+    
+![png](output_15_0.png)
+    
+
 
 Wir haben den Wert des zweiten Qubits invertiert. 
 Wie könnte das Ergebnis der obigen Schaltung aussehen ?
@@ -160,17 +138,6 @@ print(result.get_counts())
 ```
 
     {'10': 1000}
-
-
-
-```python
-display(qc.draw('mpl'))
-```
-
-
-    
-![png](output_23_0.png)
-    
 
 
 Als nächstes setzen wir ein Qubit in Superposition. 
@@ -187,7 +154,14 @@ qc = QuantumCircuit(2, 2)
 qc.h(1)
 qc.measure([0,1], [0,1])
 result = execute(qc, backend, shots=1000).result()
+display(qc.draw('mpl'))
 ```
+
+
+    
+![png](output_19_0.png)
+    
+
 
 Man sieht, dass das erste Qubit auf 0 fixiert bleibt, während das zweite sowohl 0 als auch 1 hat.
 
@@ -197,20 +171,7 @@ print(result.get_counts())
 
 ```
 
-    {'00': 490, '10': 510}
-
-
-
-```python
-
-
-display(qc.draw('mpl'))
-```
-
-
-    
-![png](output_28_0.png)
-    
+    {'10': 500, '00': 500}
 
 
 Was passiert, wenn wir beide Qubits in Superposition bringen? 
@@ -227,12 +188,12 @@ print(result.get_counts())
 display(qc.draw('mpl'))
 ```
 
-    {'11': 261, '01': 238, '10': 243, '00': 258}
+    {'11': 252, '00': 238, '01': 259, '10': 251}
 
 
 
     
-![png](output_30_1.png)
+![png](output_23_1.png)
     
 
 
@@ -250,10 +211,13 @@ qc.h(0)
 qc.x(1)
 qc.measure(range(3), range(3))
 result = execute(qc, backend, shots=1000).result()
-
+display(qc.draw('mpl'))
 ```
 
-    {'011': 510, '010': 490}
+
+    
+![png](output_25_0.png)
+    
 
 
 Wenn Sie erwarten, dass die Ausgabe zwei mögliche Kombinationen enthält, die gleichmäßig aufgeteilt sind, dann liegen Sie richtig! 
@@ -271,16 +235,10 @@ Das dritte Qubit (das am weitesten links liegende) wird als 0 belassen, so dass 
 
 ```python
 print(result.get_counts())
-display(qc.draw('mpl'))
+
 ```
 
-    {'011': 510, '010': 490}
-
-
-
-    
-![png](output_34_1.png)
-    
+    {'010': 500, '011': 500}
 
 
 Wir könnten diesen Abschnitt zwar erweitern, indem wir alle Qubits in Überlagerung bringen qc.h(range(3)), aber Sie können sich vorstellen, wie die Ausgabeergebnisse exponentiell mit der Anzahl der Qubits in Überlagerung wachsen können (das Beispiel sollte für die Zertifizierungsprüfung reichen !).
@@ -293,5 +251,4 @@ Damit sollte klar geworden sein, wie die Messung der Ausgaben einer Quantenschal
 Machen wir weiter mit dem Bau des nächsten Quanten-Gates - diesmal mit zwei Qubits statt nur einem, dem Y-Gate!
 
 
-
-### [zurück](study-guide.md)
+[zurück](../study-guide.md)
