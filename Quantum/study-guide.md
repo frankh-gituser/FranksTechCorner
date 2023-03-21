@@ -46,8 +46,9 @@ oder in seiner eigenen lokal installierten Python+Quiskit Entwicklungsumgebung.
 2. [Creating Logic Gates with IBM Quantum Composer](#composer)
 3. [Messung der Ausgaben im IBM Quantum Composer](#measuring)
 4. [Vorhersage der Ausgabe von Quantenschaltungen] (#predicting)
-[X Gate (NOT)]
-[Y Gate]
+5. [X Gate (NOT)] (#x-gate)
+6. [Y Gate] (#y-gate)
+
 [CNOT Gate (AND)]
 [NAND Gate]
 [XOR Gate]
@@ -125,7 +126,7 @@ Zu den grundlegendsten Gattern gehören NOT, AND, OR, NAND und XOR. Im Folgenden
 Wir beginnen mit den einfachsten Gattern, der Menge der Pauli-Gatter (X, Y, Z) (https://en.wikipedia.org/wiki/Quantum_logic_gate#Pauli_gates_%28X,Y,Z%29).
 
 
-### X Gate (NOT)
+### X Gate (NOT) <a name="x-gate"></a>
 
 The most simplest of the logic gates is the Pauli X-gate, also called the NOT gate. This gate simply inverts the value of a qubit from 0 to 1 or 1 to 0. Due to this simple inversion of the value, the Pauli X-gate is often referred to as a bit-flip, since it “flips the bits” of the affected qubits.
 
@@ -232,10 +233,12 @@ Befindet sich ein Qubit jedoch in der Superposition, so hält es gleichzeitig de
 Aus diesem Grund kann es etwas schwierig sein, die Ausgabe eines Quantenschaltkreises vorherzusagen, insbesondere wenn er Qubits in superpositions enthält.
 
 Sehen wir uns also ein paar Beispielschaltungen für Quantencomputer an und lernen, wie man ihr Ergebnis vorhersagen kann. 
-Wir beginnen mit einer Quantenschaltung, die ein einzelnes Qubit enthält.
+Beginnen wir mit einer Quantenschaltung, die erst ein einzelnes Qubit und dann zwei Qubits enthält.
 
 
 [Vorhersage der Ausgabe von Quantenschaltungen](study-guide-chapter/Ausgabe-Vorhersagen/Ausgabe-Vorhersagen.md)
+
+
 
 
 

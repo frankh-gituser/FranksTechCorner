@@ -1,32 +1,31 @@
-```python
-import numpy as np
+[zurück](study-guide.md)
 
-# Importing standard Qiskit libraries
-from qiskit import QuantumCircuit, transpile, Aer, IBMQ
-from qiskit.tools.jupyter import *
-from qiskit.visualization import *
-from ibm_quantum_widgets import *
-from qiskit.providers.aer import QasmSimulator
+<details open>
 
-# Loading your IBM Quantum account(s)
-provider = IBMQ.load_account()
-```
+<summary>Import Basic Functions First</summary>
 
-    /tmp/ipykernel_82/1994989634.py:11: DeprecationWarning: The qiskit.IBMQ entrypoint and the qiskit-ibmq-provider package (accessible from 'qiskit.providers.ibmq`) are deprecated and will be removed in a future release. Instead you should use the qiskit-ibm-provider package which is accessible from 'qiskit_ibm_provider'. You can install it with 'pip install qiskit_ibm_provider'. Just replace 'qiskit.IBMQ' with 'qiskit_ibm_provider.IBMProvider'
-      provider = IBMQ.load_account()
+    import numpy as np
 
+    # Importing standard Qiskit libraries
+    from qiskit import QuantumCircuit, transpile, Aer, IBMQ
+    from qiskit.tools.jupyter import *
+    from qiskit.visualization import *
+    from ibm_quantum_widgets import *
+    from qiskit.providers.aer import QasmSimulator
 
+    # Loading your IBM Quantum account(s)
+    provider = IBMQ.load_account()
+    
+    import qiskit
+    from qiskit import ClassicalRegister, QuantumRegister, QuantumCircuit
+    from qiskit import execute, BasicAer, Aer
+    from qiskit.tools.visualization import plot_histogram, circuit_drawer
 
-```python
-import qiskit
-from qiskit import ClassicalRegister, QuantumRegister, QuantumCircuit
-from qiskit import execute, BasicAer, Aer
-from qiskit.tools.visualization import plot_histogram, circuit_drawer
+    from qiskit.visualization import plot_state_qsphere
+    from qiskit.visualization import plot_bloch_multivector, array_to_latex
+    from numpy import sqrt, pi
 
-from qiskit.visualization import plot_state_qsphere
-from qiskit.visualization import plot_bloch_multivector, array_to_latex
-from numpy import sqrt, pi
-```
+</details>
 
 ### Vorhersage des Outputs eines Qubits
 
@@ -47,15 +46,20 @@ Wenn wir den Bit-Flip-Operator (**X-Gate**) anwenden würden, wäre der Wert 1. 
 
 ```python
 print(result.get_counts())
+
+```
+
+    {'0': 1000}
+
+
+
+```python
 display(qc.draw('mpl'))
 ```
 
-    {'10': 499, '00': 501}
-
-
 
     
-![png](output_6_1.png)
+![png](output_7_0.png)
     
 
 
@@ -78,15 +82,20 @@ Wie man sieht, ist das Ergebnis gleichmässig verteilt:
 
 ```python
 print(result.get_counts())
+
+```
+
+    {'1': 491, '0': 509}
+
+
+
+```python
 display(qc.draw('mpl'))
 ```
 
-    {'10': 499, '00': 501}
-
-
 
     
-![png](output_10_1.png)
+![png](output_12_0.png)
     
 
 
@@ -112,15 +121,20 @@ Werfen wir einen Blick auf das Ergebnis:
 
 ```python
 print(result.get_counts())
-display(qc.draw('mpl'))
+
 ```
 
     {'00': 1000}
 
 
 
+```python
+display(qc.draw('mpl'))
+```
+
+
     
-![png](output_15_1.png)
+![png](output_18_0.png)
     
 
 
@@ -142,22 +156,28 @@ Da die Konvention ist, die Ausgabe von rechts nach links zu zeigen (wobei q0 der
 
 ```python
 print(result.get_counts())
-display(qc.draw('mpl'))
+
 ```
 
     {'10': 1000}
 
 
 
+```python
+display(qc.draw('mpl'))
+```
+
+
     
-![png](output_19_1.png)
+![png](output_23_0.png)
     
 
 
 Als nächstes setzen wir ein Qubit in Superposition. 
 Da dieses Qubit nun sowohl den Wert 0 als auch den Wert 1 annehmen kann, nehmen wir an, 
-das wir für alle möglichen Kombinationen dieses Qubits zusammen in Überlagerung mit dem statischen Qubit gleichzeitige Werte erhalten,
+das wir für alle möglichen Kombinationen dieses Qubits zusammen mit dem statischen Qubit in Superposition gleiche Anzahl an Wahrscheinlichkeiten der Werte erhalten,
 d.h. {'00': 500, '10': 500}. 
+
 Wir erwarten, dass das zweite Qubit (das am weitesten links liegende, das wir in Überlagerung gebracht haben) einen möglichen Wert von sowohl 0 als auch 1 enthält, 
 während das erste Qubit (das am weitesten rechts liegende) fest bei 0 bleibt.
 
@@ -174,29 +194,104 @@ Man sieht, dass das erste Qubit auf 0 fixiert bleibt, während das zweite sowohl
 
 ```python
 print(result.get_counts())
+
+```
+
+    {'00': 490, '10': 510}
+
+
+
+```python
+
+
 display(qc.draw('mpl'))
 ```
 
-    {'10': 499, '00': 501}
+
+    
+![png](output_28_0.png)
+    
+
+
+Was passiert, wenn wir beide Qubits in Superposition bringen? 
+Nun, jetzt erhalten wir alle Möglichkeiten für zwei Qubits 00, 01, 10, 11, die jeweils in 4 gleiche Ergebnisse aufgeteilt sind.
+
+
+```python
+qc = QuantumCircuit(2, 2)
+qc.h(0)
+qc.h(1)
+qc.measure([0,1], [0,1])
+result = execute(qc, backend, shots=1000).result()
+print(result.get_counts())
+display(qc.draw('mpl'))
+```
+
+    {'11': 261, '01': 238, '10': 243, '00': 258}
 
 
 
     
-![png](output_23_1.png)
+![png](output_30_1.png)
     
 
 
+### Vorhersage der Ausgabe von drei Qubits
 
-```python
+Schauen wir uns ein weiteres Beispiel an, diesmal mit 3 Qubits. 
+Um nicht den Überblick zu verlieren, bringen wir nur eines der Qubits in Superposition . 
+Wie könnte das Ergebnis der folgenden Schaltung dann aussehen ?
 
-```
-
-
-```python
-
-```
 
 
 ```python
+qc = QuantumCircuit(3, 3)
+qc.h(0)
+qc.x(1)
+qc.measure(range(3), range(3))
+result = execute(qc, backend, shots=1000).result()
 
 ```
+
+    {'011': 510, '010': 490}
+
+
+Wenn Sie erwarten, dass die Ausgabe zwei mögliche Kombinationen enthält, die gleichmäßig aufgeteilt sind, dann liegen Sie richtig! 
+
+Wir sollten folgendes Ergebnis sehen {'010: 500, '011': 500}. 
+
+Und warum? 
+
+Weil das erste Qubit (das ganz rechte) in die Superposition gesetzt wird, also sowohl eine 0 als auch eine 1 hat. 
+
+Das zweite Qubit (das mittlere) ist auf 1 geflippt (X-Gate) und bleibt auf diesem Wert stehen. 
+
+Das dritte Qubit (das am weitesten links liegende) wird als 0 belassen, so dass wir 010 und 011 haben.
+
+
+```python
+print(result.get_counts())
+display(qc.draw('mpl'))
+```
+
+    {'011': 510, '010': 490}
+
+
+
+    
+![png](output_34_1.png)
+    
+
+
+Wir könnten diesen Abschnitt zwar erweitern, indem wir alle Qubits in Überlagerung bringen qc.h(range(3)), aber Sie können sich vorstellen, wie die Ausgabeergebnisse exponentiell mit der Anzahl der Qubits in Überlagerung wachsen können (das Beispiel sollte für die Zertifizierungsprüfung reichen !).
+
+
+Übrigens, wenn Sie sich für das Ergebnis von 3 Qubits in Superposition interessieren, würde es in der Tat zu einer gleichmäßigen Aufteilung von 2^3 Möglichkeiten {'110': 113, '111': 108, '001': 134, '100': 116, '011': 145, '010': 141, '000': 111, '101': 132} kommen.
+
+
+Damit sollte klar geworden sein, wie die Messung der Ausgaben einer Quantenschaltung funktioniert.
+Machen wir weiter mit dem Bau des nächsten Quanten-Gates - diesmal mit zwei Qubits statt nur einem, dem Y-Gate!
+
+
+
+### [zurück](study-guide.md)
