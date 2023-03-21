@@ -45,9 +45,10 @@ oder in seiner eigenen lokal installierten Python+Quiskit Entwicklungsumgebung.
 1. [My Personal Experience Taking the Certification ExamIBM Quantum Composer](#personalexperience)
 2. [Creating Logic Gates with IBM Quantum Composer](#composer)
 3. [Messung der Ausgaben im IBM Quantum Composer](#measuring)
-4. [Vorhersage der Ausgabe von Quantenschaltungen] (#predicting)
-5. [X Gate (NOT)] (#x-gate)
-6. [Y Gate] (#y-gate)
+4. [Vorhersage der Ausgabe von Quantenschaltungen](#predicting)
+5. [X Gate (NOT)](#x-gate)
+6. [Y Gate](#y-gate)
+
 
 [CNOT Gate (AND)]
 [NAND Gate]
