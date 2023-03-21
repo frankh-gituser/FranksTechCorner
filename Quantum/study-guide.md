@@ -234,57 +234,9 @@ Aus diesem Grund kann es etwas schwierig sein, die Ausgabe eines Quantenschaltkr
 Sehen wir uns also ein paar Beispielschaltungen für Quantencomputer an und lernen, wie man ihr Ergebnis vorhersagen kann. 
 Wir beginnen mit einer Quantenschaltung, die ein einzelnes Qubit enthält.
 
-### Vorhersage des Outputs eines Qubits
 
-Nehmen wir an, wir haben einen Quantenschaltkreis, der aus einem einzigen Qubit besteht. 
-Wenn sich das Qubit nicht in Superposition befindet, ist es einfach, seinen Wert als 0 oder 1 vorherzusagen.
+[Vorhersage der Ausgabe von Quantenschaltungen](study-guide-chapter/Ausgabe-Vorhersagen/Ausgabe-Vorhersagen.md)
 
-```python
-qc = QuantumCircuit(1, 1)
-qc.measure(0, 0)
-backend = BasicAer.get_backend('qasm_simulator')
-result = execute(qc, backend, shots=1000).result()
-print(result.get_counts())
-display(qc.draw('mpl'))
-```
-
-Alle Messungen (**shots**) an dieser Schaltung ergeben eine 0. 
-Wenn wir den Bit-Flip-Operator (**X-Gate**) anwenden würden, wäre der Wert 1. Das Ergebnis der obigen Schaltung ist unten dargestellt.
-
-
-	{'0': 1000}
-
-
-![image logo](images/prdict-single.png)
-
-
-Versetzen wir das Qubit in Superposition und schauen die Vorhersageergebnisse an: 
-Da das Qubit nun sowohl den Wert 0 als auch den Wert 1 enthält, wäre zu erwarten, dass das Ergebnis 50/50 aufgeteilt wird, d.h.: 
-{'0': 500, '1': 500}. 
-Schauen wir uns das Ergebnis an.
-
-```python
-qc = QuantumCircuit(2, 2)
-qc.measure([0,1], [0,1])
-result = execute(qc, backend, shots=1000).result()
-print(result.get_counts())
-display(qc.draw('mpl'))
-```
-
-Wie man sieht, ist das Ergebnis gleichmässig verteilt:
-
-
-	{'0': 503, '1': 497}
-
-![image logo](images/prdict-multi.png)
-
-
-### Vorhersage des Outputs von zwei Qubits
-
-
-Gehen wir jetzt einen Schritt weiter und verwenden als nächstes zwei Qubits. 
-Es ist wichtig, mit der Vorhersage der Messwerte von Quantenschaltungen vertraut zu sein, um Quantencomputerschaltungen genau aufbauen und analysieren zu können 
-(insbesondere für die Zertifizierungsprüfung!).
 
 
 
