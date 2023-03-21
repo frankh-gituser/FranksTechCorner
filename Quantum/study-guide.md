@@ -234,6 +234,29 @@ Aus diesem Grund kann es etwas schwierig sein, die Ausgabe eines Quantenschaltkr
 Sehen wir uns also ein paar Beispielschaltungen für Quantencomputer an und lernen, wie man ihr Ergebnis vorhersagen kann. 
 Wir beginnen mit einer Quantenschaltung, die ein einzelnes Qubit enthält.
 
+### Vorhersage des Outputs eines Qubits
+
+Nehmen wir an, wir haben einen Quantenschaltkreis, der aus einem einzigen Qubit besteht. 
+Wenn sich das Qubit nicht in Superposition befindet, ist es einfach, seinen Wert als 0 oder 1 vorherzusagen.
+
+```python
+qc = QuantumCircuit(1, 1)
+qc.measure(0, 0)
+backend = BasicAer.get_backend('qasm_simulator')
+result = execute(qc, backend, shots=1000).result()
+print(result.get_counts())
+```
+
+    {'0': 1000}
+
+
+
+```python
+
+```
+
+
+
 
 
 
