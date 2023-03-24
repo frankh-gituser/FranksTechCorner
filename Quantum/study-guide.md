@@ -341,6 +341,62 @@ Danach erfolgt die Messung des Ergebnisses.
 
 ### OR Gate (AND) <a name="OR-gate"></a>
 
+Das letzte Beispiel für ein Logik-Gate ist das OR-Gate. Während das AND-Gate die beiden Eingangs-Qubits daraufhin vergleicht, ob sie einen Wert von 1 haben, damit der Ausgang einen Wert von 1 hat, setzt das OR-Gate den Ausgang auf 1, wenn einer der beiden Eingänge 1 ist.
+
+Das OR-Gate wird in einem Quantenschaltkreis mit zwei CX-Gates (conditional NOT), gefolgt von einem Toffoli-gate, realisiert.
+
+	OR
+	0 0: {'0': 1024}
+	0 1: {'1': 1024}
+	1 0: {'1': 1024}
+	1 1: {'1': 1024}
+
+![image logo](images/composer-OR-Gate.png)
+
+Das logische OR-Gate ist etwas komplexer als unsere vorherigen Beispiele, da es ein zusätzliches logisches Gate enthält. 
+Die OR-Schaltung kombiniert den bedingten NOT-Operator (CX) mit einem Toffoli-Operator (CCX), um das Ergebnis "UND" zu verknüpfen.
+
+Im obigen Screenshot sieht das OR-Gate dem XOR-Gate sehr ähnlich. Zunächst wird daher ein bedingter NOT-Operator (CX) auf jedes der Eingangs-Qubits (q0, q1) angewendet und das Ergebnis im dritten Qubit (q2) abgespeichert. Anschließend wird wieder ein Toffoli-Gate (CCX) auf die ersten beiden Eingänge angewendet und  das Ergebnis im dritten Qubit gespeichert. Auf diese Weise wird zunächst eine XOR-Verknüpfung durchgeführt, und dann, wenn die beiden Eingänge beide 1 sind, wird der Ausgang durch das Toffoli-Gate entsprechend umgedreht.
+
+Das heißt, um das OR-Gate zu implementieren, wenn das erste Qubit 1 ist, kippen wir das Ausgangsqubit auf 1. Andernfalls wird es bei 0 gelassen. 
+Wenn das zweite Qubit 1 ist, wird das Ergebnisbit erneut gekippt (auf 0, wenn das erste 1 war, oder auf 1, wenn das erste 0 war). 
+Andernfalls wird das Ausgangs-Qubit unverändert gelassen. Wenn schließlich beide Eingangs-Qubits 1 sind, wird das Ergebnis-Qubit ein weiteres Mal umgedreht.
+
+Dies wird besser deutlich, wenn man sich den Python-Qiskit-Quellcode anschaut:
+
+	qc = QuantumCircuit(3, 1)   
+	# OR
+	# If the first bit is 1, flip the result bit to 1. Otherwise, leave it as 0.
+	qc.cx(0, 2)
+	# If the second bit is 1, flip the result bit again (to 0 if the first is 1, or 1 if the first is 0). Otherwise, leave it as-is.
+	qc.cx(1, 2)
+	# If both bits are 1, flip the result bit one more time.
+	qc.ccx(0, 1, 2)
+	qc.barrier()
+	# Measure
+	qc.measure(2, 0)
+	qc.draw()
+
+
+![image logo](images/OR-Gate.png)
+
+Im obigen Code werden die beiden CX-Operatoren, gefolgt vom CCX, miteinander verkettet . 
+Wenn z. B. 
+q0=0 und q1=1 ist, 
+hinterlässt der erste CX den Ausgang 0. 
+Der zweite CX ändert den Ausgang auf 1. 
+Der letzte CCX hinterlässt den Ausgang 1. 
+0 ODER 1 ist also gleich 1. 
+Der eigentliche Test ergibt sich aus dem Fall q0=1 und q1=1. 
+In diesem Fall setzt die erste CX den Ausgang auf 1, die zweite CX setzt den Ausgang wieder auf 0 und die CCX setzt den Ausgang ein weiteres Mal auf 1 (da beide Eingänge 1 sind). Folglich ist 1 ODER 1 gleich 1.
+
+Den Python-Qiskit-Code für die obigen Logikgates-Beispiele findet man hier:
+
+https://gist.github.com/primaryobjects/49674b30f1882401b32fc46d1991ef89
+
+
+
+
 
 
 ### [Themenvertiefung der Quantencomputer Programmierung](../Quantum/study-guide.md)
