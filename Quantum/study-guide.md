@@ -48,12 +48,10 @@ oder in seiner eigenen lokal installierten Python+Quiskit Entwicklungsumgebung.
 4. [Vorhersage der Ausgabe von Quantenschaltungen](#predicting)
 5. [X Gate (NOT)](#x-gate)
 6. [Y Gate](#y-gate)
-
-
-[CNOT Gate (AND)]
-[NAND Gate]
-[XOR Gate]
-[OR Gate]
+7. [CNOT Gate (AND)](#CNOT-gate)
+8. [NAND Gate](#NAND-gate)
+9. [XOR Gate](#XOR-gate)
+10. [OR Gate](#OR-gate)
 [Quantum Gate Icons]
 [Initializing Qubits Using State Vectors]
 [Two Methods to Load a State Vector]
@@ -251,6 +249,57 @@ Wie in der obigen Schaltung zu sehen ist, wurden 3 Qubits hinzugefügt. Das erst
 
 [Single Gates - X, Y, Z-Gate und Hadamard](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
 
+CNOT Gate (AND) <a name="CNOT-gate"></a>
+
+Während das NOT-Gate im obigen Beispiel mit einem einzelnen Qubit arbeitet, arbeitet die nächste Gruppe von Gates mit zwei Qubits. Das AND-Gate nimmt zwei Eingangs-Qubits. Wenn beide den Wert 1 haben, wird das resultierende Qubit auf 1 gesetzt. 
+Wenn eines der Eingangs-Qubits 0 ist, wird das resultierende Qubit 0 sein.
+
+Ein AND-Gate kann leicht mit Hilfe eines **Toffoli**-Gate konstruiert werden, das auch "CCNOT-Gate" (d.h. doppelt gesteuertes NOT-Gate) oder "AND-Gate" genannt wird. 
+Ein Toffoli-Gate nimmt einfach zwei Eingangs-Qubits und dreht den Wert eines resultierenden Qubits um, wenn die beiden Eingänge den Wert 1 haben. Dies führt effektiv eine AND-Operation durch.
+
+![image logo](images/Composer-AND-Gate.png)
+
+Wie in der obigen Quantenschaltung im IBM Quantum Composer zu sehen ist, werden zwei Qubits mit dem Wert 1 initialisiert (durch Anwendung des X-Gatters auf jedes Qubit, wodurch deren Standardwerte von 0 auf 1 invertiert werden). 
+Dann wird ein Toffoli-Gate (CCNOT) auf die beiden Eingangs-Qubits angewendet, dessen Ausgang in einem dritten Qubit gespeichert ist. 
+Da die beiden Eingangs-Qubits den Wert 1 haben, wird das resultierende Ausgangsbit von 0 auf 1 umgedreht.
+
+In der Wahrscheinlichkeitsausgabe zeigt der IBM Quantum Composer eine 100%ige Wahrscheinlichkeit für das Ergebnis von 111 an. 
+Wenn man die Ausgabe von rechts nach links liest, ist 
+
+q0=1, q1=1, q2=1. 
+
+Das macht Sinn, da die ersten beiden Qubits mit dem Wert 1 initialisiert wurden (indem ihre Werte mit dem X-Gate invertiert wurden) und ein Toffoli-Gate auf diese beiden Qubits angewendet wurde, um das Ergebnis im dritten Qubit zu speichern. 
+Da das Toffoli-Gate eine AND-Verknüpfung ist und die beiden Eingänge 1 waren, ist 1 AND 1 gleich 1 - also hat das dritte Qubit den Wert 1.
+
+Um dies etwas besser zu beweisen, hier ein Beispiel für die Ausführung derselben Quantenschaltung mit einem AND-Gatter, wobei das erste Qubit den Wert 1 und das zweite Qubit den Wert 0 hat (q0=1, q1=0, q2=0).
+
+![image logo](images/Composer-AND-Gate-2.png)
+
+Da 1 AND 0 gleich 0 ist, ergibt die resultierende Wahrscheinlichkeitsausgabe (von rechts nach links gelesen) eine 100%ige Wahrscheinlichkeit für die Messung von 001.
+Wir können den Python Qiskit Code für ein AND-Gatter mit dem folgenden Beispiel schreiben.
+
+
+
+
+NAND Gate (AND) <a name="NAND-gate"></a>
+
+In Anlehnung an das obige Beispiel kann ein  NAND-Gate (NOT AND) implementiert werden, indem  fast die gleiche Schaltung wie im obigen Beispiel für AND verwendet wird und zusätzlich ein NOT-Operator auf das Ergebnis angewendet wird.
+
+[NAND Gate](quiskit-python-samples/NAND_Gate.md)
+
+![image logo](images/nand-gate.png)
+
+Zu beachten ist, dass ein X-Gate auf die ersten beiden Eingangs-Qubits angewendet wurde. 
+Dann ein Toffoli-Gate (AND) auf die ersten beiden Eingänge und das Ergebnis der Operation im dritten Qubit gespeichert. 
+Um schließlich eine NAND-Verknüpfung zu implementieren, wird ein X-Gate auf das Ausgangs-Qubit angewendet, das seinen Wert umkehrt.
+
+In der Ausgangswahrscheinlichkeit ist zu sehen, dass das Ergebnis 011 ist (q0=1, q1=1, q2=0), da 1 NOT AND 1 gleich 0 ist.
+
+
+XOR Gate (AND) <a name="XOR-gate"></a>
+
+
+OR Gate (AND) <a name="OR-gate"></a>
 
 
 
