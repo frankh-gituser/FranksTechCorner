@@ -249,7 +249,7 @@ Wie in der obigen Schaltung zu sehen ist, wurden 3 Qubits hinzugefügt. Das erst
 
 [Single Gates - X, Y, Z-Gate und Hadamard](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
 
-CNOT Gate (AND) <a name="CNOT-gate"></a>
+### CNOT Gate (AND) <a name="CNOT-gate"></a>
 
 Während das NOT-Gate im obigen Beispiel mit einem einzelnen Qubit arbeitet, arbeitet die nächste Gruppe von Gates mit zwei Qubits. Das AND-Gate nimmt zwei Eingangs-Qubits. Wenn beide den Wert 1 haben, wird das resultierende Qubit auf 1 gesetzt. 
 Wenn eines der Eingangs-Qubits 0 ist, wird das resultierende Qubit 0 sein.
@@ -281,7 +281,7 @@ Wir können den Python Qiskit Code für ein AND-Gatter mit dem folgenden Beispie
 
 
 
-NAND Gate (AND) <a name="NAND-gate"></a>
+### NAND Gate (AND) <a name="NAND-gate"></a>
 
 In Anlehnung an das obige Beispiel kann ein  NAND-Gate (NOT AND) implementiert werden, indem  fast die gleiche Schaltung wie im obigen Beispiel für AND verwendet wird und zusätzlich ein NOT-Operator auf das Ergebnis angewendet wird.
 
@@ -295,16 +295,40 @@ Um schließlich eine NAND-Verknüpfung zu implementieren, wird ein X-Gate auf da
 
 In der Ausgangswahrscheinlichkeit ist zu sehen, dass das Ergebnis 011 ist (q0=1, q1=1, q2=0), da 1 NOT AND 1 gleich 0 ist.
 
+Im Qiskit-python Code für NAND wird einfach der Operator qc.ccx() verwendet, um ein Toffoli-Gate auf die ersten beiden Qubits (q0, q1) anzuwenden und das Ergebnis im dritten Qubit (q2) zu speichern. 
+Anschließend wird ein X-Gate auf das dritte Qubit (q2) angewendet, um das Ergebnis zu erzeugen.
 
-XOR Gate (AND) <a name="XOR-gate"></a>
+	qc = QuantumCircuit(3, 1)
+
+    # Set up the registers
+    qc.x(0)
+    qc.x(1)
+
+    # AND
+    qc.ccx(0, 1, 2)
 
 
-OR Gate (AND) <a name="OR-gate"></a>
+
+    # Measure
+    qc.measure(2, 0)
+    qc.draw()
+
+### XOR Gate (AND) <a name="XOR-gate"></a>
+
+Das XOR-Gate (oder exklusiv ODER) kann mit Hilfe eines CX-Gates, auch "kontrolliertes NOT-Gate" genannt, erstellt werden. 
+Dieses Gate nimmt ein Eingangs-Qubit (Kontrollbit genannt) und ein Ausgangs-Qubit auf. 
+Das Ausgangsqubit wird nur dann invertiert, wenn das Eingangsqubit den Wert 1 hat. 
+Hat das Eingangsqubit den Wert 0, wird am Ausgang keine Änderung vorgenommen.
+
+Mit Hilfe des CX-Gates lässt sich eine XOR-Verknüpfung herstellen, indem  zwei CX-Gates in den Schaltkreis eingefügt werden, eines auf jedem Eingangs-Qubit, und das Ergebnis auf demselben Ausgangs-Qubit gespeichert wird. 
+Da das CX-Gate das Ausgangsqubit umdreht, wenn sein Eingang den Wert 1 hat, setzt die erste CX-Gatter-Operation den Ausgang auf 1, wenn der Eingang 1 war. So weit, so gut. Das zweite CX-Gate setzt den Ausgang auf das Gegenteil, wenn der zweite Eingang 1 war. Wenn also der erste Eingang eine 0 war, ist der Ausgang momentan eine 0 und wird daher auf eine 1 gesetzt (wenn das zweite Qubit 1 ist). Wenn die erste Eingabe eine 1 war und die Ausgabe eine 1 ist, wird das zweite Qubit, das den Wert 1 hat, die Ausgabe wieder auf 0 zurücksetzen. Das ist sinnvoll, da 1 XOR 1 gleich 0 und 0 XOR 1 gleich 1 ist.
+
+### OR Gate (AND) <a name="OR-gate"></a>
 
 
 
-### [zurück 1](../Quantum/study-guide.md)
-### [zurück 2](../Quantum/index.md)
+### [Themenvertiefung der Quantencomputer Programmierung](../Quantum/study-guide.md)
+### [Startseite](../Quantum/index.md)
 
 
 
