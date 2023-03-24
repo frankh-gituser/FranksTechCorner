@@ -299,19 +299,16 @@ Im Qiskit-python Code für NAND wird einfach der Operator qc.ccx() verwendet, um
 Anschließend wird ein X-Gate auf das dritte Qubit (q2) angewendet, um das Ergebnis zu erzeugen.
 
 	qc = QuantumCircuit(3, 1)
-
     # Set up the registers
     qc.x(0)
     qc.x(1)
-
     # AND
     qc.ccx(0, 1, 2)
-
-
-
     # Measure
     qc.measure(2, 0)
     qc.draw()
+
+
 
 ### XOR Gate (AND) <a name="XOR-gate"></a>
 
@@ -320,8 +317,27 @@ Dieses Gate nimmt ein Eingangs-Qubit (Kontrollbit genannt) und ein Ausgangs-Qubi
 Das Ausgangsqubit wird nur dann invertiert, wenn das Eingangsqubit den Wert 1 hat. 
 Hat das Eingangsqubit den Wert 0, wird am Ausgang keine Änderung vorgenommen.
 
-Mit Hilfe des CX-Gates lässt sich eine XOR-Verknüpfung herstellen, indem  zwei CX-Gates in den Schaltkreis eingefügt werden, eines auf jedem Eingangs-Qubit, und das Ergebnis auf demselben Ausgangs-Qubit gespeichert wird. 
-Da das CX-Gate das Ausgangsqubit umdreht, wenn sein Eingang den Wert 1 hat, setzt die erste CX-Gatter-Operation den Ausgang auf 1, wenn der Eingang 1 war. So weit, so gut. Das zweite CX-Gate setzt den Ausgang auf das Gegenteil, wenn der zweite Eingang 1 war. Wenn also der erste Eingang eine 0 war, ist der Ausgang momentan eine 0 und wird daher auf eine 1 gesetzt (wenn das zweite Qubit 1 ist). Wenn die erste Eingabe eine 1 war und die Ausgabe eine 1 ist, wird das zweite Qubit, das den Wert 1 hat, die Ausgabe wieder auf 0 zurücksetzen. Das ist sinnvoll, da 1 XOR 1 gleich 0 und 0 XOR 1 gleich 1 ist.
+Mit Hilfe des CX-Gates lässt sich eine XOR-Verknüpfung herstellen, indem zwei CX-Gates in den Schaltkreis eingefügt werden, eines auf jedem Eingangs-Qubit, und das Ergebnis auf demselben Ausgangs-Qubit gespeichert wird. 
+Da das CX-Gate das Ausgangsqubit umdreht, wenn sein Eingang den Wert 1 hat, setzt die erste CX-Gate-Operation den Ausgang auf 1, wenn der Eingang 1 war. 
+So weit, so gut. 
+Das zweite CX-Gate setzt den Ausgang auf das Gegenteil, wenn der zweite Eingang 1 war. 
+Wenn also der erste Eingang eine 0 war, ist der Ausgang momentan eine 0 und wird daher auf eine 1 gesetzt (wenn das zweite Qubit 1 ist). 
+Wenn die erste Eingabe eine 1 war und die Ausgabe eine 1 ist, wird das zweite Qubit, das den Wert 1 hat, die Ausgabe wieder auf 0 zurücksetzen. 
+Das ist sinnvoll, da 1 XOR 1 gleich 0 und 0 XOR 1 gleich 1 ist.
+
+![image logo](images/composer-xor-gate.png)
+
+	qc = QuantumCircuit(3, 1)
+	# XOR
+	qc.cx(0, 2)
+	qc.cx(1, 2)
+	# Measure
+	qc.measure(2, 0)
+	qc.draw()
+
+Im obigen Beispiel wird auf jedes Qubit ein qc.cx() oder (kontrolliertes NOT) angewendet und das Ergebnis im dritten Qubit gespeichert. 
+Danach erfolgt die Messung des Ergebnisses.
+
 
 ### OR Gate (AND) <a name="OR-gate"></a>
 
