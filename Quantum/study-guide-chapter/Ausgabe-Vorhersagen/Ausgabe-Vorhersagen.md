@@ -1,4 +1,6 @@
-[zurück](../study-guide.md)<details open>
+[zurück](../study-guide.md)
+<details open>
+
 <summary>Import Basic Functions First</summary>
 
     import numpy as np
@@ -23,6 +25,7 @@
     from numpy import sqrt, pi
 
 </details>
+
 ### Vorhersage des Outputs eines Qubits
 
 Nehmen wir an, wir haben einen Quantenschaltkreis, der aus einem einzigen Qubit besteht. 

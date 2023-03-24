@@ -239,6 +239,13 @@ Beginnen wir mit einer Quantenschaltung, die erst ein einzelnes Qubit und dann z
 
 [Vorhersage der Ausgabe von Quantenschaltungen](study-guide-chapter/Ausgabe-Vorhersagen/Ausgabe-Vorhersagen.md)
 
+### Y-Gate (NOT) <a name="y-gate"></a>
+
+Ein weiteres grundlegendes Ein-Qubit Pauli Gate ist das **Y-Gate**. Das Y-Gate entspricht einem Bitwert- und Phasenflip in einem Vorgang. Das heißt, während das X-Gate nur den Bitwert für das Qubit von 0 auf 1 oder von 1 auf 0 umdreht, dreht das Y-Gate nicht nur den Wert, sondern auch die Phase von +1 auf -1 oder von -1 auf +1.
+
+Befindet sich das Qubit nicht in einer Superposition mit einem Hadamard-Gate, sieht das Y-Gate genauso aus wie ein X-Gate, das einfach den klassischen Wert von 0 auf 1 umkehrt. Wird jedoch zuerst ein Hadamard-Gate angewendet, hat das Y-Gate den zusätzlichen Effekt, dass es die Phase umkehrt.
+
+
 
 
 
