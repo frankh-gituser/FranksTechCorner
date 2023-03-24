@@ -245,9 +245,17 @@ Ein weiteres grundlegendes Ein-Qubit Pauli Gate ist das **Y-Gate**. Das Y-Gate e
 
 Befindet sich das Qubit nicht in einer Superposition mit einem Hadamard-Gate, sieht das Y-Gate genauso aus wie ein X-Gate, das einfach den klassischen Wert von 0 auf 1 umkehrt. Wird jedoch zuerst ein Hadamard-Gate angewendet, hat das Y-Gate den zusätzlichen Effekt, dass es die Phase umkehrt.
 
+![image logo](images/y-Gate-Quantum-Composer.png)
+
+Wie in der obigen Schaltung zu sehen ist, wurden 3 Qubits hinzugefügt. Das erste Qubit wendet einfach ein X-Gate an, das den Wert von 0 auf 1 umkippt. Das zweite Qubit wendet ein Y-Gate ohne Superposition an, das wiederum den Wert von 0 auf 1 umkippt. Das dritte Qubit jedoch wird über das Hadamard-Gate in Superposition gebracht und wendet dann ein Y-Gate an, das den Wert von 0 auf 1 umkippt und auch die Phase auf -1 umkippt (wie in der Phasenscheibe auf der rechten Seite der Qubit-Zeile zu sehen ist).
+
+[Single Gates - X, Y, Z-Gate und Hadamard](quiskit-python-samples/prep-single-gates-xyz/prep-single-gates-xyz.md)
 
 
 
+
+### [zurück 1](../Quantum/study-guide.md)
+### [zurück 2](../Quantum/index.md)
 
 
 
